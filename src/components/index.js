@@ -7,6 +7,9 @@ import { PermissionForm } from './forms/PermissionForm';
 import { RoleForm } from './forms/RoleForm';
 import { AdminForm } from './forms/AdminForm';
 import { EbookForm } from './forms/EbookForm';
+import Header from './Header';
+import MainMenu from './MainMenu';
+import Footer from './Footer';
 
 export const Components = {
     CountryForm,
@@ -18,5 +21,8 @@ export const Components = {
 	RoleForm,
 	AdminForm,
 	EbookForm,
+	Header,
+	MainMenu,
+	Footer,
 	
 }

@@ -1,4 +1,4 @@
-import { countrieservice } from './countrieservice';
+import { CountryService } from './CountryService';
 import { CategoryService } from './CategoryService';
 import { UserService } from './UserService';
 import { ProductService } from './ProductService';
@@ -9,7 +9,7 @@ import { AdminService } from './AdminService';
 import { EbookService } from './EbookService';
 
 export const Services = {
-    countrieservice,
+    CountryService,
 	CategoryService,
 	UserService,
 	ProductService,

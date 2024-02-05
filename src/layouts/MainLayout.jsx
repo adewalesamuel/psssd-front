@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import { Components } from "../components";
 
 export default function MainLayout({children}) {
+
+    useEffect(() => {
+        window.document.body.className = `vertical-layout vertical-menu-modern 
+        boxicon-layout no-card-shadow 2-columns navbar-sticky footer-static`;
+    })
     return (
         <>
             <Components.Header />

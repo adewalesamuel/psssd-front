@@ -26,6 +26,7 @@ import { EbookListView } from './EbookListView';
 import { EbookCreateView } from './EbookCreateView';
 import { EbookEditView } from './EbookEditView';
 import DashbaordView from './DashbordView';
+import RegisterView from './RegisterView';
 
 export const Views = {
     CountryListView,
@@ -56,5 +57,6 @@ export const Views = {
 	EbookCreateView,
 	EbookEditView,
 	DashbaordView,
+	RegisterView,
 	
 }

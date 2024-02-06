@@ -14,14 +14,15 @@ export default function AuthLayout({children}) {
         boxicon-layout no-card-shadow 1-column  navbar-sticky footer-static 
         bg-full-screen-image  blank-page blank-page`;
 
-        if (isLoggedIn() && getUser().is_active) 
-            return navigate('/', {replace: true});
-
-        if (pathname !== '/activation') {
-            if (isLoggedIn() && !getUser().is_active)
+        if (isLoggedIn()) {
+            if (getUser().is_active) {
+                return navigate('/', {replace: true});
+            } else {
                 return navigate('/activation', {replace: true});
+            }
         } else {
-            if (!isLoggedIn()) return navigate('/', {replace: true});
+            if (pathname === '/activation')
+                return navigate('/connexion', {replace: true});
         }
 
     }, [pathname])

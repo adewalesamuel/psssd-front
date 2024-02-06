@@ -18,7 +18,7 @@
   color: var(--color-primary) !important;
 }
 
-.btn-primary:hover, .btn-primary:active {
+.btn-primary:hover, .btn-primary:active, .btn-primary.active {
   background-color: #390155 !important;
 
 }

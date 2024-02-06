@@ -5,32 +5,16 @@ import { Services } from '../services';
 import { Components } from '../components';
 import { Utils } from '../utils';
 
-export function ProductListView(props) {
+export function ProductListView() {
     let abortController = new AbortController();
 
     const { ProductService } = Services;
-
-    const tableAttributes = {
-        'name': {},
-		'slug': {},
-		'description': {},
-		'price': {},
-		'download_code': {},
-		'initial_stock': {},
-		'current_stock': {},
-		'img_url': {},
-		'file_url': {},
-		'user_id': {},
-		'category_id': {},
-		
-    }
-    const tableActions = ['raad', 'edit', 'delete'];
     
     const navigate = useNavigate();
 
     const [products, setProducts] = useState([]);
-    const [page, setPage] = useState(1);
-    const [pageLength, setPageLength] = useState(1);
+    const [page, ] = useState(1);
+    const [, setPageLength] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
 
     const handleEditClick = (e, data) => {
@@ -81,15 +65,13 @@ export function ProductListView(props) {
 
     return (
         <>
-            <h6>Liste Products</h6>
+            {/* <h6>Liste Products</h6> */}
             <Components.Loader isLoading={isLoading}>
                 <Link className='btn btn-info' to='/products/creer'>
                     <i className='icon ion-plus'></i> Ajout product
                 </Link>
                 <div className='table-responsive'>
-                    <Components.Table controllers={{handleEditClick, handleDeleteClick}} 
-                    tableAttributes={tableAttributes} tableActions={tableActions} 
-                    tableData={products}/>
+
                 </div>
             </Components.Loader>
         </>

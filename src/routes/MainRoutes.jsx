@@ -7,6 +7,7 @@ export default function MainRoutes() {
         <Layouts.MainLayout>
             <Routes>
                 <Route path='' element={<Views.DashbaordView />}/>
+                <Route path='mes-publications' element={<Views.ProductListView />}/>
             </Routes>
         </Layouts.MainLayout>
     )

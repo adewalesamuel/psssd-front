@@ -12,7 +12,11 @@ import MainMenu from './MainMenu';
 import Footer from './Footer';
 import RegisterForm from './forms/RegisterForm';
 import LoginForm from './forms/LoginForm';
-import {ErrorMessages} from './ErrorMessages'
+import {ErrorMessages} from './ErrorMessages';
+import {Loader} from './Loader';
+import {Spinner} from './Spinner';
+import { Table } from './Table';
+
 
 export const Components = {
     CountryForm,
@@ -29,6 +33,8 @@ export const Components = {
 	Footer,
 	RegisterForm,
 	LoginForm,
-	ErrorMessages
-	
+	ErrorMessages,
+	Loader,
+	Spinner,
+	Table,
 }

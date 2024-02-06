@@ -45,8 +45,8 @@ export  default function MainMenu() {
                             <span className="menu-title" data-i18n="Chat">Mon Profil</span>
                         </NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink className='text-secondary' to="/nouveau-produit">
+                    <li className="nav-item mt-3">
+                        <NavLink className='btn btn-primary text-white' to="/nouveau-produit">
                             <i className="bx bx-plus-circle"></i>
                             <span className="menu-title" data-i18n="Todo">Publier un produit</span>
                         </NavLink>

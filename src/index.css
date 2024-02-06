@@ -27,7 +27,7 @@
 
 }
 
-.border-primary {
+.border-primary, .btn-primary {
   border-color: var(--color-primary) !important;
 }
 

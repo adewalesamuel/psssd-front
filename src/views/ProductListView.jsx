@@ -80,7 +80,7 @@ export function ProductListView() {
                                         <div className="text-center">
                                             <h4>{product.name}</h4>
                                             <p>{product?.category?.name}</p>
-                                            <p className="px-2 pb-1">{product.description}</p>
+                                            <p className="px-2">{product.download_code}</p>
                                         </div>
                                     </div>
                                     <div className="card-footer text-center">

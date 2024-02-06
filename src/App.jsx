@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="inscription" element={<Views.RegisterView/>}/>
         <Route path="connexion" element={<Views.LoginView/>}/>
+        <Route path="activation" element={<Views.ActivationView/>}/>
         <Route path="*" element={<AppRoutes.MainRoutes/>}/>
       </Routes>
     </BrowserRouter>

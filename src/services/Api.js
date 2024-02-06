@@ -2,7 +2,7 @@ import { Utils } from '../utils';
 
 const HOST = 'http://127.0.0.1';
 const PORT = '8000';
-const URL = import.meta.env.VITE_APP_HOST_URL ?? `${HOST}:${PORT}`;
+const URL = import.meta.env.VITE_APP_HOST_URL && `${HOST}:${PORT}`;
 const ROOT_PATH  = '/api' 
 const HEADERS = new Headers({
     'Content-type': 'application/json',
@@ -146,8 +146,6 @@ const getResponseErrors = response => {
         
         response.json().then(result => {
             let errorMessages = [];
-            
-            errorMessages.push(result.message);
     
             for (let error in result.errors) 
                 errorMessages.push(result.errors[error]);

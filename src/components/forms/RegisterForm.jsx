@@ -44,11 +44,13 @@ export default function RegisterForm(props) {
                         <input
                             className='form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='text'
+                            type='tel'
                             id='phone_number'
                             name='phone_number'
                             placeholder='Numéro de téléphone'
                             value={props.useUser.phone_number ?? ''}
+                            minLength={10}
+                            maxLength={10}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setPhone_number(e.target.value) ?? null}
                             required
@@ -63,11 +65,13 @@ export default function RegisterForm(props) {
                         <input
                             className='form-control form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='text'
+                            type='tel'
                             id='whatsapp_number'
                             name='whatsapp_number'
                             placeholder='Numéro WhatsApp'
                             value={props.useUser.whatsapp_number ?? ''}
+                            minLength={10}
+                            maxLength={10}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setWhatsapp_number(e.target.value) ?? null}
                             required
@@ -82,11 +86,13 @@ export default function RegisterForm(props) {
                         <input
                             className='form-control form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='text'
+                            type='tel'
                             id='telegram_number'
                             name='telegram_number'
                             placeholder='Numéro Telegram'
                             value={props.useUser.telegram_number ?? ''}
+                            minLength={10}
+                            maxLength={10}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setTelegram_number(e.target.value) ?? null}
                             required
@@ -101,11 +107,13 @@ export default function RegisterForm(props) {
                         <input
                             className='form-control form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='text'
+                            type='tel'
                             id='backup_number'
                             name='backup_number'
                             placeholder='Numéro de secours'
                             value={props.useUser.backup_number ?? ''}
+                            minLength={10}
+                            maxLength={10}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setBackup_number(e.target.value) ?? null}
                             required
@@ -127,7 +135,6 @@ export default function RegisterForm(props) {
                             value={props.useUser.sponsor_code ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setSponsor_code(e.target.value) ?? null}
-                            required
                         />
                         <div className="form-control-position">
                             <i className="bx bx-key text-primary"></i>
@@ -198,7 +205,9 @@ export default function RegisterForm(props) {
                         className='btn btn-primary btn-block mt-2 p-1'
                         onClick={props.handleFormSubmit}
                     >
-                        <span className="text-uppercase">S&apos;inscrire</span>
+                        <span className="text-uppercase">
+                            {props.isDisabled ? "Chargement..." : "S'inscrire"}
+                        </span>
                     </button>
                 </div>
             </div>

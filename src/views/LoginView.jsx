@@ -2,13 +2,52 @@ import { Link } from "react-router-dom";
 import { Layouts } from "../layouts";
 import { Components } from "../components";
 import { useState } from "react";
+import { Services } from "../services";
+import { Utils } from "../utils";
+import {useNavigate} from 'react-router-dom';
 
 export default function LoginView() {
     const abortContoller = new AbortController();
 
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isDisabled, ] = useState(false);
+    const [isDisabled, setIsDisabled] = useState(false);
+    const [errorMessages, setErrorMessages] = useState([]);
+
+    const handleLoginSubmit = async e => {
+        e.preventDefault();
+        setErrorMessages([]);
+        setIsDisabled(true);
+
+        try {
+            const payload = {
+                email, password
+            }
+            const {user, tk} = await Services.AuthService.login(
+                JSON.stringify(payload), abortContoller.signal);
+
+            Utils.Auth.setSessionToken(tk);
+            Utils.Auth.setUser(user);
+
+            if (user.is_active) return window.location.replace('/');
+
+            navigate('/activation');
+        } catch (error) {
+            if ('message' in error) return setErrorMessages([error.message])
+            if (!('messages' in error)) return;
+
+            if (error.status === 404) 
+                return setErrorMessages(['Login ou mot de passe incorrect'])
+
+            const messages = await error.messages;
+            setErrorMessages(messages);
+        } finally {
+            setIsDisabled(false);
+        }
+        
+    }
 
     return (
         <Layouts.AuthLayout>
@@ -29,8 +68,12 @@ export default function LoginView() {
                                     </div>
                                     <div className="card-content">
                                         <div className="card-body">
+                                            <Components.ErrorMessages>
+                                                {errorMessages}
+                                            </Components.ErrorMessages>
                                             <Components.LoginForm isDisabled={isDisabled} email={email} 
-                                            setEmail={setEmail} password={password} setPassword={setPassword}/>
+                                            setEmail={setEmail} password={password} setPassword={setPassword}
+                                            handleFormSubmit={handleLoginSubmit}/>
                                             <div className="text-center mt-1">
                                                 <p className="mr-25 d-inline-block">Vous n&apos;avez pas de compte?</p>
                                                 <Link to="/inscription"><b className="d-inline-block">Inscrivez-vous</b> </Link>

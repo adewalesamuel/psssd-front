@@ -12,6 +12,7 @@ import MainMenu from './MainMenu';
 import Footer from './Footer';
 import RegisterForm from './forms/RegisterForm';
 import LoginForm from './forms/LoginForm';
+import {ErrorMessages} from './ErrorMessages'
 
 export const Components = {
     CountryForm,
@@ -27,6 +28,7 @@ export const Components = {
 	MainMenu,
 	Footer,
 	RegisterForm,
-	LoginForm
+	LoginForm,
+	ErrorMessages
 	
 }

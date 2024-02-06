@@ -4,13 +4,56 @@ import { Components } from "../components";
 import {Hooks} from '../hooks';
 import { useCallback, useEffect, useState } from "react";
 import { Services } from "../services";
+import { Utils } from "../utils";
+import {useNavigate} from 'react-router-dom';
 
 export default function RegisterView() {
     const abortContoller = new AbortController();
 
     const useUser = Hooks.useUser();
+    const navigate = useNavigate();
 
     const [countries, setCountries] = useState([]);
+    const [errorMessages, setErrorMessages] = useState([]);
+
+    const handleRegisterSubmit = async (e) => {
+        e.preventDefault();
+        setErrorMessages([]);
+
+        useUser.setIsDisabled(true);
+
+        try {
+            const payload = {
+                fullname: useUser.fullname,
+                email: useUser.email,
+                password: useUser.password,
+                phone_number: useUser.phone_number,
+                backup_number: useUser.backup_number,
+                whatsapp_number: useUser.whatsapp_number,
+                telegram_number: useUser.telegram_number,
+                shop_name: useUser.shop_name,
+                sponsor_code: useUser.sponsor_code,
+                country_id: useUser.country_id
+            }
+            const {user, tk} = await Services.AuthService.register(
+                JSON.stringify(payload), abortContoller.signal)
+
+            Utils.Auth.setSessionToken(tk);
+            Utils.Auth.setUser(user);
+
+            if (user.is_active) return window.location.replace('/');
+
+            navigate('/activation');
+        } catch (error) {
+            if ('message' in error) return setErrorMessages[error.message]
+            if (!('messages' in error)) return;
+
+            const messages = await error.messages;
+            setErrorMessages(messages);
+        } finally {
+            useUser.setIsDisabled(false);
+        }
+    } 
 
     const init = useCallback(async () => {
         useUser.setIsDisabled(true);
@@ -21,7 +64,11 @@ export default function RegisterView() {
             
             setCountries(countries);
         } catch (error) {
-            console.log(error);
+            if ('message' in error) return setErrorMessages([error.message])
+            if (!('messages' in error)) return;
+
+            const messages = await error.messages;
+            setErrorMessages(messages);
         } finally {
             useUser.setIsDisabled(false);
         }
@@ -50,8 +97,12 @@ export default function RegisterView() {
                                     </div>
                                     <div className="card-content">
                                         <div className="card-body">
+                                            <Components.ErrorMessages>
+                                                {errorMessages}
+                                            </Components.ErrorMessages>
                                             <Components.RegisterForm isDisabled={useUser.isDisabled} 
-                                            useUser={useUser} countries={countries}/>
+                                            useUser={useUser} countries={countries} 
+                                            handleFormSubmit={handleRegisterSubmit}/>
                                             <div className="text-center mt-1">
                                                 <p className="mr-25 d-inline-block">Vous avez déjà un compte?</p>
                                                 <Link to="/connexion"><b className="d-inline-block">Connectez-vous</b> </Link>

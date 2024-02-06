@@ -1,44 +1,39 @@
-//'use client'
+
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Services } from '../services';
 import { Components } from '../components';
-import { Utils } from '../utils';
+import girlImage from '../app-assets/images/profile/user-uploads/girl-image.jpg';
 
 export function ProductListView() {
     let abortController = new AbortController();
 
     const { ProductService } = Services;
-    
-    const navigate = useNavigate();
+
 
     const [products, setProducts] = useState([]);
     const [page, ] = useState(1);
     const [, setPageLength] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
 
-    const handleEditClick = (e, data) => {
-        e.preventDefault();
-        navigate(`/products/${data.id}/modifier`);
-    }
-    const handleDeleteClick = async (e, product) => {
-        e.preventDefault();
+    // const handleDeleteClick = async (e, product) => {
+    //     e.preventDefault();
 
-        const {isConfirmed} = await Utils.SweetAlert.fireAlert(
-            'supprimer', 'ce product');
+    //     const {isConfirmed} = await Utils.SweetAlert.fireAlert(
+    //         'supprimer', 'ce product');
 
-        if (isConfirmed) {
-            const productsCopy = [...products];
-            const index = productsCopy.findIndex(productItem => 
-                productItem.id === product.id);
+    //     if (isConfirmed) {
+    //         const productsCopy = [...products];
+    //         const index = productsCopy.findIndex(productItem => 
+    //             productItem.id === product.id);
 
-            productsCopy.splice(index, 1);
-            setProducts(productsCopy);
+    //         productsCopy.splice(index, 1);
+    //         setProducts(productsCopy);
 
-            await ProductService.destroy(product.id, 
-                abortController.signal);
-        }
-    }
+    //         await ProductService.destroy(product.id, 
+    //             abortController.signal);
+    //     }
+    // }
 
     const init = useCallback(async () => {
         try {
@@ -67,11 +62,37 @@ export function ProductListView() {
         <>
             {/* <h6>Liste Products</h6> */}
             <Components.Loader isLoading={isLoading}>
-                <Link className='btn btn-info' to='/products/creer'>
-                    <i className='icon ion-plus'></i> Ajout product
+                <Link className='btn btn-info text-white' to='/nouveau-produit'>
+                    <i className='icon ion-plus'></i> Publier un produit
                 </Link>
-                <div className='table-responsive'>
-
+                <div className='row mt-1 py-2'>
+                    {products.map((product, index) => {
+                        return (
+                            <div className="col-xl-3 col-md-6 img-top-card" key={index}>
+                                <div className="card widget-img-top p-0">
+                                    <div className="card-content">
+                                        <img className="card-img-top img-fluid mb-1" src={girlImage} 
+                                        alt="Card image cap" />
+                                        <div className="heading-elements">
+                                            <i className="bx bx-dots-vertical-rounded font-medium-3 
+                                            align-middle text-white"></i>
+                                        </div>
+                                        <div className="text-center">
+                                            <h4>{product.name}</h4>
+                                            <p>{product?.category?.name}</p>
+                                            <p className="px-2 pb-1">{product.description}</p>
+                                        </div>
+                                    </div>
+                                    <div className="card-footer text-center">
+                                        <Link to={`/articles/${product.slug}/modifier`} 
+                                        className="btn btn-info text-white glow px-4">
+                                            Modifer
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </Components.Loader>
         </>

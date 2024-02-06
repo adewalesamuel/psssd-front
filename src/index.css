@@ -2,6 +2,10 @@
   --color-primary: #500178;
 }
 
+*[role=button] {
+  cursor: pointer;
+}
+
 #root {
   width: 100%;
   margin: 0;

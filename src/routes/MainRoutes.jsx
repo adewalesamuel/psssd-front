@@ -8,6 +8,8 @@ export default function MainRoutes() {
             <Routes>
                 <Route path='' element={<Views.DashbaordView />}/>
                 <Route path='mes-publications' element={<Views.ProductListView />}/>
+                <Route path='nouveau-produit' element={<Views.ProductCreateView />}/>
+                <Route path='articles/:id/modifier' element={<Views.ProductEditView />}/>
             </Routes>
         </Layouts.MainLayout>
     )

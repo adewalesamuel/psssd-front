@@ -16,6 +16,7 @@ import {ErrorMessages} from './ErrorMessages';
 import {Loader} from './Loader';
 import {Spinner} from './Spinner';
 import { Table } from './Table';
+import { ImageFileInput } from './ImageFileInput';
 
 
 export const Components = {
@@ -37,4 +38,5 @@ export const Components = {
 	Loader,
 	Spinner,
 	Table,
+	ImageFileInput,
 }

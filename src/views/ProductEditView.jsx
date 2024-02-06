@@ -1,22 +1,21 @@
-//'use client'
+
 import { useCallback, useEffect, useState } from 'react';
 import { Components } from '../components';
 import { Hooks } from '../hooks';
 import { useParams } from 'react-router-dom';
 import { Services } from '../services';
 
-export function ProductEditView(props) {
+export function ProductEditView() {
     let abortController = new AbortController();
 
     const {id} = useParams();
 
     const useProduct = Hooks.useProduct();
 
-    const [users, setUsers] = useState([]);
-	const [categories, setCategorys] = useState([]);
+	const [categories, setCategories] = useState([]);
 	
     const [errorMessages, setErrorMessages] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [, setIsLoading] = useState(true);
 
     const handleFormSubmit = async e => {
         e.preventDefault();
@@ -24,7 +23,8 @@ export function ProductEditView(props) {
         setErrorMessages([]);
         
         try {
-            await useProduct.updateProduct(id, abortController.signal);
+            await useProduct.updateProduct(useProduct.id, 
+                abortController.signal);
         } catch (error) {
             if ('messages' in error)
                 error.messages.then(messages => setErrorMessages(messages));
@@ -39,10 +39,9 @@ export function ProductEditView(props) {
         try {
             await useProduct.getProduct(id, abortController.signal);
             
-            const { users } = await Services.UserService.getAll(abortController.signal);
-			setUsers(users);
-			const { categories } = await Services.CategoryService.getAll(abortController.signal);
-			setCategorys(categories);
+			const { categories } = await Services.CategoryService.getAll(
+                abortController.signal);
+			setCategories(categories);
 			
         } catch (error) {
             console.log(error);
@@ -58,17 +57,21 @@ export function ProductEditView(props) {
 
     return (
         <>
-            <h6 className='slim-pagetitle'>Modifier Product</h6>
+            <div style={{maxWidth: '600px'}}>
+                <div className='card'>
+                    <Components.ErrorMessages>
+                        {errorMessages}
+                    </Components.ErrorMessages>
+                    <div className='card-content'>
+                        <Components.ProductForm useProduct={useProduct} 
+                        categories={categories} setCategories={setCategories} 
+                        isDisabled={useProduct.isDisabled} 
+                        handleFormSubmit={handleFormSubmit}/>
 
-            <Components.ErrorMessages>
-                {errorMessages}
-            </Components.ErrorMessages>
-            <Components.ProductForm useProduct={useProduct} 
-            users={users} setUsers={setUsers}
-			categories={categories} setCategorys={setCategorys}
-			 
-            isDisabled={useProduct.isDisabled} 
-            handleFormSubmit={handleFormSubmit}/>
+                    </div>
+                </div>
+
+            </div>
         </>
     )
 }

@@ -165,7 +165,7 @@ export default function RegisterForm(props) {
                         <input
                             className='form-control form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='text'
+                            type='email'
                             id='email'
                             name='email'
                             placeholder='Login'

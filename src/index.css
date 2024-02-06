@@ -23,3 +23,10 @@
 
 }
 
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+.rounded {
+  border-radius: 10px !important;
+}

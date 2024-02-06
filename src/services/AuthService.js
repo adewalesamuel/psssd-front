@@ -3,12 +3,17 @@ import { Api } from './Api';
 const  ENPOINTS = {
     Login: 'login',
     Register: 'register',
-    Logout: 'logout'
+    Logout: 'logout',
+    Validation: 'validate'
 };
 
 
 const login = (payload, signal) => {
     return Api.post(ENPOINTS.Login, payload, signal)
+
+}
+const activation = (payload, signal) => {
+    return Api.post(ENPOINTS.Validation, payload, signal)
 
 }
 const register = (payload, signal) => {
@@ -23,5 +28,6 @@ const logout = (payload, signal) => {
 export const AuthService = {
     login,
     logout,
+    activation,
     register
 }

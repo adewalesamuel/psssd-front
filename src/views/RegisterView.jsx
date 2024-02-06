@@ -105,7 +105,9 @@ export default function RegisterView() {
                                             handleFormSubmit={handleRegisterSubmit}/>
                                             <div className="text-center mt-1">
                                                 <p className="mr-25 d-inline-block">Vous avez déjà un compte?</p>
-                                                <Link to="/connexion"><b className="d-inline-block">Connectez-vous</b> </Link>
+                                                <Link to="/connexion">
+                                                    <b className="d-inline-block">Connectez-vous</b> 
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

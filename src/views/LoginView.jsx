@@ -1,35 +1,14 @@
 import { Link } from "react-router-dom";
 import { Layouts } from "../layouts";
 import { Components } from "../components";
-import {Hooks} from '../hooks';
-import { useCallback, useEffect, useState } from "react";
-import { Services } from "../services";
+import { useState } from "react";
 
-export default function RegisterView() {
+export default function LoginView() {
     const abortContoller = new AbortController();
 
-    const useUser = Hooks.useUser();
-
-    const [countries, setCountries] = useState([]);
-
-    const init = useCallback(async () => {
-        useUser.setIsDisabled(true);
-
-        try {
-            const {countries} = await Services.CountryService.getAll(
-                abortContoller.signal);
-            
-            setCountries(countries);
-        } catch (error) {
-            console.log(error);
-        } finally {
-            useUser.setIsDisabled(false);
-        }
-    }, [])
-
-    useEffect(() => {
-        init()
-    }, [init])
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isDisabled, ] = useState(false);
 
     return (
         <Layouts.AuthLayout>
@@ -38,23 +17,23 @@ export default function RegisterView() {
                 <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 
                 py-sm-5 px-sm-1 px-0">
                     <div className="bg-white bg-authentication mb-0 p-0 h-100 d-flex 
-                    flex-column">
+                    flex-column justify-content-around">
                         <div className="row m-0">
                             <div className="col-12 px-0">
-                                <div className="card disable-rounded-right mb-0 p-2 h-100 
+                                <div className="card mb-0 p-2 h-100 
                                 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
-                                            <h4 className="text-center mb-2 text-uppercase">Inscription</h4>
+                                            <h4 className="text-center mb-2 text-uppercase">Connexion</h4>
                                         </div>
                                     </div>
                                     <div className="card-content">
                                         <div className="card-body">
-                                            <Components.RegisterForm isDisabled={useUser.isDisabled} 
-                                            useUser={useUser} countries={countries}/>
+                                            <Components.LoginForm isDisabled={isDisabled} email={email} 
+                                            setEmail={setEmail} password={password} setPassword={setPassword}/>
                                             <div className="text-center mt-1">
-                                                <p className="mr-25 d-inline-block">Vous avez déjà un compte?</p>
-                                                <Link to="/connexion"><b className="d-inline-block">Connectez-vous</b> </Link>
+                                                <p className="mr-25 d-inline-block">Vous n&apos;avez pas de compte?</p>
+                                                <Link to="/inscription"><b className="d-inline-block">Inscrivez-vous</b> </Link>
                                             </div>
                                         </div>
                                     </div>

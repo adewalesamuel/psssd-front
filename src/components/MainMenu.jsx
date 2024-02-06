@@ -26,56 +26,29 @@ export  default function MainMenu() {
             <div className="shadow-bottom"></div>
             <div className="main-menu-content">
                 <ul className="navigation navigation-main" id="main-menu-navigation">
-                    <li className="navigation-header"><span>Apps</span></li>
+                    <li className="navigation-header"><span>Menu</span></li>
                     <li className="nav-item">
-                        <NavLink to="/"><i className="bx bx-home-alt"></i>
-                            <span className="menu-title" data-i18n="Dashboard">Dashboard</span>
-                            <span className="badge badge-light-danger badge-pill badge-round 
-                            float-right mr-2">
-                                2
-                            </span>
-                        </NavLink>
-                        <ul className="menu-content">
-                            <li>
-                                <NavLink to="/"><i className="bx bx-right-arrow-alt"></i>
-                                    <span className="menu-item" data-i18n="eCommerce">eCommerce</span>
-                                </NavLink>
-                            </li>
-                            <li className="active">
-                                <NavLink to="/"><i className="bx bx-right-arrow-alt"></i>
-                                    <span className="menu-item" data-i18n="Analytics">Analytics</span>
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/"><i className="bx bx-envelope"></i>
-                            <span className="menu-title" data-i18n="Email">Email</span>
+                        <NavLink className='text-secondary' to="/">
+                            <i className="bx bx-home-alt"></i>
+                            <span className="menu-title" data-i18n="Dashboard">Tableau de bord</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/"><i className="bx bx-chat"></i>
-                            <span className="menu-title" data-i18n="Chat">Chat</span>
+                        <NavLink className='text-secondary' to="/mes-publications">
+                            <i className="bx bx-cart"></i>
+                            <span className="menu-title" data-i18n="Email">Mes Publications</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/"><i className="bx bx-check-circle"></i>
-                            <span className="menu-title" data-i18n="Todo">Todo</span>
+                        <NavLink className='text-secondary' to="/mon-profil">
+                            <i className="bx bx-user"></i>
+                            <span className="menu-title" data-i18n="Chat">Mon Profil</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/"><i className="bx bx-calendar"></i>
-                            <span className="menu-title" data-i18n="Calendar">Calendar</span>
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/"><i className="bx bx-grid-alt"></i>
-                            <span className="menu-title" data-i18n="Kanban">Kanban</span>
-                        </NavLink>
-                    </li>
-                    <li className="disabled nav-item">
-                        <NavLink to="/"><i className="bx bx-unlink"></i>
-                            <span className="menu-title" data-i18n="Disabled Menu">Disabled Menu</span>
+                        <NavLink className='text-secondary' to="/nouveau-produit">
+                            <i className="bx bx-plus-circle"></i>
+                            <span className="menu-title" data-i18n="Todo">Publier un produit</span>
                         </NavLink>
                     </li>
                 </ul>

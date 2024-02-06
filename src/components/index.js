@@ -10,6 +10,8 @@ import { EbookForm } from './forms/EbookForm';
 import Header from './Header';
 import MainMenu from './MainMenu';
 import Footer from './Footer';
+import RegisterForm from './forms/RegisterForm';
+import LoginForm from './forms/LoginForm';
 
 export const Components = {
     CountryForm,
@@ -24,5 +26,7 @@ export const Components = {
 	Header,
 	MainMenu,
 	Footer,
+	RegisterForm,
+	LoginForm
 	
 }

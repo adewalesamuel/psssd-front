@@ -47,14 +47,11 @@ export default function ActivationView() {
         <Layouts.AuthLayout>
             <section className="row flexbox-container flex-wrap align-items-lg-stretch">
                 <div className="col-xl-7 col-12"></div>
-                <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 
-                py-sm-5 px-sm-1 px-0">
-                    <div className="bg-white bg-authentication mb-0 p-0 h-100 d-flex 
-                    flex-column">
+                <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 py-sm-5 px-sm-1 px-0">
+                    <div className="bg-white bg-authentication mb-0 p-0 h-100 d-flex flex-column">
                         <div className="row m-0">
                             <div className="col-12 px-0">
-                                <div className="card mb-0 p-2 h-100 
-                                d-flex justify-content-center">
+                                <div className="card mb-0 p-2 h-100 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
                                             <h4 className="text-center mb-2 text-uppercase">
@@ -88,27 +85,19 @@ export default function ActivationView() {
                                                     <div className="row">
                                                         <div className='col-12'>
                                                             <div className='form-group position-relative'>
-                                                                <input
-                                                                    className='form-control form-control rounded 
-                                                                    border-primary p-2'
-                                                                    type='text'
-                                                                    id='activation_code'
-                                                                    name='activation_code'
-                                                                    placeholder='Code alphanumérique de 8 charactères'
-                                                                    value={activation_code ?? ''}
-                                                                    disabled={isDisabled}
-                                                                    onChange={e => setActivation_code(e.target.value) ?? null}
-                                                                    required
-                                                                />
+                                                                <input className='form-control form-control rounded 
+                                                                    border-primary p-2' type='text' id='activation_code' 
+                                                                    name='activation_code' required
+                                                                    placeholder='Code alphanumérique de 8 charactères' 
+                                                                    value={activation_code ?? ''} disabled={isDisabled}
+                                                                    onChange={e => setActivation_code(e.target.value) ?? null} />
                                                             </div>
                                                         </div>
                                                         <div className='col-12'>
                                                             <button
-                                                                disabled={isDisabled ?? false}
-                                                                type='submit'
+                                                                disabled={isDisabled ?? false} type='submit'
                                                                 className='btn btn-primary btn-block mt-1 p-1 rounded'
-                                                                onClick={handleActivationSubmit}
-                                                            >
+                                                                onClick={handleActivationSubmit}>
                                                                 <span className="text-uppercase">
                                                                     {isDisabled ? "Chargement..." : "Validez votre compte"}
                                                                 </span>

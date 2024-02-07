@@ -2,20 +2,18 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Components } from '../components';
 import { Hooks } from '../hooks';
-import { useParams } from 'react-router-dom';
 import { Services } from '../services';
+import { Utils } from '../utils';
 
-export function UserEditView(props) {
+export function UserEditView() {
     let abortController = new AbortController();
-
-    const {id} = useParams();
 
     const useUser = Hooks.useUser();
 
     const [countries, setcountries] = useState([]);
 	
     const [errorMessages, setErrorMessages] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [, setIsLoading] = useState(true);
 
     const handleFormSubmit = async e => {
         e.preventDefault();
@@ -23,10 +21,16 @@ export function UserEditView(props) {
         setErrorMessages([]);
         
         try {
-            await useUser.updateUser(id, abortController.signal);
+            const {user} = await useUser.updateUser(abortController.signal);
+            const authUser = {...Utils.Auth.getUser(), ...user};
+
+            Utils.Auth.setUser(authUser);
         } catch (error) {
-            if ('messages' in error)
-                error.messages.then(messages => setErrorMessages(messages));
+            if ('message' in error) return setErrorMessages([error.message])
+            if (!('messages' in error)) return;
+
+            const messages = await error.messages;
+            setErrorMessages(messages);
         } finally {
             useUser.setIsDisabled(false);
         }
@@ -36,9 +40,10 @@ export function UserEditView(props) {
         useUser.setIsDisabled(true);
 
         try {
-            await useUser.getUser(id, abortController.signal);
+            useUser.fillUser(Utils.Auth.getUser());
             
-            const { countries } = await Services.countrieservice.getAll(abortController.signal);
+            const { countries } = await Services.countrieservice.getAll(
+                abortController.signal);
 			setcountries(countries);
 			
         } catch (error) {
@@ -55,16 +60,19 @@ export function UserEditView(props) {
 
     return (
         <>
-            <h6 className='slim-pagetitle'>Modifier User</h6>
-
-            <Components.ErrorMessages>
-                {errorMessages}
-            </Components.ErrorMessages>
-            <Components.UserForm useUser={useUser} 
-            countries={countries} setcountries={setcountries}
-			 
-            isDisabled={useUser.isDisabled} 
-            handleFormSubmit={handleFormSubmit}/>
+            <div style={{maxWidth: '600px'}}>
+                <div className='card'>
+                    <Components.ErrorMessages>
+                        {errorMessages}
+                    </Components.ErrorMessages>
+                    <div className='card-content'>
+                        <Components.UserForm useUser={useUser} 
+                        countries={countries} setcountries={setcountries}
+                        isDisabled={useUser.isDisabled} 
+                        handleFormSubmit={handleFormSubmit}/>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

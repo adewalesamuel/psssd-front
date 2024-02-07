@@ -47,7 +47,9 @@ export default function LoginForm(props) {
                         className='btn btn-primary btn-block mt-2 p-1'
                         onClick={props.handleFormSubmit}
                     >
-                        <span className="text-uppercase">Connexion</span>
+                        <span className="text-uppercase">
+                            {props.isDisabled ? "Chargement..." : "Connexion"}
+                        </span>
                     </button>
                 </div>
             </div>

@@ -16,8 +16,8 @@ const create = (payload, signal) => {
     return Api.post(ENPOINTS.User, payload, signal)
 }
 
-const update = (id, payload, signal) => {
-    return Api.put(`${ENPOINTS.User}/${id}`, payload, signal)
+const update = (payload, signal) => {
+    return Api.put(`profile`, payload, signal)
 }
 const destroy = (id, signal) => {
     return Api.erase(`${ENPOINTS.User}/${id}`, signal)

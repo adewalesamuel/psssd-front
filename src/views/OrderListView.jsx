@@ -1,55 +1,19 @@
 
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { Services } from '../services';
 import { Components } from '../components';
-import { Utils } from '../utils';
+import girlImage from '../app-assets/images/profile/user-uploads/girl-image.jpg';
 
-export function OrderListView(props) {
+export function OrderListView() {
     let abortController = new AbortController();
 
     const { OrderService } = Services;
 
-    const tableAttributes = {
-        'code': {},
-		'quantity': {},
-		'amount': {},
-		'status': {},
-		'product_id': {},
-		'user_id': {},
-		
-    }
-    const tableActions = ['raad', 'edit', 'delete'];
-    
-    const navigate = useNavigate();
 
     const [orders, setOrders] = useState([]);
-    const [page, setPage] = useState(1);
-    const [pageLength, setPageLength] = useState(1);
+    const [page, ] = useState(1);
+    const [, setPageLength] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
-
-    const handleEditClick = (e, data) => {
-        e.preventDefault();
-        navigate(`/orders/${data.id}/modifier`);
-    }
-    const handleDeleteClick = async (e, order) => {
-        e.preventDefault();
-
-        const {isConfirmed} = await Utils.SweetAlert.fireAlert(
-            'supprimer', 'ce order');
-
-        if (isConfirmed) {
-            const ordersCopy = [...orders];
-            const index = ordersCopy.findIndex(orderItem => 
-                orderItem.id === order.id);
-
-            ordersCopy.splice(index, 1);
-            setOrders(ordersCopy);
-
-            await OrderService.destroy(order.id, 
-                abortController.signal);
-        }
-    }
 
     const init = useCallback(async () => {
         try {
@@ -76,15 +40,43 @@ export function OrderListView(props) {
 
     return (
         <>
-            <h6>Liste Orders</h6>
+            <h6>Liste de vos commandes</h6>
             <Components.Loader isLoading={isLoading}>
-                <Link className='btn btn-info' to='/orders/creer'>
-                    <i className='icon ion-plus'></i> Ajout order
-                </Link>
-                <div className='table-responsive'>
-                    <Components.Table controllers={{handleEditClick, handleDeleteClick}} 
-                    tableAttributes={tableAttributes} tableActions={tableActions} 
-                    tableData={orders}/>
+                <div className='row mt-1 py-2'>
+                    {orders.map((order, index) => {
+                        const productImg = (order?.Img.img_url && order?.product.img_url !== "") ? 
+                        order?.product.img_url : girlImage;
+                        return (
+                            <div className="col-xl-3 col-md-6 img-top-card" key={index}>
+                                <div className="card widget-img-top p-0">
+                                    <div className="card-content">
+                                        <img className="card-img-top img-fluid mb-1" src={productImg} 
+                                        alt="Card image cap" style={{height: "200px", objectFit: 'cover'}}/>
+                                        <div className="heading-elements">
+                                            <i className="bx bx-dots-vertical-rounded font-medium-3 
+                                            align-middle text-white"></i>
+                                        </div>
+                                        <div className="text-center">
+                                            <h4>{order.name}</h4>
+                                            <p>{order?.category?.name}</p>
+                                            <p className="px-2">{order.download_code}</p>
+                                        </div>
+                                    </div>
+                                    <div className="card-footer text-center d-flex justify-content-between 
+                                    align-items-center">
+                                        <a href={order.file_url} className='btn btn-secondary'
+                                        target='_blank' rel='noreferrer'>
+                                            <i className='bx bx-download'></i>
+                                        </a>
+                                        {/* <Link to={`/articles/${product.slug}/modifier`} 
+                                        className="btn btn-info text-white">
+                                            <i className='bx bx-pencil'></i>
+                                        </Link> */}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </Components.Loader>
         </>

@@ -4,12 +4,9 @@ import { Components } from "../components";
 import { useState } from "react";
 import { Services } from "../services";
 import { Utils } from "../utils";
-import {useNavigate} from 'react-router-dom';
 
 export default function LoginView() {
     const abortContoller = new AbortController();
-
-    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -33,7 +30,7 @@ export default function LoginView() {
 
             if (user.is_active) return window.location.replace('/');
 
-            navigate('/activation');
+            window.location.replace('/activation');
         } catch (error) {
             if ('message' in error) return setErrorMessages([error.message])
             if (!('messages' in error)) return;

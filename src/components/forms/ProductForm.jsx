@@ -1,13 +1,55 @@
 import { Components } from "..";
+import { Services } from "../../services";
 
 export function ProductForm(props) {
+    const abortController = new AbortController();
+
+    const handleFileUpload = async file => {
+        props.useProduct.setIsDisabled(true);
+
+        try {
+            const formData = new FormData();
+
+            formData.append('img', file);
+
+            const {img_url} = await Services.FileService.store(
+                formData, abortController.signal);
+
+            props.useProduct.setFile_url(img_url);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            props.useProduct.setIsDisabled(false);
+        }
+
+    }
+    const handleImageUpload = async file => {
+        props.useProduct.setIsDisabled(true);
+
+        try {
+            const formData = new FormData();
+
+            formData.append('img', file);
+
+            const {img_url} = await Services.FileService.store(
+                formData, abortController.signal);
+
+            props.useProduct.setImg_url(img_url);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            props.useProduct.setIsDisabled(false);
+        }
+
+    }
     return (
-        <form className='form' disabled={props.isDisabled ?? false} onSubmit={props.handleFormSubmit ?? null}>
+        <form className='form'onSubmit={props.handleFormSubmit ?? null}>
             <div className='row'>
                 <div className='col-12'>
                     <div className='form-group'>
                         <label htmlFor='img_url'>Image de l&apos;article</label>
-                        <Components.ImageFileInput img_url={props.useProduct.img_url} handleFileChange={null} />
+                        <Components.ImageFileInput img_url={props.useProduct.img_url} 
+                        handleFileChange={handleImageUpload} />
                     </div>
                 </div>
                 <div className='col-12'>
@@ -115,18 +157,17 @@ export function ProductForm(props) {
                 </div>
                 <div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='file_url'>URL du fichier</label>
-                        <input
-                            className='form-control'
-                            type='text'
-                            id='file_url'
-                            name='file_url'
-                            placeholder='URL du fichier'
-                            value={props.useProduct.file_url ?? ''}
-                            disabled={props.isDisabled}
-                            onChange={(e) => props.useProduct.setFile_url(e.target.value) ?? null}
-                            required
-                        />
+                        <label htmlFor="basicInputFile">Fichier</label>
+                        <div className="custom-file">
+                            <input type="file" className="custom-file-input" id="inputGroupFile01" 
+                            role='button' onChange={e => handleFileUpload(e.target.files[0])}
+                            accept=".azw,.csv,.doc,.docx,.epub,.html,.htm,.odp,.ods,.odt,.pdf,.xhtml,.xls,.xlsx,.xml"/>
+                            <label className="custom-file-label overflow-hidden" htmlFor="inputGroupFile01"
+                            style={{whiteSpace: 'nowrap'}}>
+                                {(props.useProduct.file_url && props.useProduct.file_url !== "" ) ?
+                                props.useProduct.file_url : "Aucun fichier sélectionné"}
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div className='col-12 text-right'>
@@ -136,7 +177,9 @@ export function ProductForm(props) {
                         className='btn btn-primary'
                         onClick={props.handleFormSubmit}
                     >
-                        <span>Enregistrer</span>
+                        <span className="text-uppercase">
+                            {props.isDisabled ? "Chargement..." : "Enregistrer"}
+                        </span>
                     </button>
                 </div>
             </div>

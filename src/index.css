@@ -18,12 +18,12 @@
   background-color: var(--color-primary) !important;
 }
 
-.text-primary, a {
+.text-primary {
   color: var(--color-primary) !important;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary.active {
-  background-color: #390155 !important;
+  background-color: #7603af !important;
 
 }
 
@@ -33,4 +33,16 @@
 
 .rounded {
   border-radius: 10px !important;
+}
+
+.main-menu.menu-light .navigation > li:not(.sidebar-group-active) > a.active
+{
+  background: rgba(90, 141, 238, 0.15);
+  color: #5A8DEE;
+  border-radius: 0.267rem;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after
+{
+  content: "Parcourir...";
 }

@@ -146,6 +146,9 @@ const getResponseErrors = response => {
         
         response.json().then(result => {
             let errorMessages = [];
+
+            if ('message' in result)
+                errorMessages.push(result.message);
     
             for (let error in result.errors) 
                 errorMessages.push(result.errors[error]);

@@ -5,13 +5,11 @@ import {Hooks} from '../hooks';
 import { useCallback, useEffect, useState } from "react";
 import { Services } from "../services";
 import { Utils } from "../utils";
-import {useNavigate} from 'react-router-dom';
 
 export default function RegisterView() {
     const abortContoller = new AbortController();
 
     const useUser = Hooks.useUser();
-    const navigate = useNavigate();
 
     const [countries, setCountries] = useState([]);
     const [errorMessages, setErrorMessages] = useState([]);
@@ -43,7 +41,7 @@ export default function RegisterView() {
 
             if (user.is_active) return window.location.replace('/');
 
-            navigate('/activation');
+            window.location.replace('/activation');
         } catch (error) {
             if ('message' in error) return setErrorMessages[error.message]
             if (!('messages' in error)) return;

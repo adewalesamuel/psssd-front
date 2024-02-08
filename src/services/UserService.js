@@ -8,6 +8,10 @@ const getAll = (params, signal) => {
     return Api.get(`${ENPOINTS.User}?page=${params?.page ?? 1}`, signal)
 }
 
+const analytics = (signal) => {
+    return Api.get(`analytics`, signal)
+}
+
 const getById = (id, signal) => {
     return Api.get(`${ENPOINTS.User}/${id}`, signal);
 }
@@ -25,6 +29,7 @@ const destroy = (id, signal) => {
 
 export const UserService = {
     getAll,
+    analytics,
     getById,
     create,
     update,

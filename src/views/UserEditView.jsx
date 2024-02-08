@@ -42,7 +42,7 @@ export function UserEditView() {
         try {
             useUser.fillUser(Utils.Auth.getUser());
             
-            const { countries } = await Services.countrieservice.getAll(
+            const { countries } = await Services.CountryService.getAll(
                 abortController.signal);
 			setcountries(countries);
 			

@@ -168,7 +168,7 @@ export default function RegisterForm(props) {
                             type='email'
                             id='email'
                             name='email'
-                            placeholder='Login'
+                            placeholder='Email'
                             value={props.useUser.email ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setEmail(e.target.value) ?? null}

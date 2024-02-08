@@ -40,7 +40,6 @@ export function OrderListView() {
 
     return (
         <>
-            <h6>Liste de vos commandes</h6>
             <Components.Loader isLoading={isLoading}>
                 <div className='row mt-1 py-2'>
                     {orders.map((order, index) => {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import avatarImg from '../app-assets/images/portrait/small/avatar-s-11.jpg';
+import avatarImg from '../app-assets/images/placeholder.jpg';
 import {Utils} from "../utils";
 import {Services} from "../services";
 import Swal from 'sweetalert2';
@@ -15,8 +15,14 @@ export default function Header() {
     }
 
     const handleLogoutClick = async () => {
-        const {isConfirmed} = await Swal.fire(
-            "Vous êtes sur le point de vous déconecter","",'warning')
+        const {isConfirmed} = await Swal.fire({
+            icon: 'warning',
+            titleText: "Deconnexion!",
+            text: 'Vous êtes sur le point de vous deconnecter',
+            showCancelButton: true,
+            cancelButtonText: 'Annuler',
+            confirmButtonText: 'Me deconnecter'
+        })
 
         if (isConfirmed) {
             Services.AuthService.logout(null);

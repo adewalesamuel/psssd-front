@@ -102,8 +102,7 @@ export function UserForm(props) {
                     <div className='form-group'>
                         <label htmlFor='country_id'>Pays de résidence</label>
                         <select
-                            className='select2 form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='select2 form-control'
                             id='country_id'
                             name='country_id'
                             value={props.useUser.country_id ?? ''}

@@ -147,7 +147,8 @@ const getResponseErrors = response => {
         response.json().then(result => {
             let errorMessages = [];
 
-            if ('message' in result)
+            if ('message' in result && 
+            result.message !== "The given data was invalid.")
                 errorMessages.push(result.message);
     
             for (let error in result.errors) 

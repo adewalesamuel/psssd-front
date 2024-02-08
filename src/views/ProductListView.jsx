@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Services } from '../services';
 import { Components } from '../components';
-import girlImage from '../app-assets/images/profile/user-uploads/girl-image.jpg';
+import placeholderImg from '../app-assets/images/placeholder.jpg';
 
 export function ProductListView() {
     let abortController = new AbortController();
@@ -60,15 +60,11 @@ export function ProductListView() {
 
     return (
         <>
-            {/* <h6>Liste Products</h6> */}
             <Components.Loader isLoading={isLoading}>
-                <Link className='btn btn-info text-white' to='/nouveau-produit'>
-                    <i className='icon ion-plus'></i> Publier un produit
-                </Link>
                 <div className='row mt-1 py-2'>
                     {products.map((product, index) => {
                         const productImg = (product.img_url && product.img_url !== "") ? 
-                        product.img_url : girlImage;
+                        product.img_url : placeholderImg;
                         return (
                             <div className="col-xl-3 col-6 img-top-card" key={index}>
                                 <div className="card widget-img-top p-0">

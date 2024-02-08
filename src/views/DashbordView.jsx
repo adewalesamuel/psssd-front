@@ -5,7 +5,7 @@ export default function DashbaordView() {
     const abortController = new AbortController();
 
     const [analytics, setAnalytics] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
+    const [, setIsLoading] = useState(false);
 
     const init = useCallback(async () => {
         setIsLoading(true);
@@ -105,6 +105,8 @@ export default function DashbaordView() {
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-2 w-100">
                                         <div>
+                                            <i className="bx bx-store text-primary p-1 mb-1
+                                            rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>
                                             <p className="font-weight-bold">Publications</p>
                                             <h3 className="font-weight-normal">
                                                 {analytics.products_count ?? "--"}
@@ -124,6 +126,8 @@ export default function DashbaordView() {
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-2 w-100">
                                         <div>
+                                            <i className="bx bx-wallet text-primary p-1 mb-1
+                                            rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>
                                             <p className="font-weight-bold">Solde actuel</p>
                                             <h3 className="font-weight-normal">
                                                 {analytics.revenu ?? "--"}
@@ -143,6 +147,8 @@ export default function DashbaordView() {
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-2 w-100">
                                         <div>
+                                            <i className="bx bx-user text-primary p-1 mb-1
+                                            rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>
                                             <p className="font-weight-bold">Clients</p>
                                             <h3 className="font-weight-normal">
                                                 {analytics.clients_count ?? "--"}
@@ -162,6 +168,8 @@ export default function DashbaordView() {
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-2 w-100">
                                         <div>
+                                            <i className="bx bx-bell text-primary p-1 mb-1
+                                            rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>
                                             <p className="font-weight-bold">Notifications</p>
                                             <h3 className="font-weight-normal">
                                                 {analytics.notifications_count ?? "--"}

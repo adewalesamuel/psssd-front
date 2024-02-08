@@ -70,7 +70,7 @@ export function ProductListView() {
                                 <div className="card widget-img-top p-0">
                                     <div className="card-content">
                                         <img className="card-img-top img-fluid mb-1" src={productImg} 
-                                        alt="Card image cap" style={{height: "200px", objectFit: 'cover'}}/>
+                                        alt="Card image cap" style={{height: "200px", objectFit: 'scale-down'}}/>
                                         <div className="heading-elements">
                                             <i className="bx bx-dots-vertical-rounded font-medium-3 
                                             align-middle text-white"></i>

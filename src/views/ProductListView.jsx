@@ -69,8 +69,9 @@ export function ProductListView() {
                             <div className="col-xl-3 col-6 img-top-card" key={index}>
                                 <div className="card widget-img-top p-0">
                                     <div className="card-content">
-                                        <img className="card-img-top img-fluid mb-1" src={productImg} 
-                                        alt="Card image cap" style={{height: "200px", objectFit: 'scale-down'}}/>
+                                        <img className="card-img-top mb-1" src={productImg} 
+                                        alt={product.name} width="180px" height="180px" 
+                                        style={{objectFit: 'scale-down'}}/>
                                         <div className="heading-elements">
                                             <i className="bx bx-dots-vertical-rounded font-medium-3 
                                             align-middle text-white"></i>

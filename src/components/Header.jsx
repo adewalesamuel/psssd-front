@@ -3,11 +3,16 @@ import avatarImg from '../app-assets/images/placeholder.jpg';
 import {Utils} from "../utils";
 import {Services} from "../services";
 import Swal from 'sweetalert2';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
 
     const navigate = useNavigate();
+    
+    const {pathname} = useLocation();
+
+    const [title, setTitle] = useState('');
 
     const handleProfileClick = e => {
         e.preventDefault();
@@ -31,6 +36,14 @@ export default function Header() {
             navigate('/connexion');
         }
     }
+
+    useEffect(() => {
+        if (pathname === '/' || pathname === undefined || !pathname) {
+            setTitle('Tableau de bord')
+        } else {
+            setTitle(`${(pathname[1].toUpperCase() + pathname.slice(2)).replace('-', ' ')}`)
+        }
+    }, [pathname])
     return (
         <nav className="header-navbar main-header-navbar navbar-expand-lg navbar 
         navbar-with-menu fixed-top">
@@ -47,6 +60,7 @@ export default function Header() {
                                     </Link>
                                 </li>
                             </ul>
+                            <div className='h5'>{title}</div>
                         </div>
                         <ul className="nav navbar-nav float-right">
                             <li className="dropdown dropdown-user nav-item">

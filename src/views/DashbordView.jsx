@@ -81,9 +81,9 @@ export default function DashbaordView() {
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-2 w-100">
                                         <div>
-                                            <h3 className="font-weight-normal text-white">
+                                            <h5 className="font-weight-normal text-white">
                                                 {analytics.current_stock ?? "--"}
-                                            </h3>
+                                            </h5>
                                             <p className="text-white">
                                                 Ebooks en stocks
                                             </p>

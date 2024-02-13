@@ -9,6 +9,10 @@ import { useEffect, useState } from 'react';
 export default function Header() {
 
     const navigate = useNavigate();
+
+    const {profile_img_url} = Utils.Auth.getUser();
+    const profilImage = (profile_img_url && profile_img_url !== "") 
+    ? profile_img_url : avatarImg;
     
     const {pathname} = useLocation();
 
@@ -73,7 +77,7 @@ export default function Header() {
                                         <span className="user-status text-muted">En ligne</span>
                                     </div>
                                     <span>
-                                        <img className="round" src={avatarImg} alt="avatar" 
+                                        <img className="round" src={profilImage} alt="avatar" 
                                         height="40" width="40" />
                                     </span>
                                 </Link>

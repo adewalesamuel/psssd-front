@@ -34,12 +34,11 @@ export function ProductCreateView() {
 
     const init = useCallback(async () => {
         useProduct.setIsDisabled(true);
-
+ 
         try {
 			const { categories } = await Services.CategoryService.getAll(
                 abortController.signal);
             setCategories(categories);
-			
         } catch (error) {
             console.log(error);
         }finally {

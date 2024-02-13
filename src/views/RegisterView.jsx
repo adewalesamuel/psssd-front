@@ -5,9 +5,12 @@ import {Hooks} from '../hooks';
 import { useCallback, useEffect, useState } from "react";
 import { Services } from "../services";
 import { Utils } from "../utils";
+import {useNavigate} from "react-router-dom";
 
 export default function RegisterView() {
     const abortContoller = new AbortController();
+
+    const navigate = useNavigate();
 
     const useUser = Hooks.useUser();
 
@@ -39,16 +42,16 @@ export default function RegisterView() {
             Utils.Auth.setSessionToken(tk);
             Utils.Auth.setUser(user);
 
-            if (user.is_active) return window.location.replace('/');
+            if (user.is_active) return navigate('/', {replace:true});
 
-            window.location.replace('/activation');
+            navigate('/activation', {replace:true});
         } catch (error) {
-            if ('message' in error) return setErrorMessages[error.message]
+            if ('message' in error) return setErrorMessages([error.message])
             if (!('messages' in error)) return;
 
             const messages = await error.messages;
+
             setErrorMessages(messages);
-        } finally {
             useUser.setIsDisabled(false);
         }
     } 

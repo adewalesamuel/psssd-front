@@ -37,12 +37,11 @@ export function ProductEditView() {
         useProduct.setIsDisabled(true);
 
         try {
-            await useProduct.getProduct(id, abortController.signal);
-            
-			const { categories } = await Services.CategoryService.getAll(
+            const { categories } = await Services.CategoryService.getAll(
                 abortController.signal);
-			setCategories(categories);
-			
+                setCategories(categories);
+
+            await useProduct.getProduct(id, abortController.signal);
         } catch (error) {
             console.log(error);
         }finally{

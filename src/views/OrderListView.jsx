@@ -43,8 +43,10 @@ export function OrderListView() {
             <Components.Loader isLoading={isLoading}>
                 <div className='row mt-1 py-2'>
                     {orders.map((order, index) => {
-                        const productImg = (order?.Img.img_url && order?.product.img_url !== "") ? 
-                        order?.product.img_url : girlImage;
+                        const product = order?.product ?? {};
+                        const category = product?.category ?? {};
+                        const productImg = (order?.img_url && product?.img_url !== "") ? 
+                        product?.img_url : girlImage;
                         return (
                             <div className="col-xl-3 col-md-6 img-top-card" key={index}>
                                 <div className="card widget-img-top p-0">
@@ -56,14 +58,14 @@ export function OrderListView() {
                                             align-middle text-white"></i>
                                         </div>
                                         <div className="text-center">
-                                            <h4>{order.name}</h4>
-                                            <p>{order?.category?.name}</p>
-                                            <p className="px-2">{order.download_code}</p>
+                                            <h4>{product.name}</h4>
+                                            <p>{category?.name}</p>
+                                            <p className="px-2">{product?.download_code}</p>
                                         </div>
                                     </div>
                                     <div className="card-footer text-center d-flex justify-content-between 
                                     align-items-center">
-                                        <a href={order.file_url} className='btn btn-secondary'
+                                        <a href={product?.file_url} className='btn btn-secondary btn-block'
                                         target='_blank' rel='noreferrer'>
                                             <i className='bx bx-download'></i>
                                         </a>

@@ -34,10 +34,11 @@ export default function RegisterView() {
                 telegram_number: useUser.telegram_number,
                 shop_name: useUser.shop_name,
                 sponsor_code: useUser.sponsor_code,
+                referer_sponsor_code: useUser.referer_sponsor_code,
                 country_id: useUser.country_id
             }
             const {user, tk} = await Services.AuthService.register(
-                JSON.stringify(payload), abortContoller.signal)
+                JSON.stringify(payload), abortContoller.signal);
 
             Utils.Auth.setSessionToken(tk);
             Utils.Auth.setUser(user);

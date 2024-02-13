@@ -20,7 +20,7 @@ export default function ActivationView() {
         setErrorMessages([]);
 
         try {
-            await Services.AuthService.activation(
+            const {referer, product} = await Services.AuthService.activation(
                 JSON.stringify({activation_code}), 
                 abortContoller.signal)
             
@@ -28,6 +28,8 @@ export default function ActivationView() {
             user.is_active = true;
 
             Utils.Auth.setUser(user);
+
+            if (referer || product) navigate('/mes-commandes', {replace:true});
 
             navigate('/', {replace: true});
         } catch (error) {

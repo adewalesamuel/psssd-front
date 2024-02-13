@@ -15,6 +15,7 @@ export const useUser = () => {
 	const [is_active, setIs_active] = useState('');
 	const [sponsor_code, setSponsor_code] = useState('');
 	const [activation_code, setActivation_code] = useState('');
+	const [referer_sponsor_code, setReferrer_sponsor_code] = useState('');
 	const [country_id, setCountry_id] = useState('');
 	
     const [errors, setErrors] = useState([]);
@@ -42,6 +43,7 @@ export const useUser = () => {
 		is_active,
 		sponsor_code,
 		activation_code,
+		referer_sponsor_code,
 		country_id,
 		
         };
@@ -62,6 +64,7 @@ export const useUser = () => {
 		is_active,
 		sponsor_code,
 		activation_code,
+		referer_sponsor_code,
 		country_id,
 		
         };
@@ -85,6 +88,7 @@ export const useUser = () => {
 		setIs_active(user.is_active ?? '');
 		setSponsor_code(user.sponsor_code ?? '');
 		setActivation_code(user.activation_code ?? '');
+		setReferrer_sponsor_code(user.referer_sponsor_code ?? '');
 		setCountry_id(user.country_id ?? '');
 		
     }
@@ -102,6 +106,7 @@ export const useUser = () => {
 		setIs_active('');
 		setSponsor_code('');
 		setActivation_code('');
+		setReferrer_sponsor_code('');
 		setCountry_id('');
 		
     }
@@ -120,6 +125,7 @@ export const useUser = () => {
 		is_active,
 		sponsor_code,
 		activation_code,
+		referer_sponsor_code,
 		country_id,
 		
         errors,
@@ -135,6 +141,7 @@ export const useUser = () => {
 		setProfile_img_url,
 		setIs_active,
 		setSponsor_code,
+		setReferrer_sponsor_code,
 		setActivation_code,
 		setCountry_id,
 		

@@ -132,9 +132,9 @@ export default function RegisterForm(props) {
                             id='sponsor_code'
                             name='sponsor_code'
                             placeholder='Code de parrainage (facultatif)'
-                            value={props.useUser.sponsor_code ?? ''}
+                            value={props.useUser.referer_sponsor_code ?? ''}
                             disabled={props.isDisabled}
-                            onChange={e => props.useUser.setSponsor_code(e.target.value) ?? null}
+                            onChange={e => props.useUser.setReferrer_sponsor_code(e.target.value) ?? null}
                         />
                         <div className="form-control-position">
                             <i className="bx bx-key text-primary"></i>

@@ -40,12 +40,11 @@ export function UserEditView() {
         useUser.setIsDisabled(true);
 
         try {
-            useUser.fillUser(Utils.Auth.getUser());
-            
             const { countries } = await Services.CountryService.getAll(
                 abortController.signal);
+                
+            useUser.fillUser(Utils.Auth.getUser());
 			setcountries(countries);
-			
         } catch (error) {
             console.log(error);
         }finally{

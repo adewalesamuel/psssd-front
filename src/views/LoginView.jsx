@@ -4,9 +4,13 @@ import { Components } from "../components";
 import { useState } from "react";
 import { Services } from "../services";
 import { Utils } from "../utils";
+import {useNavigate} from "react-router-dom";
+import logo from '../app-assets/images/logo/logo.png';
 
 export default function LoginView() {
     const abortContoller = new AbortController();
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,6 +19,7 @@ export default function LoginView() {
 
     const handleLoginSubmit = async e => {
         e.preventDefault();
+
         setErrorMessages([]);
         setIsDisabled(true);
 
@@ -28,19 +33,16 @@ export default function LoginView() {
             Utils.Auth.setSessionToken(tk);
             Utils.Auth.setUser(user);
 
-            if (user.is_active) return window.location.replace('/');
+            if (user.is_active) return navigate('/', {replace: true});
 
-            window.location.replace('/activation');
+            navigate('/activation', {replace: true});
         } catch (error) {
             if ('message' in error) return setErrorMessages([error.message])
             if (!('messages' in error)) return;
 
-            if (error.status === 404) 
-                return setErrorMessages(['Login ou mot de passe incorrect'])
-
             const messages = await error.messages;
+
             setErrorMessages(messages);
-        } finally {
             setIsDisabled(false);
         }
         
@@ -60,10 +62,14 @@ export default function LoginView() {
                                 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
-                                            <h4 className="text-center mb-2 text-uppercase">Connexion</h4>
+                                            <h4 className="text-center text-uppercase">Connexion</h4>
                                         </div>
                                     </div>
                                     <div className="card-content">
+                                        <div className="w-100 py-2 text-center">
+                                            <img src={logo} alt={import.meta.env.VITE_APP_NAME} 
+                                            width={"120px"}/>
+                                        </div>
                                         <div className="card-body">
                                             <Components.ErrorMessages>
                                                 {errorMessages}

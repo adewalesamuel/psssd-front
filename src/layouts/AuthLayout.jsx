@@ -12,7 +12,7 @@ export default function AuthLayout({children}) {
     useEffect(() => {
         window.document.body.className = `vertical-layout vertical-menu-modern 
         boxicon-layout no-card-shadow 1-column  navbar-sticky footer-static 
-        bg-full-screen-image  blank-page blank-page`;
+        bg-full-screen-image  blank-page`;
 
         if (isLoggedIn()) {
             if (getUser().is_active) {

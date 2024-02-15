@@ -23,7 +23,7 @@ export default function MainLayout({children}) {
             <Components.MainMenu />
             <div className="app-content content">
                 <div className="content-overlay"></div>
-                <div className="content-wrapper">
+                <div className="content-wrapper px-1 p-md-3">
                     <div className="content-header row">
                     </div>
                     <div className="content-body">

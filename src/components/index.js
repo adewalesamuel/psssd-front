@@ -12,11 +12,13 @@ import MainMenu from './MainMenu';
 import Footer from './Footer';
 import RegisterForm from './forms/RegisterForm';
 import LoginForm from './forms/LoginForm';
-import {ErrorMessages} from './ErrorMessages';
-import {Loader} from './Loader';
-import {Spinner} from './Spinner';
+import { ErrorMessages } from './ErrorMessages';
+import { Loader } from './Loader';
+import { Spinner } from './Spinner';
 import { Table } from './Table';
 import { ImageFileInput } from './ImageFileInput';
+import { DashbaordCard } from './DashboardCard';
+import { AvatarImg } from './AvatarImg';
 
 
 export const Components = {
@@ -39,4 +41,6 @@ export const Components = {
 	Spinner,
 	Table,
 	ImageFileInput,
+	DashbaordCard,
+	AvatarImg
 }

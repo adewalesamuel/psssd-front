@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import avatarImg from '../app-assets/images/placeholder.jpg';
 import {Utils} from "../utils";
 import {Services} from "../services";
 import Swal from 'sweetalert2';
 import {useNavigate, useLocation} from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Components } from '.';
 
 export default function Header() {
 
@@ -72,10 +72,7 @@ export default function Header() {
                                         </span>
                                         <span className="user-status text-muted">En ligne</span>
                                     </div>
-                                    <span>
-                                        <img className="round" src={avatarImg} alt="avatar" 
-                                        height="40" width="40" />
-                                    </span>
+                                    <span><Components.AvatarImg /></span>
                                 </Link>
                                 <div className="dropdown-menu dropdown-menu-right pb-0" id="headerDropdown">
                                     <Link className="dropdown-item text-secondary" to="/mon-profil">

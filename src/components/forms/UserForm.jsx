@@ -48,7 +48,7 @@ export function UserForm(props) {
                     <div className='form-group'>
                         <label htmlFor='email'>Email</label>
                         <input className='form-control' type='text' id='email' name='email' 
-                        placeholder='Email' value={props.useUser.email ?? ''}
+                        placeholder='Login' value={props.useUser.email ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
                             props.useUser.setEmail(e.target.value) ?? null} required/>
                     </div>
@@ -57,9 +57,8 @@ export function UserForm(props) {
                     <div className='form-group'>
                         <label htmlFor='phone_number'>Numéro de téléphone</label>
                         <input className='form-control' type='text' id='phone_number' name='phone_number' 
-                        placeholder='Numéro de téléphone' value={props.useUser.phone_number ?? ''}
-                        disabled={props.isDisabled} onChange={ e => 
-                            props.useUser.setPhone_number(e.target.value) ?? null} required/>
+                        placeholder='Numéro de téléphone' value={props.useUser.user?.phone_number ?? ''}
+                        disabled={props.isDisabled} readOnly={true} required/>
                     </div>
                 </div>
 				<div className='col-12'>
@@ -121,8 +120,7 @@ export function UserForm(props) {
                         <label htmlFor='sponsor_code'>Code de parainage</label>
                         <input className='form-control' type='text' id='sponsor_code' name='sponsor_code' 
                         placeholder='Code de parainage' value={props.useUser.sponsor_code ?? ''}
-                        disabled={props.isDisabled} readOnly={true} onChange={ e => 
-                            props.useUser.setSponsor_code(e.target.value) ?? null} required/>
+                        disabled={props.isDisabled} readOnly={true} required/>
                     </div>
                 </div>
 				

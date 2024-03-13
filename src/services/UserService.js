@@ -1,11 +1,16 @@
+import { Utils } from '../utils';
 import { Api } from './Api';
 
 const  ENPOINTS = {
-    User: 'users',
+    User: 'accounts',
 };
 
 const getAll = (params, signal) => {
     return Api.get(`${ENPOINTS.User}?page=${params?.page ?? 1}`, signal)
+}
+
+const getAccountSponsor = signal => {
+    return Api.get(`${ENPOINTS.User}/${Utils.Auth.getUser().id}/sponsor`, signal)
 }
 
 const analytics = (signal) => {
@@ -31,6 +36,7 @@ export const UserService = {
     getAll,
     analytics,
     getById,
+    getAccountSponsor,
     create,
     update,
     destroy

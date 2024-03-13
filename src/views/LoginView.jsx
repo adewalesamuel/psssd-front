@@ -27,13 +27,13 @@ export default function LoginView() {
             const payload = {
                 email, password
             }
-            const {user, tk} = await Services.AuthService.login(
+            const {account, tk} = await Services.AuthService.login(
                 JSON.stringify(payload), abortContoller.signal);
 
             Utils.Auth.setSessionToken(tk);
-            Utils.Auth.setUser(user);
+            Utils.Auth.setUser(account);
 
-            if (user.is_active) return navigate('/', {replace: true});
+            if (account.is_active) return navigate('/', {replace: true});
 
             navigate('/activation', {replace: true});
         } catch (error) {

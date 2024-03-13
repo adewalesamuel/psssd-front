@@ -12,7 +12,6 @@ export function OrderListView() {
 
     const [orders, setOrders] = useState([]);
     const [page, ] = useState(1);
-    const [, setPageLength] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
 
     const init = useCallback(async () => {
@@ -20,8 +19,7 @@ export function OrderListView() {
             const {orders} = await OrderService.getAll(
                 {page: page}, abortController.signal);
 
-            setOrders(orders.data);
-            setPageLength(orders.last_page);
+            setOrders(orders);
         } catch (error) {
             console.log(error);
         } finally {
@@ -59,8 +57,10 @@ export function OrderListView() {
                                         </div>
                                         <div className="text-center">
                                             <h4>{product.name}</h4>
-                                            <p>{category?.name}</p>
-                                            <p className="px-2">{product?.download_code}</p>
+                                            <p>{category.name}</p>
+                                            <p>{category.name} {category?.category && 
+                                            `- ${category.category?.name ?? ""}`}</p>
+                                            <p className="px-2">{product.download_code}</p>
                                         </div>
                                     </div>
                                     <div className="card-footer text-center d-flex justify-content-between 

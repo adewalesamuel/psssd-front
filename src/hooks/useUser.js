@@ -13,10 +13,10 @@ export const useUser = () => {
 	const [shop_name, setShop_name] = useState('');
 	const [profile_img_url, setProfile_img_url] = useState('');
 	const [is_active, setIs_active] = useState('');
-	const [sponsor_code, setSponsor_code] = useState('');
 	const [activation_code, setActivation_code] = useState('');
 	const [referer_sponsor_code, setReferrer_sponsor_code] = useState('');
 	const [country_id, setCountry_id] = useState('');
+	const [user, setUser] = useState({});
 	
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
@@ -24,7 +24,7 @@ export const useUser = () => {
     const getUser = (userId, signal) => {        
         return Services.UserService.getById(userId, signal)
         .then(response => {
-            fillUser(response.user);
+            fillUser(response.account);
             setIsDisabled(false);
         });
     }
@@ -34,14 +34,13 @@ export const useUser = () => {
             fullname,
 		email,
 		password,
-		phone_number,
 		backup_number,
+		phone_number,
 		whatsapp_number,
 		telegram_number,
 		shop_name,
 		profile_img_url,
 		is_active,
-		sponsor_code,
 		activation_code,
 		referer_sponsor_code,
 		country_id,
@@ -55,14 +54,13 @@ export const useUser = () => {
             fullname,
 		email,
 		password,
-		phone_number,
 		backup_number,
+		phone_number,
 		whatsapp_number,
 		telegram_number,
 		shop_name,
 		profile_img_url,
 		is_active,
-		sponsor_code,
 		activation_code,
 		referer_sponsor_code,
 		country_id,
@@ -71,25 +69,25 @@ export const useUser = () => {
 
         return Services.UserService.update(JSON.stringify(payload), signal);
     }
-    const deleteUser = (userId, signal) => {
-        return Services.UserService.destroy(userId, signal);
+    const deleteUser = (accountId, signal) => {
+        return Services.UserService.destroy(accountId, signal);
     }
-    const fillUser = (user) => {
-        setId(user.id);
-        setFullname(user.fullname ?? '');
-		setEmail(user.email ?? '');
-		setPassword(user.password ?? '');
-		setPhone_number(user.phone_number ?? '');
-		setBackup_number(user.backup_number ?? '');
-		setWhatsapp_number(user.whatsapp_number ?? '');
-		setTelegram_number(user.telegram_number ?? '');
-		setShop_name(user.shop_name ?? '');
-		setProfile_img_url(user.profile_img_url ?? '');
-		setIs_active(user.is_active ?? '');
-		setSponsor_code(user.sponsor_code ?? '');
-		setActivation_code(user.activation_code ?? '');
-		setReferrer_sponsor_code(user.referer_sponsor_code ?? '');
-		setCountry_id(user.country_id ?? '');
+    const fillUser = (account) => {
+        setId(account.id);
+        setFullname(account.fullname ?? '');
+		setEmail(account.email ?? '');
+		setPassword(account.password ?? '');
+		setPhone_number(account.phone_number ?? '');
+		setBackup_number(account.backup_number ?? '');
+		setWhatsapp_number(account.whatsapp_number ?? '');
+		setTelegram_number(account.telegram_number ?? '');
+		setShop_name(account.shop_name ?? '');
+		setProfile_img_url(account.profile_img_url ?? '');
+		setIs_active(account.is_active ?? '');
+		setActivation_code(account.activation_code ?? '');
+		setReferrer_sponsor_code(account.referer_sponsor_code ?? '');
+		setCountry_id(account.country_id ?? '');
+		setUser(account.user ?? {});
 		
     }
     const emptyUser = () => {
@@ -104,10 +102,10 @@ export const useUser = () => {
 		setShop_name('');
 		setProfile_img_url('');
 		setIs_active('');
-		setSponsor_code('');
 		setActivation_code('');
 		setReferrer_sponsor_code('');
 		setCountry_id('');
+		setUser({});
 		
     }
 
@@ -116,31 +114,30 @@ export const useUser = () => {
         fullname,
 		email,
 		password,
-		phone_number,
 		backup_number,
+		phone_number,
 		whatsapp_number,
 		telegram_number,
 		shop_name,
 		profile_img_url,
 		is_active,
-		sponsor_code,
 		activation_code,
 		referer_sponsor_code,
 		country_id,
+		user,
 		
         errors,
         isDisabled,
         setFullname,
 		setEmail,
 		setPassword,
-		setPhone_number,
 		setBackup_number,
+		setPhone_number,
 		setWhatsapp_number,
 		setTelegram_number,
 		setShop_name,
 		setProfile_img_url,
 		setIs_active,
-		setSponsor_code,
 		setReferrer_sponsor_code,
 		setActivation_code,
 		setCountry_id,

@@ -1,6 +1,5 @@
 
 import { useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Services } from '../services';
 import { Components } from '../components';
 import placeholderImg from '../app-assets/images/placeholder.jpg';
@@ -10,40 +9,18 @@ export function ProductListView() {
 
     const { ProductService } = Services;
 
-
     const [products, setProducts] = useState([]);
     const [page, ] = useState(1);
-    const [, setPageLength] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
-
-    // const handleDeleteClick = async (e, product) => {
-    //     e.preventDefault();
-
-    //     const {isConfirmed} = await Utils.SweetAlert.fireAlert(
-    //         'supprimer', 'ce product');
-
-    //     if (isConfirmed) {
-    //         const productsCopy = [...products];
-    //         const index = productsCopy.findIndex(productItem => 
-    //             productItem.id === product.id);
-
-    //         productsCopy.splice(index, 1);
-    //         setProducts(productsCopy);
-
-    //         await ProductService.destroy(product.id, 
-    //             abortController.signal);
-    //     }
-    // }
 
     const init = useCallback(async () => {
         try {
             const {products} = await ProductService.getAll(
                 {page: page}, abortController.signal);
 
-            setProducts(products.data);
-            setPageLength(products.last_page);
+            setProducts(products);
         } catch (error) {
-            // console.log(error);
+            console.log(error);
         } finally {
             setIsLoading(false);
         }
@@ -65,6 +42,7 @@ export function ProductListView() {
                     {products.map((product, index) => {
                         const productImg = (product.img_url && product.img_url !== "") ? 
                         product.img_url : placeholderImg;
+                        const category = product.category ?? {};
                         return (
                             <div className="col-xl-3 col-6 img-top-card" key={index}>
                                 <div className="card widget-img-top p-0">
@@ -78,20 +56,17 @@ export function ProductListView() {
                                         </div>
                                         <div className="text-center">
                                             <h4>{product.name}</h4>
-                                            <p>{product?.category?.name}</p>
+                                            <p>{category.name} {category?.category && 
+                                            `- ${category.category?.name ?? ""}`}</p>
                                             <p className="px-2">{product.download_code}</p>
                                         </div>
                                     </div>
                                     <div className="card-footer text-center d-flex justify-content-between 
                                     align-items-center">
-                                        <a href={product.file_url} className='btn btn-secondary'
+                                        <a href={product.file_url} className='btn btn-info btn-block'
                                         target='_blank' rel='noreferrer'>
                                             <i className='bx bx-download'></i>
                                         </a>
-                                        <Link to={`/articles/${product.slug}/modifier`} 
-                                        className="btn btn-info text-white">
-                                            <i className='bx bx-pencil'></i>
-                                        </Link>
                                     </div>
                                 </div>
                             </div>

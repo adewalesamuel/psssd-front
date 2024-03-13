@@ -10,7 +10,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='fullname'
                             name='fullname'
-                            placeholder='Nom complet'
+                            placeholder='Nom'
                             value={props.useUser.fullname ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setFullname(e.target.value) ?? null}
@@ -47,7 +47,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='phone_number'
                             name='phone_number'
-                            placeholder='Numéro de téléphone'
+                            placeholder='Num tel'
                             value={props.useUser.phone_number ?? ''}
                             minLength={10}
                             maxLength={10}
@@ -149,7 +149,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='shop_name'
                             name='shop_name'
-                            placeholder='Nom du magasin'
+                            placeholder='Nom de votre boutique'
                             value={props.useUser.shop_name ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setShop_name(e.target.value) ?? null}
@@ -165,10 +165,10 @@ export default function RegisterForm(props) {
                         <input
                             className='form-control form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='email'
+                            type='text'
                             id='email'
                             name='email'
-                            placeholder='Email'
+                            placeholder='Login'
                             value={props.useUser.email ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setEmail(e.target.value) ?? null}

@@ -34,7 +34,7 @@ export default function DashbaordView() {
                     <Link className="text-center" to='/mon-profil'>
                         <Components.AvatarImg size={"100"}/>
                         <p className="user-name mt-1 text-secondary">
-                            {Utils.Auth.getUser().fullname ?? "---"}
+                            {Utils.Auth.getUser().shop_name ?? "---"}
                             &nbsp; <i className="bx bx-pencil"></i>
                         </p>
                     </Link>

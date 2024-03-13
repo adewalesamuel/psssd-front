@@ -24,31 +24,25 @@ export  default function MainMenu() {
                     <li className="nav-item">
                         <NavLink to="/">
                             <i className="bx bx-home-alt"></i>
-                            <span className="menu-title" data-i18n="Dashboard">Tableau de bord</span>
+                            <span className="menu-title">Tableau de bord</span>
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/mes-commandes">
+                            <i className="bx bx-book"></i>
+                            <span className="menu-title">Mes livres</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/mes-publications">
                             <i className="bx bx-store"></i>
-                            <span className="menu-title" data-i18n="Email">Mes Publications</span>
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/mes-commandes">
-                            <i className="bx bx-cart"></i>
-                            <span className="menu-title" data-i18n="Email">Mes Commandes</span>
+                            <span className="menu-title">Ma boutique</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/mon-profil">
                             <i className="bx bx-user"></i>
-                            <span className="menu-title" data-i18n="Chat">Mon Profil</span>
-                        </NavLink>
-                    </li>
-                    <li className="nav-item mt-3">
-                        <NavLink className='btn btn-primary text-white' to="/nouveau-produit">
-                            <i className="bx bx-plus-circle"></i>
-                            <span className="menu-title" data-i18n="Todo">Publier un produit</span>
+                            <span className="menu-title">Mon Profil</span>
                         </NavLink>
                     </li>
                 </ul>

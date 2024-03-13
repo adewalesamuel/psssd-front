@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Layouts } from "../layouts";
 import { Services } from "../services";
 import { Utils } from "../utils";
@@ -12,7 +12,9 @@ export default function ActivationView() {
 
     const [activation_code, setActivation_code] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [errorMessages, setErrorMessages] = useState([]);
+    const [sponsor, setSponsor] = useState({});
 
     const handleActivationSubmit = async e => {
         e.preventDefault();
@@ -41,9 +43,32 @@ export default function ActivationView() {
         } finally {
             setIsDisabled(false);
         }
-
-
     }
+
+    const init = useCallback(async () => {
+        setIsDisabled(true);
+
+        try {
+            const {sponsor} = await Services.UserService.getAccountSponsor(
+                abortContoller.signal);
+                console.log(sponsor);
+
+            setSponsor(sponsor);
+        } catch (error) {
+            if ('message' in error) return setErrorMessages([error.message])
+            if (!('messages' in error)) return;
+
+            const messages = await error.messages;
+            setErrorMessages(messages);
+        }finally {
+            setIsDisabled(false);
+            setIsLoading(false);
+        }
+    }, [])
+    
+    useEffect(() => {
+        init();
+    }, [init])
 
     return (
         <Layouts.AuthLayout>
@@ -56,24 +81,26 @@ export default function ActivationView() {
                                 <div className="card mb-0 p-2 h-100 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
-                                            <h4 className="text-center mb-2 text-uppercase">
-                                                Félicitations
-                                            </h4>
-                                            <p style={{textTransform: 'none'}}>
-                                                Vous venuez de créer votre compte sur l&apos;interface
-                                                PSSSP. Contactez la personne ci-dessous pour l&apos;acquisition
-                                                de votre code d&apos;activation et de téléchargement de vos
-                                                premiers ebooks
-                                            </p>
-                                            <div className="border border-primary rounded mt-2">
-                                                <ul className="p-1" style={{listStyleType: "none"}}>
-                                                    <li className="mb-1"><strong>Login:</strong> Alba</li>
-                                                    <li className="mb-1"><strong>Pays de résidence:</strong> Nigeria</li>
-                                                    <li className="mb-1"><strong>Numéro WhatsApp:</strong> +225 07000000000</li>
-                                                    <li className="mb-1"><strong>Numéro Télégram:</strong> +225 07000000000  </li>
-                                                    <li><strong>Numéro Secours:</strong> +225 07000000000  </li>
-                                                </ul>
-                                            </div>
+                                            <Components.Loader isLoading={isLoading}>
+                                                <h4 className="text-center mb-2 text-uppercase">
+                                                    Félicitations
+                                                </h4>
+                                                <p style={{textTransform: 'none'}}>
+                                                    Vous venuez de créer votre compte sur l&apos;interface
+                                                    PSSSP. Contactez la personne ci-dessous pour l&apos;acquisition
+                                                    de votre code d&apos;activation et de téléchargement de vos
+                                                    premiers ebooks
+                                                </p>
+                                                <div className="border border-primary rounded mt-2">
+                                                    <ul className="p-1" style={{listStyleType: "none"}}>
+                                                        <li className="mb-1"><strong>Login:</strong> {sponsor.email}</li>
+                                                        <li className="mb-1"><strong>Pays de résidence:</strong> Nigeria</li>
+                                                        <li className="mb-1"><strong>Numéro WhatsApp:</strong> {sponsor.whatsapp_number}</li>
+                                                        <li className="mb-1"><strong>Numéro Télégram:</strong> {sponsor.telegram_number}</li>
+                                                        <li><strong>Numéro Secours:</strong> {sponsor.backup_number}  </li>
+                                                    </ul>
+                                                </div>
+                                            </Components.Loader>
                                             <div className="mt-2">
                                                 <p className="text-uppercase text-center">
                                                     Entrez votre code de validation et de téléchargement

@@ -37,13 +37,13 @@ export default function RegisterView() {
                 referer_sponsor_code: useUser.referer_sponsor_code,
                 country_id: useUser.country_id
             }
-            const {user, tk} = await Services.AuthService.register(
+            const {account, tk} = await Services.AuthService.register(
                 JSON.stringify(payload), abortContoller.signal);
 
             Utils.Auth.setSessionToken(tk);
-            Utils.Auth.setUser(user);
+            Utils.Auth.setUser(account);
 
-            if (user.is_active) return navigate('/', {replace:true});
+            if (account.is_active) return navigate('/', {replace:true});
 
             navigate('/activation', {replace:true});
         } catch (error) {

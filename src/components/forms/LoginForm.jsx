@@ -7,10 +7,10 @@ export default function LoginForm(props) {
                         <input
                             className='form-control form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
-                            type='email'
+                            type='test'
                             id='email'
                             name='email'
-                            placeholder='Email'
+                            placeholder='Login'
                             value={props.email ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.setEmail(e.target.value) ?? null}

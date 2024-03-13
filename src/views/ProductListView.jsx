@@ -61,13 +61,13 @@ export function ProductListView() {
                                             <p className="px-2">{product.download_code}</p>
                                         </div>
                                     </div>
-                                    <div className="card-footer text-center d-flex justify-content-between 
+                                    {/* <div className="card-footer text-center d-flex justify-content-between 
                                     align-items-center">
                                         <a href={product.file_url} className='btn btn-info btn-block'
                                         target='_blank' rel='noreferrer'>
                                             <i className='bx bx-download'></i>
                                         </a>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         )

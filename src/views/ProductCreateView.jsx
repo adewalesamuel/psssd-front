@@ -23,7 +23,7 @@ export function ProductCreateView() {
         
         try {
             await useProduct.createProduct(abortController.signal);
-            navigate('/mes-publications');
+            navigate('/ma-boutique');
         } catch (error) {
             if ('messages' in error)
                 error.messages.then(messages => setErrorMessages(messages));

@@ -21,8 +21,8 @@ export function UserEditView() {
         setErrorMessages([]);
         
         try {
-            const {user} = await useUser.updateUser(abortController.signal);
-            const authUser = {...Utils.Auth.getUser(), ...user};
+            const {account} = await useUser.updateUser(abortController.signal);
+            const authUser = {...Utils.Auth.getUser(), ...account};
 
             Utils.Auth.setUser(authUser);
         } catch (error) {

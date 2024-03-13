@@ -65,14 +65,10 @@ export function OrderListView() {
                                     </div>
                                     <div className="card-footer text-center d-flex justify-content-between 
                                     align-items-center">
-                                        <a href={product?.file_url} className='btn btn-secondary btn-block'
+                                        <a href={product?.file_url} className='btn btn-info btn-block'
                                         target='_blank' rel='noreferrer'>
                                             <i className='bx bx-download'></i>
                                         </a>
-                                        {/* <Link to={`/articles/${product.slug}/modifier`} 
-                                        className="btn btn-info text-white">
-                                            <i className='bx bx-pencil'></i>
-                                        </Link> */}
                                     </div>
                                 </div>
                             </div>

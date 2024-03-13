@@ -28,13 +28,13 @@ export  default function MainMenu() {
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/mes-commandes">
+                        <NavLink to="/mes-livres">
                             <i className="bx bx-book"></i>
                             <span className="menu-title">Mes livres</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/mes-publications">
+                        <NavLink to="/ma-boutique">
                             <i className="bx bx-store"></i>
                             <span className="menu-title">Ma boutique</span>
                         </NavLink>

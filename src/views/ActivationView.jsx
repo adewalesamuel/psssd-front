@@ -31,7 +31,7 @@ export default function ActivationView() {
 
             Utils.Auth.setUser(user);
 
-            if (referer || product) navigate('/mes-commandes', {replace:true});
+            if (referer || product) navigate('/mes-livres', {replace:true});
 
             navigate('/', {replace: true});
         } catch (error) {

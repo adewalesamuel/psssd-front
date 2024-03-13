@@ -75,6 +75,9 @@ export default function Header() {
                                     <span><Components.AvatarImg /></span>
                                 </Link>
                                 <div className="dropdown-menu dropdown-menu-right pb-0" id="headerDropdown">
+                                    <Link className="dropdown-item text-secondary" to="/notifications">
+                                        <i className="bx bx-bell mr-50"></i> Notifications
+                                    </Link>
                                     <Link className="dropdown-item text-secondary" to="/mon-profil">
                                         <i className="bx bx-user mr-50"></i> Mon Profil
                                     </Link>

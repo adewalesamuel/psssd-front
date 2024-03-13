@@ -1,3 +1,5 @@
+import * as Icons from 'react-feather';
+
 export function Table(props) {
     const ACTIONS = {
         EDIT: 'edit',
@@ -6,25 +8,25 @@ export function Table(props) {
     };
     const {tableAttributes, tableData, tableActions, controllers} = props;
     const {handleEditClick, handleReadClick, handleDeleteClick} = controllers;
-
-    const renderEditButton = data => (
-        <button key={Math.random()} className="flex items-center mr-3" 
-        onClick={e => handleEditClick(e, data)}> 
-            <i className="w-4 h-4 mr-1 bx bx-pencil"></i> Modifier 
-        </button>
-        );
         
     const renderReadButton = data => (
-        <button key={Math.random()} className="flex items-center text-theme-6" 
-        onClick={e => handleReadClick(e, data)}> 
-            <i className="w-4 h-4 mr-1 bx bx-eye"></i> Consulter 
+        <button className="btn btn-sm btn-danger" 
+        onClick={e => handleReadClick(e, data)} key={Math.random()}> 
+            <Icons.Eye className="w-"/> 
+        </button>
+        );
+
+    const renderEditButton = data => (
+        <button className="btn btn-sm btn-info mr-3" 
+        onClick={e => handleEditClick(e, data)} key={Math.random()}> 
+            <Icons.Edit className="w-"/> 
         </button>
         );
 
     const renderDeleteButton = data => (
-        <button key={Math.random()} className="flex items-center text-theme-6" 
-        onClick={e => handleDeleteClick(e, data)}> 
-            <i className="w-4 h-4 mr-1 bx bx-trash"></i> Supprimer 
+        <button className="btn btn-sm btn-danger" 
+        onClick={e => handleDeleteClick(e, data)} key={Math.random()}> 
+            <Icons.Trash2 className="-1"/> 
         </button>
         );
 
@@ -41,8 +43,11 @@ export function Table(props) {
             )
         })
 
-        tableHeads.push(<th key={9999} className="text-center 
-        whitespace-no-wrap">ACTIONS</th>);
+        if (tableActions.length > 0) {
+            tableHeads.push(<th key={9999} className="text-center 
+            whitespace-no-wrap">ACTIONS</th>);
+        }
+
 
         return tableHeads;
     }
@@ -56,8 +61,8 @@ export function Table(props) {
 
     const renderTableActionCell = data => {
         return (
-            <td className="table-report__action w-56">
-                {tableActions.map((action, index) => {
+            <td className="table-report__action w-56" key={Math.random()}>
+                {tableActions.map((action) => {
                     switch (action) {
                         case ACTIONS.EDIT:
                             return renderEditButton(data);
@@ -84,21 +89,20 @@ export function Table(props) {
         tableCells.push(renderTableActionCell(rowData))
 
         return (<tr key={index} className="intro-x">{tableCells}</tr>)
-
     }
         
 
     return (
-        <table className="table table-report -mt-2">
-            <thead>
-                <tr>
-                    {renderTableHeads()}
-                </tr>
-            </thead>
-            <tbody>
-                {tableData.map((rowData, index) => renderTableRow(rowData, index))}
-            </tbody>
-        </table>
+        <div className='table-responsive'>
+            <table className="table">
+                <thead>
+                    <tr>{renderTableHeads()}</tr>
+                </thead>
+                <tbody>
+                    {tableData.map((rowData, index) => renderTableRow(rowData, index))}
+                </tbody>
+            </table>
+        </div>
 
     )
 }

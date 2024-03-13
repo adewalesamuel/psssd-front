@@ -29,6 +29,7 @@ import DashbaordView from './DashbordView';
 import RegisterView from './RegisterView';
 import LoginView from './LoginView';
 import ActivationView from './ActivationView';
+import { NotificationListView } from './NotificationsListView';
 
 export const Views = {
     CountryListView,
@@ -62,5 +63,6 @@ export const Views = {
 	RegisterView,
 	LoginView,
 	ActivationView,
+	NotificationListView,
 	
 }

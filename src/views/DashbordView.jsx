@@ -142,7 +142,8 @@ export default function DashbaordView() {
                     <Components.DashbaordCard 
                     iconElement={<i className="bx bx-store text-primary p-1 mb-1
                     rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
-                    title={'Publications'}
+                    title={'Boutique'}
+                    handleClick={() => navigate('/ma-boutique')}
                     value={analytics.products_count}/>
                 </div>
                 <div className="col-6">
@@ -164,6 +165,7 @@ export default function DashbaordView() {
                     iconElement={<i className="bx bx-bell text-primary p-1 mb-1
                     rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
                     title={'Notifications'}
+                    handleClick={() => navigate('/notifications')}
                     value={analytics.notifications_count}/>
                 </div>
             </div>

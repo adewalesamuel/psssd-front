@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export function MobileMenu() {
     return (
-        <nav className="bg-white mobile-menu w-100 position-fixed">
+        <nav className="d-inline-block d-xl-none bg-white mobile-menu w-100 position-fixed">
             <ul className="position-relative shadow-md d-flex 
             justify-content-between align-items-center m-0" style={{listStyleType: 'none'}}>
                 <li className="text-center">

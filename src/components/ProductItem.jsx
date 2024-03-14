@@ -1,6 +1,6 @@
 export function ProductItem({product, category, canDownlaod, productImg}) {
     return (
-        <div className="col-xl-3 col-md-6 img-top-card">
+        <div className="col-xl-3 col-6 img-top-card productItem">
             <div className="card widget-img-top p-0">
                 <div className="card-content">
                     <img className="card-img-top img-fluid mb-1" src={productImg} 

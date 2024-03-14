@@ -50,6 +50,7 @@ export default function LoginView() {
 
     return (
         <Layouts.AuthLayout>
+            {/*<Components.MobileHomeScreen />*/}
             <section className="row flexbox-container flex-wrap align-items-lg-stretch">
                 <div className="col-xl-7 col-12"></div>
                 <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 
@@ -61,7 +62,7 @@ export default function LoginView() {
                                 <div className="card mb-0 p-1 p-sm-2 h-100 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
-                                            <h4 className="text-center text-uppercase mb-3">Se connecter</h4>
+                                            <h4 className="text-center text-uppercase mb-sm-0 mb-3">Se connecter</h4>
                                         </div>
                                     </div>
                                     <div className="card-content login-wrapper border-radius-t-lg">

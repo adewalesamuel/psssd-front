@@ -110,7 +110,7 @@ export default function RegisterView() {
                                         </div>
                                     </div>
                                     <div className="card-content login-wrapper border-radius-t-lg pt-sm-0 pt-3">
-                                        <div className="card-body bg-white border-radius-t-lg">
+                                        <div className="card-body bg-white border-radius-t-lg pt-sm-0 pt-2">
                                             <Components.ErrorMessages>
                                                 {errorMessages}
                                             </Components.ErrorMessages>

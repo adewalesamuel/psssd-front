@@ -1,6 +1,7 @@
 export function DashbaordCard(props) {
     return (
-        <div className="card p-0 my-1 text-center rounded-lg shadow-md">
+        <div className="card p-0 my-1 text-center rounded-lg shadow-md" 
+        onClick={props.handleClick ?? null}>
             <div className="card-content">
                 <div className="card-body p-0">
                     <div className="d-lg-flex justify-content-between">

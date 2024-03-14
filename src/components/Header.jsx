@@ -43,11 +43,16 @@ export default function Header() {
         } else {
             setTitle(`${(pathname[1].toUpperCase() + pathname.slice(2)).replace('-', ' ')}`)
         }
+
+        window.scrollTo({top: 0});
     }, [pathname])
     return (
         <nav className="header-navbar main-header-navbar navbar-expand-lg navbar 
         navbar-with-menu fixed-top">
-            <div className="navbar-wrapper">
+            <div className='w-100 bg-primary p-1 text-center d-block d-lg-none'>
+                <div className='h5 mb-0 text-white text-uppercase'>{title}</div>
+            </div>
+            <div className="d-none d-lg-block navbar-wrapper">
                 <div className="navbar-container content">
                     <div className="navbar-collapse" id="navbar-mobile">
                         <div className="mr-auto float-left bookmark-wrapper d-flex a

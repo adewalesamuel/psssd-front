@@ -58,19 +58,21 @@ export default function LoginView() {
                     flex-column justify-content-around">
                         <div className="row m-0">
                             <div className="col-12 px-0">
-                                <div className="card mb-0 p-2 h-100 
-                                d-flex justify-content-center">
+                                <div className="card mb-0 p-1 p-sm-2 h-100 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
-                                            <h4 className="text-center text-uppercase">Connexion</h4>
+                                            <h4 className="text-center text-uppercase mb-3">Se connecter</h4>
                                         </div>
                                     </div>
-                                    <div className="card-content">
+                                    <div className="card-content login-wrapper border-radius-t-lg">
                                         <div className="w-100 py-2 text-center">
-                                            <img src={logo} alt={import.meta.env.VITE_APP_NAME} 
-                                            width={"120px"}/>
+                                            <span className="bg-white d-inline-block rounded-circle 
+                                            overflow-hidden p-1">
+                                                <img src={logo} alt={import.meta.env.VITE_APP_NAME} 
+                                                width={"120px"} height={"120px"} style={{objectFit: 'contain'}}/>
+                                            </span>
                                         </div>
-                                        <div className="card-body">
+                                        <div className="card-body bg-white border-radius-t-lg pt-3 pt-sm-0">
                                             <Components.ErrorMessages>
                                                 {errorMessages}
                                             </Components.ErrorMessages>
@@ -78,8 +80,12 @@ export default function LoginView() {
                                             setEmail={setEmail} password={password} setPassword={setPassword}
                                             handleFormSubmit={handleLoginSubmit}/>
                                             <div className="text-center mt-1">
-                                                <p className="mr-25 d-inline-block">Vous n&apos;avez pas de compte?</p>
-                                                <Link to="/inscription"><b className="d-inline-block">Inscrivez-vous</b> </Link>
+                                                <p className="mr-25 d-inline-block">
+                                                    Vous n&apos;avez pas de compte?
+                                                </p>
+                                                <Link to="/inscription" className="text-primary mt-2 d-inline-block">
+                                                    <b className="d-inline-block">Inscrivez-vous</b> 
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

@@ -45,7 +45,7 @@ export function ProductListView() {
                         const category = product.category ?? {};
                         return (
                             <Fragment key={index}>
-                                <Components.ProdcutItem productImg={productImg} 
+                                <Components.ProductItem productImg={productImg} 
                                 product={product} category={category} canDownlaod={false}/>
                             </Fragment>
                         )

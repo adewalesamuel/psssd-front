@@ -21,6 +21,7 @@ export default function MainLayout({children}) {
         <>
             <Components.Header />
             <Components.MainMenu />
+            <Components.MobileMenu />
             <div className="app-content content">
                 <div className="content-overlay"></div>
                 <div className="content-wrapper px-1 p-md-3">

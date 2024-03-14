@@ -67,7 +67,7 @@ export default function DashbaordView() {
                     </Link>
                 </div>  
             </div>
-            <div className="row widget-radial-charts p-1 bg-primary rounded-lg"> 
+            <div className="row widget-radial-charts p-sm-1 p-0 bg-primary border-radius-t-lg"> 
                 <div className="col-4 top-card-item-wrapper">
                     <div className="card p-0 my-1 text-center rounded-lg" 
                     style={{backgroundColor: "rgba(225,225,225,0.7)"}}>
@@ -80,7 +80,7 @@ export default function DashbaordView() {
                                             <h5 className="font-medium-2 font-weight-normal text-white">
                                                 {analytics.initial_stock ?? "--"}
                                             </h5>
-                                            <p className="text-white">
+                                            <p className="text-white label">
                                                 Stock initial
                                             </p>
                                         </div>
@@ -102,7 +102,7 @@ export default function DashbaordView() {
                                             <h5 className="font-medium-2 font-weight-normal text-white">
                                                 {analytics.orders_count ?? "--"}
                                             </h5>
-                                            <p className="text-white">
+                                            <p className="text-white label">
                                                 Ebooks vendus
                                             </p>
                                         </div>
@@ -125,7 +125,7 @@ export default function DashbaordView() {
                                             <h5 className="font-weight-normal text-white">
                                                 {analytics.current_stock ?? "--"}
                                             </h5>
-                                            <p className="text-white">
+                                            <p className="text-white label">
                                                 Ebooks en stocks
                                             </p>
                                         </div>
@@ -137,7 +137,7 @@ export default function DashbaordView() {
                 </div>
             </div>
 
-            <div className="row widget-radial-charts p-1 rounded-lg mt-1 bg-white">   
+            <div className="row widget-radial-charts p-1 border-radius-t-lg mt-sm-1 mt-0 bg-white">   
                 <div className="col-6">
                     <Components.DashbaordCard 
                     iconElement={<i className="bx bx-store text-primary p-1 mb-1

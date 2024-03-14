@@ -56,8 +56,53 @@
   box-shadow: 0 0.2rem 1.2rem 0.2rem rgba(0, 0, 0, 0.175) !important;
 }
 
+.border-radius-t-lg {
+  border-radius: 2rem 2rem 0 0;
+}
+
+.mobile-menu {
+  bottom: 0;
+  z-index: 99;
+}
+
+.mobile-menu > ul {
+  padding: 10px 10px;
+}
+
+.mobile-menu .menu-title {
+  font-size: 0.7rem;
+}
+
+.mobile-menu .bx {
+  margin-bottom: -50px;
+}
+
+.mobile-menu a.active {
+  color: var(--color-primary) !important;
+}
+
+@media screen and (max-width:1199px) {
+  .header-navbar {
+    min-height: 0;
+  }
+
+  .footer {
+    min-height: 52px;
+  }
+}
+
 @media screen and (max-width:645px) {
   .top-card-item-wrapper {
     padding: 0.5rem !important;
+  }
+}
+
+@media screen and (max-width:575px) {
+  .login-wrapper {
+    background-color: var(--color-primary);
+  }
+
+  .top-card-item-wrapper .label {
+    font-size: 0.8rem;
   }
 }

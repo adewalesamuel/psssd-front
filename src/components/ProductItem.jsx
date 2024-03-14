@@ -1,4 +1,4 @@
-export function ProdcutItem({product, category, canDownlaod, productImg}) {
+export function ProductItem({product, category, canDownlaod, productImg}) {
     return (
         <div className="col-xl-3 col-md-6 img-top-card">
             <div className="card widget-img-top p-0">

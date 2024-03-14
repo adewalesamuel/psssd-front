@@ -5,7 +5,7 @@ export function DashbaordCard(props) {
                 <div className="card-body p-0">
                     <div className="d-lg-flex justify-content-between">
                         <div className="widget-card-details d-flex flex-column 
-                        justify-content-between p-2 w-100">
+                        justify-content-between p-sm-2 p-1 w-100">
                             <div>
                                 {props.iconElement}
                                 <p className="font-weight-bold">{props.title}</p>

@@ -47,7 +47,7 @@ export function OrderListView() {
                         product.img_url : placeholderImg;
                         return (
                             <Fragment key={index}>
-                                <Components.ProdcutItem productImg={productImg} 
+                                <Components.ProductItem productImg={productImg} 
                                 product={product} category={category} canDownlaod={true}/>
                             </Fragment>
                         )

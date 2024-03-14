@@ -102,15 +102,15 @@ export default function RegisterView() {
                     flex-column">
                         <div className="row m-0">
                             <div className="col-12 px-0">
-                                <div className="card disable-rounded-right mb-0 p-2 h-100 
+                                <div className="card disable-rounded-right mb-0 p-1 p-sm-2 h-100 
                                 d-flex justify-content-center">
                                     <div className="card-header pb-1">
                                         <div className="card-title">
                                             <h4 className="text-center mb-2 text-uppercase">Inscription</h4>
                                         </div>
                                     </div>
-                                    <div className="card-content">
-                                        <div className="card-body">
+                                    <div className="card-content login-wrapper border-radius-t-lg pt-sm-0 pt-3">
+                                        <div className="card-body bg-white border-radius-t-lg">
                                             <Components.ErrorMessages>
                                                 {errorMessages}
                                             </Components.ErrorMessages>
@@ -118,8 +118,8 @@ export default function RegisterView() {
                                             useUser={useUser} countries={countries} 
                                             handleFormSubmit={handleRegisterSubmit}/>
                                             <div className="text-center mt-1">
-                                                <p className="mr-25 d-inline-block">Vous avez déjà un compte?</p>
-                                                <Link to="/connexion">
+                                                <span className="mr-25 d-inline-block">Vous avez déjà un compte ?</span>
+                                                <Link to="/connexion" className="text-primary">
                                                     <b className="d-inline-block">Connectez-vous</b> 
                                                 </Link>
                                             </div>

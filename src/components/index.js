@@ -19,7 +19,8 @@ import { Table } from './Table';
 import { ImageFileInput } from './ImageFileInput';
 import { DashbaordCard } from './DashboardCard';
 import { AvatarImg } from './AvatarImg';
-import { ProdcutItem } from './ProductItem';
+import { ProductItem } from './ProductItem';
+import { MobileMenu } from './MobileMenu';
 
 
 export const Components = {
@@ -44,5 +45,6 @@ export const Components = {
 	ImageFileInput,
 	DashbaordCard,
 	AvatarImg,
-	ProdcutItem
+	ProductItem,
+	MobileMenu
 }

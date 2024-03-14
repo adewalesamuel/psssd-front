@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
-        <footer className="footer footer-static footer-light">
-            <p className="clearfix mb-0">
+        <footer className="footer footer-static">
+            <p className="clearfix mb-0 d-none d-sm-inline">
                 <span className="float-left d-inline-block">{new Date().getFullYear()} &copy; {import.meta.env.VITE_APP_NAME}</span>
                 <span className="float-right d-sm-inline-block d-none">
                     Fait avec<i className="bx bxs-heart pink mx-50 font-small-3"></i>par

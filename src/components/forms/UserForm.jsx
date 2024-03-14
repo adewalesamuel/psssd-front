@@ -37,16 +37,24 @@ export function UserForm(props) {
                 </div>
                 <div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='fullname'>Nom complet</label>
+                        <label htmlFor='sponsor_code'>Code de parainage</label>
+                        <input className='form-control' type='text' id='sponsor_code' name='sponsor_code' 
+                        placeholder='Code de parainage' value={props.useUser.user?.sponsor_code ?? ''}
+                        disabled={props.isDisabled} readOnly={true} required/>
+                    </div>
+                </div>
+                <div className='col-12'>
+                    <div className='form-group'>
+                        <label htmlFor='fullname'>Nom</label>
                         <input className='form-control' type='text' id='fullname' name='fullname' 
-                        placeholder='Nom complet' value={props.useUser.fullname ?? ''}
+                        placeholder='Nom' value={props.useUser.fullname ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
                             props.useUser.setFullname(e.target.value) ?? null} required/>
                     </div>
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'>Login</label>
                         <input className='form-control' type='text' id='email' name='email' 
                         placeholder='Login' value={props.useUser.email ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
@@ -63,27 +71,27 @@ export function UserForm(props) {
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='backup_number'>Numéro de secours</label>
+                        <label htmlFor='backup_number'>Tel de secours</label>
                         <input className='form-control' type='text' id='backup_number' name='backup_number' 
-                        placeholder='Numéro de secours' value={props.useUser.backup_number ?? ''}
+                        placeholder='Tel de secours' value={props.useUser.backup_number ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
                             props.useUser.setBackup_number(e.target.value) ?? null} required/>
                     </div>
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='whatsapp_number'>Numéro WhatsApp</label>
+                        <label htmlFor='whatsapp_number'>WhatsApp</label>
                         <input className='form-control' type='text' id='whatsapp_number' name='whatsapp_number' 
-                        placeholder='Numéro WhatsApp' value={props.useUser.whatsapp_number ?? ''}
+                        placeholder='WhatsApp' value={props.useUser.whatsapp_number ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
                             props.useUser.setWhatsapp_number(e.target.value) ?? null} required/>
                     </div>
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='telegram_number'>Numéro Telegram</label>
+                        <label htmlFor='telegram_number'>Telegram</label>
                         <input className='form-control' type='text' id='telegram_number' name='telegram_number' 
-                        placeholder='Numéro Telegram' value={props.useUser.telegram_number ?? ''}
+                        placeholder='Telegram' value={props.useUser.telegram_number ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
                             props.useUser.setTelegram_number(e.target.value) ?? null} required/>
                     </div>
@@ -99,7 +107,7 @@ export function UserForm(props) {
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='country_id'>Pays de résidence</label>
+                        <label htmlFor='country_id'>Pays</label>
                         <select
                             className='select2 form-control'
                             id='country_id'
@@ -113,14 +121,6 @@ export function UserForm(props) {
                                 return (<option value={country.id} key={index}>{country.name}</option>)
                             })}
                         </select>
-                    </div>
-                </div>
-                <div className='col-12'>
-                    <div className='form-group'>
-                        <label htmlFor='sponsor_code'>Code de parainage</label>
-                        <input className='form-control' type='text' id='sponsor_code' name='sponsor_code' 
-                        placeholder='Code de parainage' value={props.useUser.sponsor_code ?? ''}
-                        disabled={props.isDisabled} readOnly={true} required/>
                     </div>
                 </div>
 				

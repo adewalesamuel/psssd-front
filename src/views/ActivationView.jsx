@@ -22,7 +22,7 @@ export default function ActivationView() {
         setErrorMessages([]);
 
         try {
-            const {referer, product} = await Services.AuthService.activation(
+            await Services.AuthService.activation(
                 JSON.stringify({activation_code}), 
                 abortContoller.signal)
             
@@ -31,9 +31,7 @@ export default function ActivationView() {
 
             Utils.Auth.setUser(user);
 
-            if (referer || product) navigate('/mes-livres', {replace:true});
-
-            navigate('/', {replace: true});
+            navigate('/mes-achats', {replace:true});
         } catch (error) {
             if ('message' in error) return setErrorMessages([error.message])
             if (!('messages' in error)) return;
@@ -86,7 +84,7 @@ export default function ActivationView() {
                                                     Félicitations
                                                 </h4>
                                                 <p style={{textTransform: 'none'}}>
-                                                    Vous venuez de créer votre compte sur l&apos;interface
+                                                    Vous venez de créer votre compte sur l&apos;interface
                                                     PSSSP. Contactez la personne ci-dessous pour l&apos;acquisition
                                                     de votre code d&apos;activation et de téléchargement de vos
                                                     premiers ebooks
@@ -94,7 +92,7 @@ export default function ActivationView() {
                                                 <div className="border border-primary rounded mt-2">
                                                     <ul className="p-1" style={{listStyleType: "none"}}>
                                                         <li className="mb-1"><strong>Login:</strong> {sponsor.email}</li>
-                                                        <li className="mb-1"><strong>Pays de résidence:</strong> Nigeria</li>
+                                                        <li className="mb-1"><strong>Pays:</strong> {sponsor.country?.name}</li>
                                                         <li className="mb-1"><strong>Numéro WhatsApp:</strong> {sponsor.whatsapp_number}</li>
                                                         <li className="mb-1"><strong>Numéro Télégram:</strong> {sponsor.telegram_number}</li>
                                                         <li><strong>Numéro Secours:</strong> {sponsor.backup_number}  </li>

@@ -2,10 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import { Services } from '../services';
 import { Components } from "../components";
 import { Utils } from "../utils";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 export default function DashbaordView() {
     const abortController = new AbortController();
+    
+    const navigate = useNavigate();
 
     const [analytics, setAnalytics] = useState({});
     const [, setIsLoading] = useState(false);
@@ -15,7 +18,31 @@ export default function DashbaordView() {
         try {
             const {analytics} = await Services.UserService.analytics(
                 abortController.signal);
+
             setAnalytics(analytics);
+
+            if (analytics.products_count > 0) return;
+
+            const {isConfirmed} = await Swal.fire({
+                icon: 'warning',
+                titleText: 'Attention!',
+                text: `Vous n'avez plus de livres dans votre boutique. 
+                Veuillez creer un nouveau compte.`,
+                reverseButtons: true,
+                showCancelButton: true,
+                cancelButtonText: 'Fermer',
+                confirmButtonText: 'Nouveau compte'
+            })
+    
+            if (isConfirmed) {
+                const user = Utils.Auth.getUser();
+
+                Services.AuthService.logout(null);
+                Utils.Auth.removeSessionToken();
+                Utils.Auth.setUser(null);
+
+                navigate(`/inscription?user=${JSON.stringify(user)}`);
+            }
         } catch (error) {
             console.log(error);
         } finally {
@@ -123,13 +150,13 @@ export default function DashbaordView() {
                     iconElement={<i className="bx bx-wallet text-primary p-1 mb-1
                     rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
                     title={'Solde actuel'}
-                    value={analytics.revenu_count}/>
+                    value={analytics.revenu}/>
                 </div>
                 <div className="col-6">
                     <Components.DashbaordCard 
                     iconElement={<i className="bx bx-user text-primary p-1 mb-1
                     rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
-                    title={'Clients'}
+                    title={'Filleuls'}
                     value={analytics.clients_count}/>
                 </div>
                 <div className="col-6">

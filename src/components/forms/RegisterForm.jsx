@@ -32,7 +32,7 @@ export default function RegisterForm(props) {
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setCountry_id(e.target.value) ?? null}
                         >
-                            <option hidden>Pays de residence</option>
+                            <option hidden>Pays</option>
                             {props.countries.map((country,index) => {
                                 return (<option value={country.id} key={index}>{country.name}</option>)
                             })}
@@ -47,7 +47,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='phone_number'
                             name='phone_number'
-                            placeholder='Num tel'
+                            placeholder='Tel principal'
                             value={props.useUser.phone_number ?? ''}
                             minLength={10}
                             maxLength={10}
@@ -68,7 +68,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='whatsapp_number'
                             name='whatsapp_number'
-                            placeholder='Numéro WhatsApp'
+                            placeholder='WhatsApp'
                             value={props.useUser.whatsapp_number ?? ''}
                             minLength={10}
                             maxLength={10}
@@ -89,7 +89,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='telegram_number'
                             name='telegram_number'
-                            placeholder='Numéro Telegram'
+                            placeholder='Telegram'
                             value={props.useUser.telegram_number ?? ''}
                             minLength={10}
                             maxLength={10}
@@ -110,7 +110,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='backup_number'
                             name='backup_number'
-                            placeholder='Numéro de secours'
+                            placeholder='Tel de secours'
                             value={props.useUser.backup_number ?? ''}
                             minLength={10}
                             maxLength={10}
@@ -149,7 +149,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='shop_name'
                             name='shop_name'
-                            placeholder='Nom de votre boutique'
+                            placeholder='Choisissez le nom votre boutique'
                             value={props.useUser.shop_name ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setShop_name(e.target.value) ?? null}

@@ -19,6 +19,7 @@ import { Table } from './Table';
 import { ImageFileInput } from './ImageFileInput';
 import { DashbaordCard } from './DashboardCard';
 import { AvatarImg } from './AvatarImg';
+import { ProdcutItem } from './ProductItem';
 
 
 export const Components = {
@@ -42,5 +43,6 @@ export const Components = {
 	Table,
 	ImageFileInput,
 	DashbaordCard,
-	AvatarImg
+	AvatarImg,
+	ProdcutItem
 }

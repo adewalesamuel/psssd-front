@@ -5,7 +5,7 @@ import {Hooks} from '../hooks';
 import { useCallback, useEffect, useState } from "react";
 import { Services } from "../services";
 import { Utils } from "../utils";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
 export default function RegisterView() {
     const abortContoller = new AbortController();
@@ -13,6 +13,8 @@ export default function RegisterView() {
     const navigate = useNavigate();
 
     const useUser = Hooks.useUser();
+
+    const [searchParams,] = useSearchParams();
 
     const [countries, setCountries] = useState([]);
     const [errorMessages, setErrorMessages] = useState([]);
@@ -61,6 +63,16 @@ export default function RegisterView() {
         useUser.setIsDisabled(true);
 
         try {
+            if (searchParams.get('user')) {
+                const user = JSON.parse(searchParams.get('user'));
+
+                useUser.fillUser(user);
+                useUser.setEmail('');
+                useUser.setShop_name('');
+                useUser.setFullname(user.fullname);
+                useUser.setPhone_number(user.user.phone_number)
+            }
+
             const {countries} = await Services.CountryService.getAll(
                 abortContoller.signal);
             

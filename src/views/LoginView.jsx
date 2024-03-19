@@ -16,6 +16,7 @@ export default function LoginView() {
     const [password, setPassword] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
+    const [isHomeScreenVisible, setIsHomeScreenVisible] = useState(true);
 
     const handleLoginSubmit = async e => {
         e.preventDefault();
@@ -50,7 +51,9 @@ export default function LoginView() {
 
     return (
         <Layouts.AuthLayout>
-            {/*<Components.MobileHomeScreen />*/}
+            {isHomeScreenVisible && 
+                <Components.MobileHomeScreen setIsVisible={setIsHomeScreenVisible}/>
+            }
             <section className="row flexbox-container flex-wrap align-items-lg-stretch">
                 <div className="col-xl-7 col-12"></div>
                 <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 

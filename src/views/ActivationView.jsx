@@ -49,7 +49,6 @@ export default function ActivationView() {
         try {
             const {sponsor} = await Services.UserService.getAccountSponsor(
                 abortContoller.signal);
-                console.log(sponsor);
 
             setSponsor(sponsor);
         } catch (error) {

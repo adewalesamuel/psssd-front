@@ -3,11 +3,11 @@ import purpleBg from '../app-assets/images/backgrounds/purple-wave.png';
 
 export function MobileHomeScreen({setIsVisible}) {
 	return (
-			<section className='fixed-top w-100 h-100 bg-white d-block d-lg-none' 
+			<section className='fixed-top w-100 h-100 bg-white d-block d-md-none' 
 			style={{
 				backgroundImage: `url(${purpleBg})`,
 				backgroundPosition: '0 0',
-				backgroundSize: 'contain',
+				backgroundSize: '100%',
 				backgroundRepeat: 'no-repeat',
 			}}>
 				<div className="position-relative d-flex flex-column justify-content-between 

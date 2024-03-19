@@ -22,6 +22,7 @@ import { AvatarImg } from './AvatarImg';
 import { ProductItem } from './ProductItem';
 import { MobileMenu } from './MobileMenu';
 import { MobileHomeScreen } from './MobileHomeScreen';
+import { Modal } from './Modal';
 
 
 export const Components = {
@@ -48,5 +49,6 @@ export const Components = {
 	AvatarImg,
 	ProductItem,
 	MobileMenu,
-	MobileHomeScreen
+	MobileHomeScreen,
+	Modal
 }

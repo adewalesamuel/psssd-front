@@ -18,6 +18,7 @@ export default function RegisterView() {
 
     const [countries, setCountries] = useState([]);
     const [errorMessages, setErrorMessages] = useState([]);
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
@@ -48,6 +49,7 @@ export default function RegisterView() {
             if (account.is_active) return navigate('/', {replace:true});
 
             navigate('/activation', {replace:true});
+            setIsModalVisible(false);
         } catch (error) {
             if ('message' in error) return setErrorMessages([error.message])
             if (!('messages' in error)) return;
@@ -56,6 +58,7 @@ export default function RegisterView() {
 
             setErrorMessages(messages);
             useUser.setIsDisabled(false);
+            setIsModalVisible(false);
         }
     } 
 
@@ -116,7 +119,7 @@ export default function RegisterView() {
                                             </Components.ErrorMessages>
                                             <Components.RegisterForm isDisabled={useUser.isDisabled} 
                                             useUser={useUser} countries={countries} 
-                                            handleFormSubmit={handleRegisterSubmit}/>
+                                            handleFormSubmit={() => setIsModalVisible(true)}/>
                                             <div className="text-center mt-1">
                                                 <span className="mr-25 d-inline-block">Vous avez déjà un compte ?</span>
                                                 <Link to="/connexion" className="text-primary">
@@ -131,6 +134,18 @@ export default function RegisterView() {
                     </div>
                 </div>
             </section>
+            {isModalVisible && 
+                <Components.Modal isControlVisible={true} handleModalClose={() => setIsModalVisible(false)}
+                title={"Nos termes et conditions"} handleModalValidate={handleRegisterSubmit}
+                isDisabled={useUser.isDisabled}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </Components.Modal>
+            }
         </Layouts.AuthLayout>
     )
 }

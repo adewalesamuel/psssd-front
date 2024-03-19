@@ -4,6 +4,7 @@ import { Services } from "../services";
 import { Utils } from "../utils";
 import {useNavigate} from 'react-router-dom';
 import { Components } from "../components";
+import successImg from '../app-assets/images/success.jpg';
 
 export default function ActivationView() {
     const abortContoller = new AbortController();
@@ -76,13 +77,19 @@ export default function ActivationView() {
                         <div className="row m-0">
                             <div className="col-12 px-0">
                                 <div className="card mb-0 p-2 h-100 d-flex justify-content-center">
-                                    <div className="card-header pb-1">
-                                        <div className="card-title">
+                                    <div className="card-header p-0">
+                                    </div>
+                                    <div className="card-content">
+                                        <div className="card-body px-1">
                                             <Components.Loader isLoading={isLoading}>
+                                                <div className="text-center mb-1">
+                                                    <img src={successImg} alt="success" width={"120px"} 
+                                                    className="img-fluid"/>
+                                                </div>
                                                 <h4 className="text-center mb-2 text-uppercase">
                                                     Félicitations
                                                 </h4>
-                                                <p style={{textTransform: 'none'}}>
+                                                <p>
                                                     Vous venez de créer votre compte sur l&apos;interface
                                                     PSSSP. Contactez la personne ci-dessous pour l&apos;acquisition
                                                     de votre code d&apos;activation et de téléchargement de vos
@@ -132,11 +139,6 @@ export default function ActivationView() {
                                                     </div>
                                                 </form>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-content">
-                                        <div className="card-body">
-
                                         </div>
                                     </div>
                                 </div>

@@ -33,7 +33,7 @@ export function MobileMenu() {
                     </NavLink>
                 </li>
                 <li className="text-center">
-                    <NavLink to="/mon-profil" className='text-secondary'>
+                    <NavLink to="/profil" className='text-secondary'>
                         <i className="bx d-inline-block w-100 bx-user m-0" 
                         style={{fontSize: "1.6rem"}}></i>
                         <span className="menu-title text-uppercase">

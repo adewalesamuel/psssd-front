@@ -13,6 +13,7 @@ export default function MainRoutes() {
                 <Route path='mon-profil' element={<Views.UserEditView />}/>
                 <Route path='articles/:id/modifier' element={<Views.ProductEditView />}/>
                 <Route path='notifications' element={<Views.NotificationListView />}/>
+                <Route path='profil' element={<Views.ProfileView />}/>
             </Routes>
         </Layouts.MainLayout>
     )

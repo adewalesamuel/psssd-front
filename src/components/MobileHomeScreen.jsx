@@ -31,18 +31,18 @@ export function MobileHomeScreen({setIsVisible}) {
 							sur les quatres piliers de la vie humaine. &laquo; La solidarite, la santé, 
 							la spiritualité et la prospérité financière&raquo;
 						</small>
-						<div className='py-5'>
+						<div className='pt-5'>
 							<h4 className='text-bold-600 text-uppercase text-white'>
 								Déjà, 500.000 comptes crées
 							</h4>
 						</div>
 					</div>
 					<div className='px-2 pb-3'>
-						<div className='text-uppercase py-2'>Le projet Psssp international</div>
+						<div className='text-uppercase pb-2'>Le projet Psssp international</div>
 						<small className='text-bold-600'>
 							ASIE - EUROPE - AMERIQUE - AFRIQUE - PACIFIQUE
 						</small>
-						<button className='btn btn-block p-1 text-uppercase mt-2 rounded 
+						<button className='btn btn-block p-1 text-uppercase mt-2 rounded bg-white 
 						text-primary text-bold-600' style={{border: '1px solid var(--color-primary)'}}
 						onClick={() => setIsVisible(false)}>
 							Suivant

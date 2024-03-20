@@ -6,16 +6,6 @@ import { Components } from '../components';
 export function NotificationListView() {
     let abortController = new AbortController();
 
-    const tableAttributes = {
-        'nom': {},
-		'login': {},
-        'num tel': {},
-		'nom boutique': {},
-		'code d\'activation': {},
-		
-    }
-    const tableActions = [];
-
     const { NotificationService } = Services;
 
     const [notifications, setNotifications] = useState([]);
@@ -32,9 +22,10 @@ export function NotificationListView() {
                 return { 
                     nom: account.fullname,
                     login: account.email,
-                    'num tel': account.user?.phone_number,
+                    tel: account.user?.phone_number,
                     'nom boutique': account.shop_name,
-                    'code d\'activation': account.activation_code,
+                    activation_code: account.activation_code,
+                    ...notification
                 }
             })
             setNotifications(notificationCopy);
@@ -57,9 +48,22 @@ export function NotificationListView() {
     return (
         <>
             <Components.Loader isLoading={isLoading}>
-                <div className='table-responsive bg-white'>
-                    <Components.Table controllers={{}} tableAttributes={tableAttributes} 
-                    tableActions={tableActions} tableData={notifications} hasActions={false}/>
+                <div className='w-100'>
+                    {notifications.map((notification, index) => {
+                        return (
+                            <div className='bg-white rounded p-2 shadow-md mb-2' key={index} 
+                            style={{borderLeft: '4px solid teal'}}>
+                                <b>{notification.nom}</b> viens de créer son compte. <br />
+                                <b>Tel: {notification.tel}</b> <br />
+                                <b>Login: {notification.login}</b> <br />
+                                <b>Code: {notification.activation_code}</b> <br />
+                                <small className='d-inline-block float-right'>
+                                    {notification.created_at && new Date(notification.created_at)
+                                    .toLocaleDateString('fr', {dateStyle: 'full'})}
+                                </small>
+                            </div>
+                        )
+                    })}
                 </div>
             </Components.Loader>
         </>

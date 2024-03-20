@@ -9,7 +9,7 @@ export function DashbaordCard(props) {
                         justify-content-between p-sm-2 p-1 w-100">
                             <div>
                                 {props.iconElement}
-                                <p className="font-weight-bold">{props.title}</p>
+                                <p className="font-weight-bold mb-0 mb-sm-1">{props.title}</p>
                                 <h3 className="font-weight-normal">
                                     {props?.value ?? "--"}
                                 </h3>

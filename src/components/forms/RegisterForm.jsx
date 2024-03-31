@@ -22,7 +22,7 @@ export default function RegisterForm(props) {
                     </div>
                 </div>
                 <div className='col-12'>
-                    <div className='form-group'>
+                    <div className='form-group position-relative has-icon-left'>
                         <select
                             className='select2 form-control border-bottom-1 border-top-0 
                             border-left-0 border-right-0 rounded-0'
@@ -37,6 +37,9 @@ export default function RegisterForm(props) {
                                 return (<option value={country.id} key={index}>{country.name}</option>)
                             })}
                         </select>
+                        <div className="form-control-position">
+                            <i className="bx bx-flag text-primary"></i>
+                        </div>
                     </div>
                 </div>
                 <div className='col-12'>

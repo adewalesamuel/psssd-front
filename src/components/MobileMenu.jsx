@@ -10,7 +10,7 @@ export function MobileMenu() {
                         <i className="bx d-inline-block w-100 bx-home-alt m-0" 
                         style={{fontSize: "1.6rem"}}></i>
                         <span className="menu-title text-uppercase">
-                            Acceuil
+                            Accueil
                         </span>
                     </NavLink>
                 </li>

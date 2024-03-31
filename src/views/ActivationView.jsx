@@ -89,18 +89,16 @@ export default function ActivationView() {
                                                 <h4 className="text-center mb-2 text-uppercase">
                                                     Félicitations
                                                 </h4>
-                                                <p>
-                                                    Vous venez de créer votre compte sur l&apos;interface
-                                                    PSSSP. Contactez la personne ci-dessous pour l&apos;acquisition
-                                                    de votre code d&apos;activation et de téléchargement de vos
-                                                    premiers ebooks
+                                                <p className="text-center">
+                                                    Votre compte PSSSP Afrique vient d&apos;être créé. Contactez 
+                                                    la  personne ci-dessous pour  votre Code d&apos;Activation
                                                 </p>
                                                 <div className="border border-primary rounded mt-2">
                                                     <ul className="p-1" style={{listStyleType: "none"}}>
-                                                        <li className="mb-1"><strong>Login:</strong> {sponsor.email}</li>
-                                                        <li className="mb-1"><strong>Pays:</strong> {sponsor.country?.name}</li>
-                                                        <li className="mb-1"><strong>Numéro WhatsApp:</strong> {sponsor.whatsapp_number}</li>
-                                                        <li className="mb-1"><strong>Numéro Télégram:</strong> {sponsor.telegram_number}</li>
+                                                        <li><strong>Login:</strong> {sponsor.email}</li>
+                                                        <li><strong>Pays:</strong> {sponsor.country?.name}</li>
+                                                        <li><strong>Numéro WhatsApp:</strong> {sponsor.whatsapp_number}</li>
+                                                        <li><strong>Numéro Télégram:</strong> {sponsor.telegram_number}</li>
                                                         <li><strong>Numéro Secours:</strong> {sponsor.backup_number}  </li>
                                                     </ul>
                                                 </div>

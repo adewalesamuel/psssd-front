@@ -52,10 +52,14 @@ export default function LoginView() {
     return (
         <Layouts.AuthLayout>
             {isHomeScreenVisible && 
-                <Components.MobileHomeScreen setIsVisible={setIsHomeScreenVisible}/>
+                <div className="fixed-top w-100 h-100 bg-white d-block d-lg-none">
+                        <Components.HomeScreen setIsVisible={setIsHomeScreenVisible}/>
+                </div>
             }
             <section className="row flexbox-container flex-wrap align-items-lg-stretch">
-                <div className="col-xl-7 col-12"></div>
+                <div className="col-xl-7 col-12 p-0 d-none d-xl-block">
+                    <Components.HomeScreen />
+                </div>
                 <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 
                 py-sm-5 px-sm-1 px-0">
                     <div className="bg-white bg-authentication mb-0 p-0 h-100 d-flex 

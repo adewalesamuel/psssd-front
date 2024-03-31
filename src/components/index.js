@@ -21,8 +21,8 @@ import { DashbaordCard } from './DashboardCard';
 import { AvatarImg } from './AvatarImg';
 import { ProductItem } from './ProductItem';
 import { MobileMenu } from './MobileMenu';
-import { MobileHomeScreen } from './MobileHomeScreen';
 import { Modal } from './Modal';
+import { HomeScreen } from './HomeScreen';
 
 
 export const Components = {
@@ -49,6 +49,6 @@ export const Components = {
 	AvatarImg,
 	ProductItem,
 	MobileMenu,
-	MobileHomeScreen,
-	Modal
+	Modal,
+	HomeScreen
 }

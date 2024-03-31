@@ -10,7 +10,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='fullname'
                             name='fullname'
-                            placeholder='Nom'
+                            placeholder='Nom complet'
                             value={props.useUser.fullname ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setFullname(e.target.value) ?? null}

@@ -1,6 +1,6 @@
-export function ProductItem({product, category, canDownlaod, productImg}) {
+export function ProductItem({product, canDownlaod, productImg}) {
     return (
-        <div className="col-xl-3 col-6 img-top-card productItem">
+        <div className="px-1 col-1/5 img-top-card productItem">
             <div className="card widget-img-top p-0">
                 <div className="card-content">
                     <img className="card-img-top img-fluid mb-1" src={productImg} 
@@ -8,12 +8,6 @@ export function ProductItem({product, category, canDownlaod, productImg}) {
                     <div className="heading-elements">
                         <i className="bx bx-dots-vertical-rounded font-medium-3 
                         align-middle text-white"></i>
-                    </div>
-                    <div className="text-center">
-                        <h4>{product.name}</h4>
-                        <p>{category.name} {category?.category && 
-                        `- ${category.category?.name ?? ""}`}</p>
-                        <p className="px-2">{product.download_code}</p>
                     </div>
                 </div>
                 {canDownlaod && 

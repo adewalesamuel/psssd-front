@@ -94,7 +94,7 @@ export default function ActivationView() {
                                                     la  personne ci-dessous pour  votre Code d&apos;Activation
                                                 </p>
                                                 <div className="border border-primary rounded mt-2">
-                                                    <ul className="p-1" style={{listStyleType: "none"}}>
+                                                    <ul className="p-1 mb-0" style={{listStyleType: "none"}}>
                                                         <li><strong>Login:</strong> {sponsor.email}</li>
                                                         <li><strong>Pays:</strong> {sponsor.country?.name}</li>
                                                         <li><strong>Numéro WhatsApp:</strong> {sponsor.whatsapp_number}</li>

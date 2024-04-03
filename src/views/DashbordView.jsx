@@ -39,7 +39,6 @@ export default function DashbaordView() {
 
                 Services.AuthService.logout(null);
                 Utils.Auth.removeSessionToken();
-                Utils.Auth.setUser(null);
 
                 navigate(`/inscription?user=${JSON.stringify(user)}`);
             }
@@ -61,7 +60,8 @@ export default function DashbaordView() {
                     <Link className="text-center" to='/mon-profil'>
                         <Components.AvatarImg size={"100"}/>
                         <p className="user-name mt-1 text-secondary">
-                            {Utils.Auth.getUser().shop_name ?? "---"}
+                            Bienvenu dans votre compte n ({analytics.accounts_count ?? 1})
+                            de la categorie <b>{Utils.Auth.getUser().user?.subscription_plan?.name ?? "___"}</b>
                             &nbsp; <i className="bx bx-pencil"></i>
                         </p>
                     </Link>

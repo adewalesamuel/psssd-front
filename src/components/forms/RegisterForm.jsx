@@ -1,6 +1,6 @@
 export default function RegisterForm(props) {
     return (
-        <form onSubmit={props.handleFormSubmit}>
+        <form>
             <div className='row'>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
@@ -204,7 +204,7 @@ export default function RegisterForm(props) {
                 <div className='col-12'>
                     <button
                         disabled={props.isDisabled ?? false}
-                        type='submit'
+                        type='button'
                         className='btn btn-primary btn-block mt-2 p-1'
                         onClick={props.handleFormSubmit}
                     >

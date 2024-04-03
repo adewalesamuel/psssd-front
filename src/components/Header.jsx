@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import {useNavigate, useLocation} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Components } from '.';
+import logo from '../app-assets/images/logo/logo.png';
 
 export default function Header() {
 
@@ -49,8 +50,19 @@ export default function Header() {
     return (
         <nav className="header-navbar main-header-navbar navbar-expand-lg navbar 
         navbar-with-menu fixed-top">
-            <div className='w-100 bg-primary p-1 text-center d-block d-lg-none'>
+            <div className='w-100 bg-primary px-1 text-center d-block d-lg-none d-flex 
+            justify-content-between align-items-center'>
+                <Link className="" to="/">
+                    <span className="bg-white d-inline-block rounded-circle 
+                    overflow-hidden">
+                        <img src={logo} alt={"logo"} width={"40px"} height={"40px"} 
+                        style={{objectFit: 'contain'}}/>
+                    </span>
+                </Link>
                 <div className='h5 mb-0 text-white text-uppercase'>{title}</div>
+                <Link to='/mon-profil'>
+                    <span><Components.AvatarImg /></span>
+                </Link>
             </div>
             <div className="d-none d-lg-block navbar-wrapper">
                 <div className="navbar-container content">

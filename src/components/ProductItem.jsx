@@ -1,9 +1,9 @@
 export function ProductItem({product, canDownlaod, productImg}) {
     return (
-        <div className="px-1 col-1/5 img-top-card productItem">
+        <div className="px-1 col-6 col-lg-3 img-top-card productItem">
             <div className="card widget-img-top p-0">
                 <div className="card-content">
-                    <img className="card-img-top img-fluid mb-1" src={productImg} 
+                    <img className="card-img-top img-fluid mb-md-1" src={productImg} 
                     alt="Card image cap" style={{height: "200px", objectFit: 'cover'}}/>
                     <div className="heading-elements">
                         <i className="bx bx-dots-vertical-rounded font-medium-3 

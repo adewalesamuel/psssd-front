@@ -39,7 +39,7 @@ export function OrderListView() {
     return (
         <>
             <Components.Loader isLoading={isLoading}>
-                <div className='row mt-1 py-2'>
+                <div className='row mt-md-1 py-md-2'>
                     {orders.map((order, index) => {
                         const product = order?.product ?? {};
                         const category = product?.category ?? {};

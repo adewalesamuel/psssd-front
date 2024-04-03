@@ -60,8 +60,8 @@ export default function DashbaordView() {
                     <Link className="text-center" to='/mon-profil'>
                         <Components.AvatarImg size={"100"}/>
                         <p className="user-name mt-1 text-secondary">
-                            Bienvenu dans votre compte n ({analytics.accounts_count ?? 1})
-                            de la categorie <b>{Utils.Auth.getUser().user?.subscription_plan?.name ?? "___"}</b>
+                            Bienvenu dans votre compte nº{analytics.accounts_count ?? 1}
+                            &nbsp;de la categorie <b>{Utils.Auth.getUser().user?.subscription_plan?.name ?? "___"}</b>
                             &nbsp; <i className="bx bx-pencil"></i>
                         </p>
                     </Link>

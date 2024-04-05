@@ -10,7 +10,6 @@ import { UserEditView } from './UserEditView';
 import { ProductListView } from './ProductListView';
 import { ProductCreateView } from './ProductCreateView';
 import { ProductEditView } from './ProductEditView';
-import { OrderListView } from './OrderListView';
 import { OrderCreateView } from './OrderCreateView';
 import { OrderEditView } from './OrderEditView';
 import { PermissionListView } from './PermissionListView';
@@ -45,7 +44,6 @@ export const Views = {
 	ProductListView,
 	ProductCreateView,
 	ProductEditView,
-	OrderListView,
 	OrderCreateView,
 	OrderEditView,
 	PermissionListView,

@@ -9,7 +9,6 @@ export function OrderListView() {
 
     const { OrderService } = Services;
 
-
     const [orders, setOrders] = useState([]);
     const [page, ] = useState(1);
     const [isLoading, setIsLoading] = useState(true);

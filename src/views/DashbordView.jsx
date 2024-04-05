@@ -103,7 +103,7 @@ export default function DashbaordView() {
                                                 {analytics.orders_count ?? "--"}
                                             </h5>
                                             <p className="text-white label">
-                                                Ebooks vendus
+                                                Ebook(s) vendu(s)
                                             </p>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@ export default function DashbaordView() {
                                                 {analytics.current_stock ?? "--"}
                                             </h5>
                                             <p className="text-white label">
-                                                Ebooks en stocks
+                                                Ebook(s) en stock(s)
                                             </p>
                                         </div>
                                     </div>

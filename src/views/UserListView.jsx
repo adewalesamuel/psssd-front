@@ -1,70 +1,47 @@
-
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { Services } from '../services';
 import { Components } from '../components';
+import Swal from 'sweetalert2';
 import { Utils } from '../utils';
+import {useNavigate} from 'react-router-dom';
 
-export function UserListView(props) {
+export function UserListView() {
     let abortController = new AbortController();
+
+    const navigate = useNavigate();
 
     const { UserService } = Services;
 
-    const tableAttributes = {
-        'fullname': {},
-		'email': {},
-		'password': {},
-		'phone_number': {},
-		'backup_number': {},
-		'whatsapp_number': {},
-		'telegram_number': {},
-		'shop_name': {},
-		'profile_img_url': {},
-		'is_active': {},
-		'sponsor_code': {},
-		'activation_code': {},
-		'country_id': {},
-		
-    }
-    const tableActions = ['raad', 'edit', 'delete'];
-    
-    const navigate = useNavigate();
-
-    const [users, setUsers] = useState([]);
-    const [page, setPage] = useState(1);
-    const [pageLength, setPageLength] = useState(1);
+    const [accounts, setAccounts] = useState([]);
+    const [page, ] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
 
-    const handleEditClick = (e, data) => {
-        e.preventDefault();
-        navigate(`/users/${data.id}/modifier`);
-    }
-    const handleDeleteClick = async (e, user) => {
-        e.preventDefault();
-
-        const {isConfirmed} = await Utils.SweetAlert.fireAlert(
-            'supprimer', 'ce user');
+    const handleAccountClick = async (account) => {
+        const {isConfirmed} = await Swal.fire({
+            icon: 'warning',
+            titleText: "Changement de compte",
+            text: `Vous allez être connecté sur le compte ${account.login}`,
+            showCancelButton: true,
+            cancelButtonText: 'Annuler',
+            confirmButtonText: 'Valider',
+        })
 
         if (isConfirmed) {
-            const usersCopy = [...users];
-            const index = usersCopy.findIndex(userItem => 
-                userItem.id === user.id);
+            account['user'] = Utils.Auth.getUser().user;
 
-            usersCopy.splice(index, 1);
-            setUsers(usersCopy);
+            Utils.Auth.setSessionToken(account.api_token);
+            Utils.Auth.setUser(account);
 
-            await UserService.destroy(user.id, 
-                abortController.signal);
+            navigate('/');
         }
     }
 
     const init = useCallback(async () => {
         try {
-            const {users} = await UserService.getAll(
+            const {accounts} = await UserService.getAll(
                 {page: page}, abortController.signal);
 
-            setUsers(users.data);
-            setPageLength(users.last_page);
+            setAccounts(accounts);
         } catch (error) {
             console.log(error);
         } finally {
@@ -74,7 +51,6 @@ export function UserListView(props) {
 
     useEffect(() => {
         init();
-
         return () => {
             abortController.abort();
             abortController = new AbortController();
@@ -83,15 +59,23 @@ export function UserListView(props) {
 
     return (
         <>
-            <h6>Liste Users</h6>
             <Components.Loader isLoading={isLoading}>
-                <Link className='btn btn-info' to='/users/creer'>
-                    <i className='icon ion-plus'></i> Ajout user
-                </Link>
-                <div className='table-responsive'>
-                    <Components.Table controllers={{handleEditClick, handleDeleteClick}} 
-                    tableAttributes={tableAttributes} tableActions={tableActions} 
-                    tableData={users}/>
+                <div className='row'>
+                    <div className='col-12 col-md-6'>
+                        {accounts.map((account, index) => {
+                            return (
+                                <div className='bg-white px-2 py-1 shadow-sm mb-1 cursor-pointer' 
+                                key={index} onClick={() => handleAccountClick(account)}>
+                                    <b>Login: {account.email}</b> <br />
+                                    <b>Boutique: {account.shop_name}</b> <br />
+                                    <small className='d-inline-block float-right'>
+                                        {account.created_at && new Date(account.created_at)
+                                        .toLocaleDateString('fr', {dateStyle: 'full'})}
+                                    </small>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </Components.Loader>
         </>

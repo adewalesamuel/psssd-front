@@ -164,6 +164,7 @@ const getResponseErrors = response => {
 }
 
 export const Api = {
+    URL,
     get,
     post,
     put,

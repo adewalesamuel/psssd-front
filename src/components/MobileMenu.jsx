@@ -15,6 +15,15 @@ export function MobileMenu() {
                     </NavLink>
                 </li>
                 <li className="text-center">
+                    <NavLink to="/mes-achats" className='text-secondary'>
+                        <i className="bx d-inline-block w-100 bx-store m-0" 
+                        style={{fontSize: "1.6rem"}}></i>
+                        <span className="menu-title text-uppercase">
+                            Mes achats
+                        </span>
+                    </NavLink>
+                </li>
+                <li className="text-center">
                     <NavLink to="/ma-boutique" className='text-secondary'>
                         <i className="bx d-inline-block w-100 bx-store m-0" 
                         style={{fontSize: "1.6rem"}}></i>

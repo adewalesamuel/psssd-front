@@ -3,6 +3,8 @@ import { Fragment, useCallback, useEffect, useState } from 'react';
 import { Services } from '../services';
 import { Components } from '../components';
 import placeholderImg from '../app-assets/images/placeholder.jpg';
+import { Utils } from '../utils';
+import { Api } from '../services/Api';
 
 export function OrderListView() {
     let abortController = new AbortController();
@@ -52,6 +54,18 @@ export function OrderListView() {
                         )
                     })}
                 </div>
+                <div className='row'>
+                <div className='mx-auto col-sm-6 col-12'>
+                    <button className='btn btn-info btn-block mt-b'>
+                        Votre code de parrainage {Utils.Auth.getUser()?.user?.sponsor_code}
+                    </button>
+                    <a href={`${Api.URL}/accounts/${Utils.Auth.getUser().id}/invoice`} 
+                    target='_blank' rel='noreferrer' className='btn btn-primary btn-block'>
+                        Télecharger le réçu d&apos;achat
+                    </a>
+                    <span>NB: Vos 4 livres téléchargeables</span>
+                </div>
+            </div>
             </Components.Loader>
         </>
     )

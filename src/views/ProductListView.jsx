@@ -44,32 +44,6 @@ export function ProductListView() {
 
     return (
         <>
-            <div className='row mt-md-1 pt-md-2'>
-                {orders.map((order, index) => {
-                    const product = order?.product ?? {};
-                    const category = product?.category ?? {};
-                    const productImg = (product.img_url && product.img_url !== "") ? 
-                    product.img_url : placeholderImg;
-                    return (
-                        <Fragment key={index}>
-                            <Components.ProductItem productImg={productImg} 
-                            product={product} category={category} canDownlaod={true}/>
-                        </Fragment>
-                    )
-                })}
-            </div>
-            <div className='row'>
-                <div className='mx-auto col-sm-6 col-12'>
-                    <button className='btn btn-info btn-block mt-b'>
-                        Votre code de parrainage {Utils.Auth.getUser()?.user?.sponsor_code}
-                    </button>
-                    <a href={`${Api.URL}/accounts/${Utils.Auth.getUser().id}/invoice`} 
-                    target='_blank' rel='noreferrer' className='btn btn-primary btn-block'>
-                        Télecharger le réçu d&apos;achat
-                    </a>
-                    <span>NB: Vos 4 livres téléchargeables</span>
-                </div>
-            </div>
             <hr />
             <Components.Loader isLoading={isLoading}>
                 <div className='col-xl-6 col-12 px-0'>

@@ -30,6 +30,7 @@ import LoginView from './LoginView';
 import ActivationView from './ActivationView';
 import { NotificationListView } from './NotificationsListView';
 import { ProfileView } from './ProfileView';
+import { OrderListView } from './OrderListView';
 
 export const Views = {
     CountryListView,
@@ -64,5 +65,6 @@ export const Views = {
 	ActivationView,
 	NotificationListView,
 	ProfileView,
+	OrderListView,
 	
 }

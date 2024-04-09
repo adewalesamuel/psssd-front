@@ -46,7 +46,7 @@ export default function RegisterView() {
             Utils.Auth.setSessionToken(tk);
             Utils.Auth.setUser(account);
 
-            if (account.is_active) return navigate('/', {replace:true});
+            if (account.is_active) return navigate('/mes-achats', {replace:true});
 
             navigate('/activation', {replace:true});
             setIsModalVisible(false);

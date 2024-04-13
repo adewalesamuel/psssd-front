@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Services } from '../services';
 import { Components } from "../components";
 import { Utils } from "../utils";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 
 export default function DashbaordView() {

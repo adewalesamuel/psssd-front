@@ -1,54 +1,55 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function MobileMenu() {
     return (
-        <nav className="d-inline-block d-xl-none bg-white mobile-menu w-100 position-fixed">
+        <nav className="d-inline-block d-xl-none bg-primary mobile-menu w-100 
+        position-fixed rounded-t-md">
             <ul className="position-relative shadow-md d-flex 
             justify-content-between align-items-center m-0" style={{listStyleType: 'none'}}>
                 <li className="text-center">
-                    <NavLink to="/" className='text-secondary'>
+                    <Link to="/" className='text-white'>
                         <i className="bx d-inline-block w-100 bx-home-alt m-0" 
                         style={{fontSize: "1.6rem"}}></i>
-                        <span className="menu-title text-uppercase">
+                        <span className="menu-title">
                             Accueil
                         </span>
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className="text-center">
-                    <NavLink to="/mes-achats" className='text-secondary'>
-                        <i className="bx d-inline-block w-100 bx-store m-0" 
+                    <Link to="/mes-achats" className='text-white'>
+                        <i className="bx d-inline-block w-100 bx-cart m-0" 
                         style={{fontSize: "1.6rem"}}></i>
-                        <span className="menu-title text-uppercase">
+                        <span className="menu-title">
                             Mes achats
                         </span>
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className="text-center">
-                    <NavLink to="/ma-boutique" className='text-secondary'>
+                    <Link to="/ma-boutique" className='text-white'>
                         <i className="bx d-inline-block w-100 bx-store m-0" 
                         style={{fontSize: "1.6rem"}}></i>
-                        <span className="menu-title text-uppercase">
+                        <span className="menu-title">
                             Ma boutique
                         </span>
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className="text-center">
-                    <NavLink to="/mes-comptes" className='text-secondary'>
+                    <Link to="/mes-comptes" className='text-white'>
                         <i className="bx d-inline-block w-100 bx-book m-0" 
                         style={{fontSize: "1.6rem"}}></i>
-                        <span className="menu-title text-uppercase">
+                        <span className="menu-title">
                             Mes comptes
                         </span>
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className="text-center">
-                    <NavLink to="/profil" className='text-secondary'>
+                    <Link to="/profil" className='text-white'>
                         <i className="bx d-inline-block w-100 bx-user m-0" 
                         style={{fontSize: "1.6rem"}}></i>
-                        <span className="menu-title text-uppercase">
+                        <span className="menu-title">
                             Mon Profil
                         </span>
-                    </NavLink>
+                    </Link>
                 </li>
             </ul>
         </nav>

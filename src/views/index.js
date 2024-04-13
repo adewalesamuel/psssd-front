@@ -31,6 +31,8 @@ import ActivationView from './ActivationView';
 import { NotificationListView } from './NotificationsListView';
 import { ProfileView } from './ProfileView';
 import { OrderListView } from './OrderListView';
+import { MobileHomeView } from './MobileHomeView';
+import { MobileChoiceView } from './MobileChoiceView';
 
 export const Views = {
     CountryListView,
@@ -66,5 +68,6 @@ export const Views = {
 	NotificationListView,
 	ProfileView,
 	OrderListView,
-	
+	MobileHomeView,
+	MobileChoiceView	
 }

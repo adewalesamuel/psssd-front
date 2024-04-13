@@ -10,6 +10,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="mobile-home" element={<Views.MobileHomeView/>}/>
+        <Route path="mobile-choice" element={<Views.MobileChoiceView/>}/>
         <Route path="inscription" element={<Views.RegisterView/>}/>
         <Route path="connexion" element={<Views.LoginView/>}/>
         <Route path="activation" element={<Views.ActivationView/>}/>

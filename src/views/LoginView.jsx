@@ -51,11 +51,7 @@ export default function LoginView() {
 
     return (
         <Layouts.AuthLayout>
-            {isHomeScreenVisible && 
-                <div className="fixed-top w-100 h-100 bg-white d-block d-lg-none">
-                        <Components.HomeScreen setIsVisible={setIsHomeScreenVisible}/>
-                </div>
-            }
+
             <section className="row flexbox-container flex-wrap align-items-lg-stretch">
                 <div className="col-xl-7 col-12 p-0 d-none d-xl-block">
                     <Components.HomeScreen />

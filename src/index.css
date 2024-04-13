@@ -40,6 +40,10 @@
   border-radius: 10px !important;
 }
 
+.rounded-lg {
+  border-radius: 50px !important;
+}
+
 .main-menu.menu-light .navigation > li:not(.sidebar-group-active) > a.active
 {
   background: rgba(90, 141, 238, 0.15);

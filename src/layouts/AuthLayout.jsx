@@ -28,12 +28,12 @@ export default function AuthLayout({children}) {
     }, [pathname])
 
     return (
-        <div className="app-content content">
-            <div className="content-overlay"></div>
-            <div className="content-wrapper">
+        <div className="app-content content h-100">
+            <div className="content-overlay h-100"></div>
+            <div className="content-wrapper h-100">
                 <div className="content-header row">
                 </div>
-                <div className="content-body">
+                <div className="content-body h-100">
                     {children}
                 </div>
             </div>

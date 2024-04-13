@@ -3,10 +3,9 @@ export default function LoginForm(props) {
         <form onSubmit={props.handleFormSubmit}>
             <div className='row'>
                 <div className='col-12'>
-                    <div className='form-group position-relative has-icon-left'>
+                    <div className='form-group position-relative'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='test'
                             id='email'
                             name='email'
@@ -16,16 +15,12 @@ export default function LoginForm(props) {
                             onChange={e => props.setEmail(e.target.value) ?? null}
                             required
                         />
-                        <div className="form-control-position">
-                            <i className="bx bx-user text-primary"></i>
-                        </div>
                     </div>
                 </div>
                 <div className='col-12'>
-                    <div className='form-group position-relative has-icon-left'>
+                    <div className='form-group position-relative'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='password'
                             id='password'
                             name='password'
@@ -35,16 +30,13 @@ export default function LoginForm(props) {
                             onChange={e => props.setPassword(e.target.value) ?? null}
                             required
                         />
-                        <div className="form-control-position">
-                            <i className="bx bx-lock text-primary"></i>
-                        </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <button
                         disabled={props.isDisabled ?? false}
                         type='submit'
-                        className='btn btn-primary btn-block mt-2 p-1'
+                        className='btn btn-info btn-block mt-2 btn-sm'
                         onClick={props.handleFormSubmit}
                     >
                         <span className="text-uppercase">

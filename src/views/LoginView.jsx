@@ -16,7 +16,6 @@ export default function LoginView() {
     const [password, setPassword] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
-    const [isHomeScreenVisible, setIsHomeScreenVisible] = useState(true);
 
     const handleLoginSubmit = async e => {
         e.preventDefault();
@@ -58,40 +57,37 @@ export default function LoginView() {
                 </div>
                 <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 
                 py-sm-5 px-sm-1 px-0">
-                    <div className="bg-white bg-authentication mb-0 p-0 h-100 d-flex 
-                    flex-column justify-content-around">
-                        <div className="row m-0">
-                            <div className="col-12 px-0">
-                                <div className="card mb-0 p-1 p-sm-2 h-100 d-flex justify-content-center">
-                                    <div className="card-header pb-1">
-                                        <div className="card-title">
-                                            <h4 className="text-center text-uppercase mb-sm-0 mb-3">Se connecter</h4>
-                                        </div>
-                                    </div>
-                                    <div className="card-content login-wrapper border-radius-t-lg">
-                                        <div className="w-100 py-2 text-center">
-                                            <span className="bg-white d-inline-block rounded-circle 
-                                            overflow-hidden p-1">
-                                                <img src={logo} alt={import.meta.env.VITE_APP_NAME} 
-                                                width={"120px"} height={"120px"} style={{objectFit: 'contain'}}/>
-                                            </span>
-                                        </div>
-                                        <div className="card-body bg-white border-radius-t-lg pt-3 pt-sm-0">
-                                            <Components.ErrorMessages>
-                                                {errorMessages}
-                                            </Components.ErrorMessages>
-                                            <Components.LoginForm isDisabled={isDisabled} email={email} 
-                                            setEmail={setEmail} password={password} setPassword={setPassword}
-                                            handleFormSubmit={handleLoginSubmit}/>
-                                            <div className="text-center mt-1">
-                                                <p className="mr-25 d-inline-block">
-                                                    Vous n&apos;avez pas de compte?
-                                                </p>
-                                                <Link to="/inscription" className="text-primary mt-2 d-inline-block">
-                                                    <b className="d-inline-block">Inscrivez-vous</b> 
-                                                </Link>
-                                            </div>
-                                        </div>
+                    <div className="mb-0 px-0 h-100 d-flex flex-column justify-centent-beetween">
+                        <div className="bg-primary rounded-b-lg">
+                            <div className="text-center">
+                                <span className="bg-white d-inline-block rounded-circle 
+                                overflow-hidden border-primary border-3" 
+                                style={{
+                                    padding: "0.5rem", 
+                                    transform: 'translateY(40px'
+                                }}>
+                                    <img src={logo} width={50} height={50} 
+                                    style={{objectFit: 'contain'}}/>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="p-4 mt-2">
+                            <div className="card rounded-md mb-0 h-100 
+                            d-flex justify-content-center p-2">
+                                <div className="card-content pt-sm-0">
+                                    <Components.ErrorMessages>
+                                        {errorMessages}
+                                    </Components.ErrorMessages>
+                                    <Components.LoginForm isDisabled={isDisabled} email={email} 
+                                    setEmail={setEmail} password={password} setPassword={setPassword}
+                                    handleFormSubmit={handleLoginSubmit}/>
+                                     <div className="text-center mt-1">
+                                        <p className="mr-25 d-inline-block">
+                                            Vous n&apos;avez pas de compte?
+                                        </p>
+                                        <Link to="/inscription" className="text-primary mt-2 d-inline-block">
+                                            <b className="d-inline-block">Inscrivez-vous</b> 
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

@@ -9,6 +9,9 @@
 *[role=button] {
   cursor: pointer;
 }
+html body.bg-full-screen-image {
+  background-repeat: repeat;
+}
 
 #root {
   width: 100%;
@@ -40,8 +43,18 @@
   border-radius: 10px !important;
 }
 
+.rounded-md {
+  border-radius: 20px !important;
+}
+
+
 .rounded-lg {
   border-radius: 50px !important;
+}
+
+.rounded-b-lg {
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 .main-menu.menu-light .navigation > li:not(.sidebar-group-active) > a.active

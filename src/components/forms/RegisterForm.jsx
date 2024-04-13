@@ -5,8 +5,7 @@ export default function RegisterForm(props) {
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='text'
                             id='fullname'
                             name='fullname'
@@ -17,15 +16,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-user text-primary"></i>
+                            <i className="bx bx-user"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <select
-                            className='select2 form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='select2 form-control'
                             id='country_id'
                             name='country_id'
                             value={props.useUser.country_id ?? ''}
@@ -38,15 +36,14 @@ export default function RegisterForm(props) {
                             })}
                         </select>
                         <div className="form-control-position">
-                            <i className="bx bx-flag text-primary"></i>
+                            <i className="bx bx-flag"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control'
                             type='tel'
                             id='phone_number'
                             name='phone_number'
@@ -59,15 +56,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-phone text-primary"></i>
+                            <i className="bx bx-phone"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='tel'
                             id='whatsapp_number'
                             name='whatsapp_number'
@@ -80,15 +76,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-phone text-primary"></i>
+                            <i className="bx bx-phone"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='tel'
                             id='telegram_number'
                             name='telegram_number'
@@ -101,15 +96,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-phone text-primary"></i>
+                            <i className="bx bx-phone"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='tel'
                             id='backup_number'
                             name='backup_number'
@@ -122,15 +116,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-phone text-primary"></i>
+                            <i className="bx bx-phone"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='text'
                             id='sponsor_code'
                             name='sponsor_code'
@@ -140,15 +133,14 @@ export default function RegisterForm(props) {
                             onChange={e => props.useUser.setReferrer_sponsor_code(e.target.value) ?? null}
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-key text-primary"></i>
+                            <i className="bx bx-key"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='text'
                             id='shop_name'
                             name='shop_name'
@@ -159,15 +151,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-cart text-primary"></i>
+                            <i className="bx bx-cart"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='text'
                             id='email'
                             name='email'
@@ -178,15 +169,14 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-user text-primary"></i>
+                            <i className="bx bx-user"></i>
                         </div>
                     </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control form-control border-bottom-1 border-top-0 
-                            border-left-0 border-right-0 rounded-0'
+                            className='form-control form-control bg-grey'
                             type='password'
                             id='password'
                             name='password'
@@ -197,7 +187,7 @@ export default function RegisterForm(props) {
                             required
                         />
                         <div className="form-control-position">
-                            <i className="bx bx-lock text-primary"></i>
+                            <i className="bx bx-lock"></i>
                         </div>
                     </div>
                 </div>
@@ -205,7 +195,7 @@ export default function RegisterForm(props) {
                     <button
                         disabled={props.isDisabled ?? false}
                         type='button'
-                        className='btn btn-primary btn-block mt-2 p-1'
+                        className='btn btn-primary btn-block mt-2 btn-sm'
                         onClick={props.handleFormSubmit}
                     >
                         <span className="text-uppercase">

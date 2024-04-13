@@ -1,5 +1,6 @@
 :root {
   --color-primary: #500178;
+  --color-success: #84c312;
 }
 
 * {
@@ -39,6 +40,10 @@ html body.bg-full-screen-image {
   border-color: var(--color-primary) !important;
 }
 
+.bg-grey {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 .rounded {
   border-radius: 10px !important;
 }
@@ -47,6 +52,9 @@ html body.bg-full-screen-image {
   border-radius: 20px !important;
 }
 
+.p-xs {
+  padding: 0.7rem;
+}
 
 .rounded-lg {
   border-radius: 50px !important;
@@ -77,6 +85,18 @@ html body.bg-full-screen-image {
   border-radius: 2rem 2rem 0 0;
 }
 
+.text-success {
+  color: var(--color-success) !important;
+}
+
+.bg-success {
+  background-color: var(--color-success) !important;
+}
+
+.border-success {
+  border-color: var(--color-success) !important;
+}
+ 
 .mobile-menu {
   bottom: 0;
   z-index: 99;

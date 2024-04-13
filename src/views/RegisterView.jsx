@@ -101,8 +101,7 @@ export default function RegisterView() {
                 <div className="col-xl-7 col-12 p-0 d-none d-xl-block">
                     <Components.HomeScreen />
                 </div>
-                <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 
-                py-sm-5 px-sm-1 px-0">
+                <div className="col-xl-5 col-md-7 col-sm-8 col-12 h-100 p-xl-0 py-lg-5 px-lg-1 px-0">
                     <div className="mb-0 px-0 h-100 d-flex flex-column justify-centent-beetween">
                         <div className="bg-primary rounded-b-lg">
                             <div className="text-center">

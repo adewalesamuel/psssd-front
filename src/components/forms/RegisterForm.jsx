@@ -23,7 +23,7 @@ export default function RegisterForm(props) {
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <select
-                            className='select2 form-control'
+                            className='select2 form-control bg-grey'
                             id='country_id'
                             name='country_id'
                             value={props.useUser.country_id ?? ''}
@@ -43,7 +43,7 @@ export default function RegisterForm(props) {
                 <div className='col-12'>
                     <div className='form-group position-relative has-icon-left'>
                         <input
-                            className='form-control'
+                            className='form-control bg-grey'
                             type='tel'
                             id='phone_number'
                             name='phone_number'
@@ -195,7 +195,7 @@ export default function RegisterForm(props) {
                     <button
                         disabled={props.isDisabled ?? false}
                         type='button'
-                        className='btn btn-primary btn-block mt-2 btn-sm'
+                        className='btn btn-primary btn-block mt-2 btn-sm p-xs rounded'
                         onClick={props.handleFormSubmit}
                     >
                         <span className="text-uppercase">

@@ -51,7 +51,7 @@ export default function Header() {
         <nav className="header-navbar main-header-navbar navbar-expand-lg navbar 
         navbar-with-menu fixed-top">
             <div className='w-100 bg-primary px-1 text-center d-block d-lg-none d-flex 
-            justify-content-between align-items-center'>
+            justify-content-between align-items-center py-1 rounded-b-md'>
                 <Link className="" to="/">
                     <span className="bg-white d-inline-block rounded-circle 
                     overflow-hidden">
@@ -59,9 +59,9 @@ export default function Header() {
                         style={{objectFit: 'contain'}}/>
                     </span>
                 </Link>
-                <div className='h5 mb-0 text-white text-uppercase'>{title}</div>
+                <h6 className='h6 mb-0 font-weight-bolder text-white text-uppercase'>{title}</h6>
                 <Link to='/mon-profil'>
-                    <span><Components.AvatarImg /></span>
+                    <Components.AvatarImg />
                 </Link>
             </div>
             <div className="d-none d-lg-block navbar-wrapper">

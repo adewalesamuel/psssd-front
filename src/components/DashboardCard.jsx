@@ -1,6 +1,6 @@
 export function DashbaordCard(props) {
     return (
-        <div className="card p-0 my-1 text-center rounded-lg shadow-md" 
+        <div className="card p-0 my-1 text-center rounded" 
         onClick={props.handleClick ?? null}>
             <div className="card-content">
                 <div className="card-body p-0">
@@ -9,10 +9,13 @@ export function DashbaordCard(props) {
                         justify-content-between p-sm-2 p-1 w-100">
                             <div>
                                 {props.iconElement}
-                                <p className="font-weight-bold mb-0 mb-sm-1">{props.title}</p>
-                                <h3 className="font-weight-normal">
+                                <small className="font-weight-bold mb-0 mb-sm-1 text-info 
+                                d-block">
+                                    {props.title}
+                                </small>
+                                {/* <h3 className="font-weight-normal">
                                     {props?.value ?? "--"}
-                                </h3>
+                                </h3> */}
                             </div>
                         </div>
                     </div>

@@ -48,7 +48,7 @@ export default function RegisterView() {
 
             if (account.is_active) return navigate('/mes-achats', {replace:true});
 
-            navigate('/activation', {replace:true});
+            navigate('/activation');
             setIsModalVisible(false);
         } catch (error) {
             if ('message' in error) return setErrorMessages([error.message])

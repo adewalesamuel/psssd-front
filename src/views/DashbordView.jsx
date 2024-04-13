@@ -57,30 +57,26 @@ export default function DashbaordView() {
         <section id="dashboard">
             <div className="row">
                 <div className="col-12 py-1 text-center">
-                    <Link className="text-center" to='/mon-profil'>
-                        <Components.AvatarImg size={"100"}/>
-                        <p className="user-name mt-1 text-secondary">
-                            Bienvenu dans votre compte nº{analytics.accounts_count ?? 1}
-                            &nbsp;de la categorie <b>{Utils.Auth.getUser().user?.subscription_plan?.name ?? "___"}</b>
-                            &nbsp; <i className="bx bx-pencil"></i>
-                        </p>
-                    </Link>
+                    <p className="user-name mt-1 text-secondary">
+                        Bienvenu dans votre compte nº{analytics.accounts_count ?? 1}
+                        &nbsp;de la categorie {Utils.Auth.getUser()
+                        .user?.subscription_plan?.name ?? "___"}
+                    </p>
                 </div>  
             </div>
-            <div className="row widget-radial-charts p-sm-1 p-0 bg-primary border-radius-t-lg"> 
+            <div className="row widget-radial-charts p-sm-1 p-0 align-content-sm-stretch"> 
                 <div className="col-4 top-card-item-wrapper">
-                    <div className="card p-0 my-1 text-center rounded-lg" 
-                    style={{backgroundColor: "rgba(225,225,225,0.7)"}}>
+                    <div className="card p-0 text-center rounded bg-info">
                         <div className="card-content">
                             <div className="card-body p-0">
                                 <div className="d-lg-flex justify-content-between">
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-0 py-1 p-md-2 w-100">
                                         <div>
-                                            <h5 className="font-medium-2 font-weight-normal text-white">
+                                            <h2 className="font-weight-bolder text-white mb-0">
                                                 {analytics.initial_stock ?? "--"}
-                                            </h5>
-                                            <p className="text-white label">
+                                            </h2>
+                                            <p className="text-white label mb-0">
                                                 Stock initial
                                             </p>
                                         </div>
@@ -90,19 +86,19 @@ export default function DashbaordView() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col-4 top-card-item-wrapper">
-                    <div className="card p-0 my-1 text-center rounded-lg" 
-                    style={{backgroundColor: "rgba(225,225,225,0.7)"}}>
+                    <div className="card p-0 text-center rounded bg-info">
                         <div className="card-content">
                             <div className="card-body p-0">
                                 <div className="d-lg-flex justify-content-between">
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-0 py-1 p-md-2 w-100">
                                         <div>
-                                            <h5 className="font-medium-2 font-weight-normal text-white">
+                                            <h2 className="font-weight-bolder text-white mb-0">
                                                 {analytics.orders_count ?? "--"}
-                                            </h5>
-                                            <p className="text-white label">
+                                            </h2>
+                                            <p className="text-white label mb-0">
                                                 Ebook(s) vendu(s)
                                             </p>
                                         </div>
@@ -114,19 +110,18 @@ export default function DashbaordView() {
                 </div>
                 
                 <div className="col-4 top-card-item-wrapper">
-                    <div className="card p-0 my-1 text-center rounded-lg" 
-                    style={{backgroundColor: "rgba(225,225,225,0.7)"}}>
+                    <div className="card p-0 text-center rounded bg-info">
                         <div className="card-content">
                             <div className="card-body p-0">
                                 <div className="d-lg-flex justify-content-between">
                                     <div className="widget-card-details d-flex flex-column 
                                     justify-content-between p-0 py-1 p-md-2 w-100">
                                         <div>
-                                            <h5 className="font-weight-normal text-white">
+                                            <h2 className="font-weight-bolder text-white mb-0">
                                                 {analytics.current_stock ?? "--"}
-                                            </h5>
-                                            <p className="text-white label">
-                                                Ebook(s) en stock(s)
+                                            </h2>
+                                            <p className="text-white label mb-0">
+                                                Ebook(s) en stocks
                                             </p>
                                         </div>
                                     </div>
@@ -137,33 +132,34 @@ export default function DashbaordView() {
                 </div>
             </div>
 
-            <div className="row widget-radial-charts p-1 border-radius-t-lg mt-sm-1 mt-0 bg-white">   
+            <div className="row widget-radial-charts p-1 border-radius-t-lg mt-sm-1 
+            mt-0 bg-white bg-primary p-3">   
                 <div className="col-6">
                     <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-store text-primary p-1 mb-1
-                    rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
+                    iconElement={<i className="bx bx-store text-info" 
+                    style={{fontSize: "3rem"}}></i>}
                     title={'Boutique'}
                     handleClick={() => navigate('/ma-boutique')}
                     value={analytics.products_count}/>
                 </div>
                 <div className="col-6">
                     <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-wallet text-primary p-1 mb-1
-                    rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
+                    iconElement={<i className="bx bx-wallet text-info" 
+                    style={{fontSize: "3rem"}}></i>}
                     title={'Solde actuel'}
                     value={analytics.revenu}/>
                 </div>
                 <div className="col-6">
                     <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-user text-primary p-1 mb-1
-                    rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
+                    iconElement={<i className="bx bx-user text-info" 
+                    style={{fontSize: "3rem"}}></i>}
                     title={'Filleuls'}
                     value={analytics.clients_count}/>
                 </div>
                 <div className="col-6">
                     <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-bell text-primary p-1 mb-1
-                    rounded-circle shadow-md" style={{fontSize: "1.7rem"}}></i>}
+                    iconElement={<i className="bx bx-bell text-info" 
+                    style={{fontSize: "3rem"}}></i>}
                     title={'Notifications'}
                     handleClick={() => navigate('/notifications')}
                     value={analytics.notifications_count}/>

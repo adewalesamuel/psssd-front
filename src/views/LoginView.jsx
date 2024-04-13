@@ -33,9 +33,9 @@ export default function LoginView() {
             Utils.Auth.setSessionToken(tk);
             Utils.Auth.setUser(account);
 
-            if (account.is_active) return navigate('/mes-achats', {replace: true});
+            if (account.is_active) return navigate('/', {replace: true});
 
-            navigate('/activation', {replace: true});
+            navigate('/activation');
         } catch (error) {
             if ('message' in error) return setErrorMessages([error.message])
             if (!('messages' in error)) return;

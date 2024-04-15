@@ -15,8 +15,6 @@ export default function AuthLayout({children}) {
         bg-full-screen-image  blank-page`;
 
         if (isLoggedIn()) {
-            console.log(isLoggedIn());
-            console.log(getUser().is_active);
             if (getUser().is_active) {
                 return navigate('/', {replace: true});
             }

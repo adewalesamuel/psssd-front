@@ -64,9 +64,10 @@ export default function DashbaordView() {
                     </p>
                 </div>  
             </div>
-            <div className="row widget-radial-charts p-sm-1 p-0 align-content-sm-stretch"> 
+            <div className="row widget-radial-charts p-sm-1 p-0 align-items-stretch p
+            osition-relative mb-2"> 
                 <div className="col-4 top-card-item-wrapper">
-                    <div className="card p-0 text-center rounded bg-info">
+                    <div className="card p-0 mb-0 text-center rounded bg-info h-100">
                         <div className="card-content">
                             <div className="card-body p-0">
                                 <div className="d-lg-flex justify-content-between">
@@ -88,7 +89,7 @@ export default function DashbaordView() {
                 </div>
 
                 <div className="col-4 top-card-item-wrapper">
-                    <div className="card p-0 text-center rounded bg-info">
+                    <div className="card p-0 mb-0 text-center rounded bg-info h-100">
                         <div className="card-content">
                             <div className="card-body p-0">
                                 <div className="d-lg-flex justify-content-between">
@@ -110,7 +111,7 @@ export default function DashbaordView() {
                 </div>
                 
                 <div className="col-4 top-card-item-wrapper">
-                    <div className="card p-0 text-center rounded bg-info">
+                    <div className="card p-0 mb-0 text-center rounded bg-info h-100">
                         <div className="card-content">
                             <div className="card-body p-0">
                                 <div className="d-lg-flex justify-content-between">

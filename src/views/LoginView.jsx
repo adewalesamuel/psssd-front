@@ -51,7 +51,7 @@ export default function LoginView() {
     return (
         <Layouts.AuthLayout>
 
-            <section className="row flexbox-container flex-wrap align-items-lg-stretch">
+            <section className="row flexbox-container flex-wrap align-items-lg-stretch h-100">
                 <div className="col-xl-7 col-12 p-0 d-none d-xl-block">
                     <Components.HomeScreen />
                 </div>

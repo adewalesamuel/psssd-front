@@ -56,6 +56,10 @@ html body.bg-full-screen-image {
   padding: 0.7rem;
 }
 
+.p-xxs {
+  padding: 0.2rem;
+}
+
 .rounded-lg {
   border-radius: 50px !important;
 }

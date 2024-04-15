@@ -38,9 +38,10 @@ export function OrderListView() {
     }, [init])
 
     return (
-        <>
+        <section className="pt-4 pt-md-0">
             <Components.Loader isLoading={isLoading}>
-                <div className='row mt-md-1 py-md-2'>
+                <div className="pb-1">Vos 4 livres ci-dessous peuvent être téléchargés et imprimés</div>
+                <div className='row mt-md-1 py-md-2 mb-4 px-2'>
                     {orders.map((order, index) => {
                         const product = order?.product ?? {};
                         const category = product?.category ?? {};
@@ -63,10 +64,9 @@ export function OrderListView() {
                     target='_blank' rel='noreferrer' className='btn btn-primary btn-block'>
                         Télecharger le réçu d&apos;achat
                     </a>
-                    <span>NB: Vos 4 livres téléchargeables</span>
                 </div>
             </div>
             </Components.Loader>
-        </>
+        </section>
     )
 }

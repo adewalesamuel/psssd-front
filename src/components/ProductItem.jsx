@@ -9,10 +9,6 @@ export function ProductItem({product, canDownlaod, productImg}) {
                         minHeight: "80px",
                         objectFit: 'cover'
                     }}/>
-                    <div className="heading-elements">
-                        <i className="bx bx-dots-vertical-rounded font-medium-3 
-                        align-middle text-white"></i>
-                    </div>
                 </a>
             </div>
             <a className="badge badge-pill text-white bg-primary bx bx-download 

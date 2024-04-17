@@ -58,9 +58,9 @@ export function UserEditView() {
     }, [init])
 
     return (
-        <>
+        <section className='py-3'>
             <div style={{maxWidth: '600px'}}>
-                <div className='card'>
+                <div className='card p-2'>
                     <Components.ErrorMessages>
                         {errorMessages}
                     </Components.ErrorMessages>
@@ -72,6 +72,6 @@ export function UserEditView() {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }

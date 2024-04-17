@@ -46,13 +46,14 @@ export function NotificationListView() {
     }, [init])
 
     return (
-        <>
+        <section className="py-2">
             <Components.Loader isLoading={isLoading}>
-                <div className='w-100'>
+                <div className="row">
+                    <div className='col-12 col-md-6'>
                     {notifications.map((notification, index) => {
                         return (
-                            <div className='bg-white rounded p-2 shadow-md mb-2' key={index} 
-                            style={{borderLeft: '4px solid teal'}}>
+                            <div className='bg-white px-2 py-1 shadow-sm mb-1 cursor-pointer
+                                position-relative' key={index}>
                                 <b>{notification.nom}</b> viens de créer son compte. <br />
                                 <b>Tel: {notification.tel}</b> <br />
                                 <b>Login: {notification.login}</b> <br />
@@ -65,7 +66,8 @@ export function NotificationListView() {
                         )
                     })}
                 </div>
+                </div>
             </Components.Loader>
-        </>
+        </section>
     )
 }

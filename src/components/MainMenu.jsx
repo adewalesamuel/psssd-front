@@ -29,7 +29,7 @@ export  default function MainMenu() {
                     </li>
                     <li className="nav-item">
                         <NavLink to="/mes-achats">
-                            <i className="bx bx-store"></i>
+                            <i className="bx bx-cart"></i>
                             <span className="menu-title">Mes achats</span>
                         </NavLink>
                     </li>

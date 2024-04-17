@@ -43,8 +43,7 @@ export function ProductListView() {
     }, [init])
 
     return (
-        <>
-            <hr />
+        <section className="py-2">
             <Components.Loader isLoading={isLoading}>
                 <div className='col-xl-6 col-12 px-0'>
                     <small>
@@ -58,8 +57,11 @@ export function ProductListView() {
                             return (
                                 <Fragment key={index}>
                                     <div className="p-xxs col-1/5 img-top-card productItem">
-                                        <div className='w-100 rounded-sm' style={{
-                                            height: '50px', backgroundColor: isLast ? "dodgerblue" : "lightgreen" 
+                                        <div className='w-100 rounded-sm bx bx-book-open 
+                                        text-white text-center' style={{
+                                            padding: "5px 2px",
+                                            fontSize: "2.5rem",
+                                            backgroundColor: isLast ? "dodgerblue" : "lightgreen" 
                                             }}></div>
                                     </div>
                                 </Fragment>
@@ -78,6 +80,6 @@ export function ProductListView() {
                     </button>
                 </div>
             </Components.Loader>
-        </>
+        </section>
     )
 }

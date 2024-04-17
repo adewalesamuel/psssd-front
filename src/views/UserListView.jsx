@@ -58,19 +58,22 @@ export function UserListView() {
     }, [init])
 
     return (
-        <>
+        <section className="py-2">
             <Components.Loader isLoading={isLoading}>
                 <div className='row'>
                     <div className='col-12 col-md-6'>
                         {accounts.map((account, index) => {
                             return (
-                                <div className='bg-white px-2 py-1 shadow-sm mb-1 cursor-pointer' 
-                                key={index} onClick={() => handleAccountClick(account)}>
+                                <div className='bg-white px-2 py-1 shadow-sm mb-1 cursor-pointer
+                                position-relative' key={index} 
+                                onClick={() => handleAccountClick(account)}>
+                                    <small className="position-absolute" style={{right:"20px"}}>N° 1</small>
                                     <b>Login: {account.email}</b> <br />
                                     <b>Boutique: {account.shop_name}</b> <br />
                                     <small className='d-inline-block float-right'>
+                                        <i className="bx bx-calendar text-primary" style={{fontSize: "1rem"}}></i>
                                         {account.created_at && new Date(account.created_at)
-                                        .toLocaleDateString('fr', {dateStyle: 'full'})}
+                                        .toLocaleDateString('fr', {dateStyle: 'short'})}
                                     </small>
                                 </div>
                             )
@@ -78,6 +81,6 @@ export function UserListView() {
                     </div>
                 </div>
             </Components.Loader>
-        </>
+        </section>
     )
 }

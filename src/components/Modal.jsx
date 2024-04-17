@@ -23,7 +23,7 @@ export function Modal(props) {
                         disabled={props.isDisabled ?? false}>
                             {props.isDisabled ? "Chargement..." : "Accepter"}
                         </button>
-                         <button type="button" className="btn btn-danger btn-outline-secondary" 
+                         <button type="button" className="btn btn-danger" 
                         data-dismiss="modal" onClick={props.handleModalClose}
                         disabled={props.isDisabled ?? false}>
                             Refuser

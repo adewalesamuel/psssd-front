@@ -10,11 +10,14 @@ export function ProfileView(){
     const handleLogoutClick = async () => {
         const {isConfirmed} = await Swal.fire({
             icon: 'warning',
+            iconColor: 'red',
+            // iconHtml
             titleText: "Deconnexion!",
             text: 'Vous êtes sur le point de vous deconnecter',
             showCancelButton: true,
             cancelButtonText: 'Annuler',
-            confirmButtonText: 'Me deconnecter'
+            confirmButtonText: 'Me deconnecter',
+            confirmButtonColor: "red"
         })
 
         if (isConfirmed) {

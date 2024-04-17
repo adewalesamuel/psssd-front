@@ -10,6 +10,11 @@
 *[role=button] {
   cursor: pointer;
 }
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Poppins', 'Sans serif';
+}
+
 html body.bg-full-screen-image {
   background-repeat: repeat;
 }

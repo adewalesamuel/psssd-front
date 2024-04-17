@@ -62,7 +62,7 @@ export default function Header() {
                     </span>
                 </Link>
                 <h6 className='h6 mb-0 font-weight-bolder text-white text-uppercase'>{title}</h6>
-                <Link to='/mon-profil'>
+                <Link to='/profil'>
                     <Components.AvatarImg />
                 </Link>
             </div>

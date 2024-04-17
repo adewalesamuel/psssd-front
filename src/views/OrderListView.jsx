@@ -40,7 +40,9 @@ export function OrderListView() {
     return (
         <section className="pt-4 pt-md-0">
             <Components.Loader isLoading={isLoading}>
-                <div className="pb-1">Vos 4 livres ci-dessous peuvent être téléchargés et imprimés</div>
+                <div className="pb-1">
+                    Vos 4 livres ci-dessous peuvent être téléchargés et imprimés
+                </div>
                 <div className='row mt-md-1 py-md-2 mb-4 px-2'>
                     {orders.map((order, index) => {
                         const product = order?.product ?? {};
@@ -57,7 +59,8 @@ export function OrderListView() {
                 </div>
                 <div className='row'>
                 <div className='mx-auto col-sm-6 col-12'>
-                    <button className='btn btn-info btn-block mt-b'>
+                    <button className='btn btn-info btn-block mt-b'
+                    onClick={() => Utils.Dom.copyToClipboard(Utils.Auth.getUser()?.user?.sponsor_code)}>
                         Votre code de parrainage {Utils.Auth.getUser()?.user?.sponsor_code}
                     </button>
                     <a href={`${Api.URL}/accounts/${Utils.Auth.getUser().id}/invoice`} 

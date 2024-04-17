@@ -18,7 +18,7 @@ export function HomeScreen() {
 								Psssp Afrique
 							</h2>
 							<small className='text-uppercase' style={{fontSize:"0.56rem"}}>
-								<b>Projet:</b> santé, solidarité, spiritualité et prospérité
+								<b>Projet: santé, solidarité, spiritualité et prospérité</b>
 							</small>
 							<div className='px-1 mt-2'>
 								Adhérez au projet PSSSP Afrique pour bâtir un avenir sur 

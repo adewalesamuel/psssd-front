@@ -30,11 +30,13 @@ export function ProfileView(){
 
     return (
         <section className="row d-block pt-3">
-            <div className="bg-primary text-white py-2">
-                <div className="px-5 pb-2 d-flex align-items-center 
+            <div className="bg-primary text-white pt-2 rounded-t-md" 
+            style={{paddingBottom: "60vh"}}>
+                <div className="px-5 pb-2 mb-2 d-flex align-items-center 
                 justify-content-center flex-row flex-wrap">
                     <img src={Utils.Auth.getUser().profile_img_url ?? imgPlaceholder}
-                    className="mr-2 img-fluid rounded-circle" width={80} height={80}/>
+                    className="mr-2 img-fluid rounded-circle" width={70} height={70}
+                    style={{objectFit:'cover', width: "70px", height: "70px"}}/>
                     <div>
                         <h6 className="mb-0 text-white">Bonjour !</h6>
                         <h5 className="mb-0 text-white">
@@ -43,9 +45,9 @@ export function ProfileView(){
                     </div>
                 </div>
                 <div className="list-group w-100">
-                    <Link to='/mon-profil' className="list-group-item d-inline-block 
-                    text-default d-flex justify-content-between align-items-center 
-                    bg-info text-white">
+                    <Link to='/mon-profil' className="list-group-item border-primary 
+                    d-inline-block text-default d-flex justify-content-between 
+                    align-items-center bg-info text-white">
                         <div>
                             <i className="bx bx-edit mr-2 align-middle"></i>
                             <span className="">Modifier mes informations</span>
@@ -53,9 +55,9 @@ export function ProfileView(){
                         <i className="bx bx-chevron-right d-inline-block" 
                         style={{fontSize: "1.8rem"}}></i>
                     </Link>
-                    <span className="list-group-item d-inline-block text-default 
-                    d-flex justify-content-between align-items-center bg-info 
-                    text-white" onClick={handleLogoutClick}>
+                    <span className="list-group-item border-primary 
+                    d-inline-block text-default d-flex justify-content-between 
+                    align-items-center bg-info text-white" onClick={handleLogoutClick}>
                         <div>
                             <i className="bx bx-exit mr-2 align-middle"></i>
                             <span className="">Se deconnecter</span>

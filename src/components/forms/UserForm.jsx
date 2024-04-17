@@ -54,10 +54,37 @@ export function UserForm(props) {
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='phone_number'>Numéro de téléphone</label>
+                        <label htmlFor='phone_number'>Tel principal</label>
                         <input className='form-control' type='text' id='phone_number' name='phone_number' 
-                        placeholder='Numéro de téléphone' value={props.useUser.user?.phone_number ?? ''}
+                        placeholder='Tel principal' value={props.useUser.user?.phone_number ?? ''}
                         disabled={props.isDisabled} readOnly={true} required/>
+                    </div>
+                </div>
+                 <div className='col-12'>
+                    <div className='form-group'>
+                        <label htmlFor='whatsapp_number'>Tel WhatsApp</label>
+                        <input className='form-control' type='text' id='whatsapp_number' name='whatsapp_number' 
+                        placeholder='Tel WhatsApp' value={props.useUser.whatsapp_number ?? ''}
+                        disabled={props.isDisabled} onChange={ e => 
+                            props.useUser.setWhatsapp_number(e.target.value) ?? null} required/>
+                    </div>
+                </div>
+                 <div className='col-12'>
+                    <div className='form-group'>
+                        <label htmlFor='telegram_number'>Tel Telegram</label>
+                        <input className='form-control' type='text' id='telegram_number' name='telegram_number' 
+                        placeholder='Tel Telegram' value={props.useUser.telegram_number ?? ''}
+                        disabled={props.isDisabled} onChange={ e => 
+                            props.useUser.setTelegram_number(e.target.value) ?? null} required/>
+                    </div>
+                </div>
+                <div className='col-12'>
+                    <div className='form-group'>
+                        <label htmlFor='backup_number'>Tel de secours</label>
+                        <input className='form-control' type='text' id='backup_number' name='backup_number' 
+                        placeholder='Tel de secours' value={props.useUser.backup_number ?? ''}
+                        disabled={props.isDisabled} onChange={ e => 
+                            props.useUser.setBackup_number(e.target.value) ?? null} required/>
                     </div>
                 </div>
                 <div className='col-12'>
@@ -89,36 +116,9 @@ export function UserForm(props) {
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='backup_number'>Tel de secours</label>
-                        <input className='form-control' type='text' id='backup_number' name='backup_number' 
-                        placeholder='Tel de secours' value={props.useUser.backup_number ?? ''}
-                        disabled={props.isDisabled} onChange={ e => 
-                            props.useUser.setBackup_number(e.target.value) ?? null} required/>
-                    </div>
-                </div>
-				<div className='col-12'>
-                    <div className='form-group'>
-                        <label htmlFor='whatsapp_number'>WhatsApp</label>
-                        <input className='form-control' type='text' id='whatsapp_number' name='whatsapp_number' 
-                        placeholder='WhatsApp' value={props.useUser.whatsapp_number ?? ''}
-                        disabled={props.isDisabled} onChange={ e => 
-                            props.useUser.setWhatsapp_number(e.target.value) ?? null} required/>
-                    </div>
-                </div>
-				<div className='col-12'>
-                    <div className='form-group'>
-                        <label htmlFor='telegram_number'>Telegram</label>
-                        <input className='form-control' type='text' id='telegram_number' name='telegram_number' 
-                        placeholder='Telegram' value={props.useUser.telegram_number ?? ''}
-                        disabled={props.isDisabled} onChange={ e => 
-                            props.useUser.setTelegram_number(e.target.value) ?? null} required/>
-                    </div>
-                </div>
-				<div className='col-12'>
-                    <div className='form-group'>
-                        <label htmlFor='shop_name'>Nom du magasin</label>
+                        <label htmlFor='shop_name'>Nom de la boutique</label>
                         <input className='form-control' type='text' id='shop_name' name='shop_name' 
-                        placeholder='Nom du magasin' value={props.useUser.shop_name ?? ''}
+                        placeholder='Nom de la boutique' value={props.useUser.shop_name ?? ''}
                         disabled={props.isDisabled} onChange={ e => 
                             props.useUser.setShop_name(e.target.value) ?? null} required/>
                     </div>

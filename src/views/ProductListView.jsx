@@ -63,6 +63,9 @@ export function ProductListView() {
                                             fontSize: "2.5rem",
                                             backgroundColor: isLast ? "dodgerblue" : "lightgreen" 
                                             }}></div>
+                                        <small className="font-weight-bolder" style={{fontSize: '0.67rem'}}>
+                                            {product.deleted_at ? 'vendu' : "non vendu"}
+                                        </small>
                                     </div>
                                 </Fragment>
                             )
@@ -75,7 +78,8 @@ export function ProductListView() {
                     </div>
                 </div>
                  <div className='mx-auto col-sm-6 col-12 px-0'>
-                    <button className='btn btn-info btn-block mt-b'>
+                    <button className='btn btn-info btn-block mt-b' 
+                    onClick={() => Utils.Dom.copyToClipboard(Utils.Auth.getUser()?.user?.sponsor_code)}>
                         Votre code de parrainage {Utils.Auth.getUser()?.user?.sponsor_code}
                     </button>
                 </div>

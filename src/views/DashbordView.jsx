@@ -133,8 +133,8 @@ export default function DashbaordView() {
                 </div>
             </div>
 
-            <div className="row widget-radial-charts p-1 border-radius-t-lg mt-sm-1 
-            mt-0 bg-white bg-primary p-3">   
+            <div className="row widget-radial-charts border-radius-t-lg mt-sm-1 
+            mt-0 bg-white bg-primary px-3 pt-3" style={{paddingBottom: "30vh"}}>   
                 <div className="col-6">
                     <Components.DashbaordCard 
                     iconElement={<i className="bx bx-store text-info" 

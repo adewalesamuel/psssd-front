@@ -135,37 +135,33 @@ export default function DashbaordView() {
 
             <div className="row widget-radial-charts border-radius-t-lg mt-sm-1 
             mt-0 bg-white bg-primary px-3 pt-3" style={{paddingBottom: "30vh"}}>   
-                <div className="col-6">
-                    <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-store text-info" 
-                    style={{fontSize: "3rem"}}></i>}
-                    title={'Boutique'}
-                    handleClick={() => navigate('/ma-boutique')}
-                    value={analytics.products_count}/>
-                </div>
-                <div className="col-6">
-                    <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-wallet text-info" 
-                    style={{fontSize: "3rem"}}></i>}
-                    title={'Solde actuel'}
-                    value={analytics.revenu}/>
-                </div>
-                <div className="col-6">
-                    <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-user text-info" 
-                    style={{fontSize: "3rem"}}></i>}
-                    title={'Filleuls'}
-                    handleClick={() => navigate('/mes-filleuls')}
-                    value={analytics.clients_count}/>
-                </div>
-                <div className="col-6">
-                    <Components.DashbaordCard 
-                    iconElement={<i className="bx bx-bell text-info" 
-                    style={{fontSize: "3rem"}}></i>}
-                    title={'Notifications'}
-                    handleClick={() => navigate('/notifications')}
-                    value={analytics.notifications_count}/>
-                </div>
+                
+                <Components.DashbaordCard 
+                iconElement={<i className="bx bx-store text-info" 
+                style={{fontSize: "3rem"}}></i>}
+                title={'Boutique'}
+                handleClick={() => navigate('/ma-boutique')}
+                value={analytics.products_count}/>
+            
+                <Components.DashbaordCard 
+                iconElement={<i className="bx bx-wallet text-info" 
+                style={{fontSize: "3rem"}}></i>}
+                title={'Solde actuel'}
+                value={analytics.revenu}/>
+            
+                <Components.DashbaordCard 
+                iconElement={<i className="bx bx-user text-info" 
+                style={{fontSize: "3rem"}}></i>}
+                title={'Filleuls'}
+                handleClick={() => navigate('/mes-filleuls')}
+                value={analytics.clients_count}/>
+            
+                <Components.DashbaordCard 
+                iconElement={<i className="bx bx-bell text-info" 
+                style={{fontSize: "3rem"}}></i>}
+                title={'Notifications'}
+                handleClick={() => navigate('/notifications')}
+                value={analytics.notifications_count}/>
             </div>
         </section>
     )

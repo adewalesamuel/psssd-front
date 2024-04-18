@@ -1,8 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from 'react';
 import { Services } from '../services';
 import { Components } from '../components';
-import placeholderImg from '../app-assets/images/placeholder.jpg';
-import { Api } from '../services/Api';
 import { Utils } from '../utils';
 
 export function ProductListView() {
@@ -11,7 +9,7 @@ export function ProductListView() {
     const { ProductService, OrderService } = Services;
 
     const [products, setProducts] = useState([]);
-    const [orders, setOrders] = useState([]);
+    const [, setOrders] = useState([]);
     const [page, ] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -72,12 +70,13 @@ export function ProductListView() {
                         })}
                     </div>
                     <div className='pb-3'>
-                        NB: La vente des livres en bleu vous revient et celle de livres en vert revient aux
-                        écrivains, maisons d&apos;édition, frais de maintenance, frais d&apos;hébergement, à la
+                        NB: La vente des livres en bleu vous revient et celle de 
+                        livres en vert revient aux écrivains, maisons d&apos;édition, 
+                        frais de maintenance, frais d&apos;hébergement, à la
                         solidarité et à la communauté.
                     </div>
                 </div>
-                 <div className='mx-auto col-sm-6 col-12 px-0'>
+                 <div className='col-sm-6 col-12 px-0'>
                     <button className='btn btn-info btn-block mt-b' 
                     onClick={() => Utils.Dom.copyToClipboard(Utils.Auth.getUser()?.user?.sponsor_code)}>
                         Votre code de parrainage {Utils.Auth.getUser()?.user?.sponsor_code}

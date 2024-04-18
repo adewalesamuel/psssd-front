@@ -54,10 +54,10 @@ export default function Header() {
         navbar-with-menu fixed-top">
             <div className='w-100 bg-primary px-1 text-center d-block d-lg-none d-flex 
             justify-content-between align-items-center py-1 rounded-b-md'>
-                <Link className="" to="/">
+                <Link className="" to="/" style={{lineHeight: '0'}}>
                     <span className="bg-white d-inline-block rounded-circle 
-                    overflow-hidden">
-                        <img src={logo} alt={"logo"} width={"40px"} height={"40px"} 
+                    overflow-hidden" style={{padding: '0.36rem'}}>
+                        <img src={logo} alt={"logo"} width={"30px"} height={"30px"} 
                         style={{objectFit: 'contain'}}/>
                     </span>
                 </Link>

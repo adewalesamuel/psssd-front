@@ -8,7 +8,8 @@ export function HomeScreen() {
 				<div className="position-relative d-flex flex-column 
 				justify-content-between align-items-center w-100 vh-100 text-center">
 					<div className='position-absolute w-100' style={{top: 0, left: 0, zIndex:0}}>
-						<img className='img-fluid w-100' src={homeImg} />
+						<img className='img-fluid w-100' src={homeImg} 
+						style={{maxHeight: "400px", objectFit: 'cover'}}/>
 					</div>
 					<img src={logoNoBg} width={60} className='position-relative mt-2'/>
 					<div className='position-relative px-1' style={{maxWidth:'500px'}}>

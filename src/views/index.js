@@ -33,6 +33,7 @@ import { ProfileView } from './ProfileView';
 import { OrderListView } from './OrderListView';
 import { MobileHomeView } from './MobileHomeView';
 import { MobileChoiceView } from './MobileChoiceView';
+import { ClientListView } from './ClientListView';
 
 export const Views = {
     CountryListView,
@@ -69,5 +70,6 @@ export const Views = {
 	ProfileView,
 	OrderListView,
 	MobileHomeView,
-	MobileChoiceView	
+	MobileChoiceView,
+	ClientListView
 }

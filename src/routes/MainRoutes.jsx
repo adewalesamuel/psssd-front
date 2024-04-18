@@ -8,6 +8,7 @@ export default function MainRoutes() {
             <Routes>
                 <Route path='' element={<Views.DashbaordView />}/>
                 <Route path='mes-comptes' element={<Views.UserListView />}/>
+                <Route path='mes-filleuls' element={<Views.ClientListView />}/>
                 <Route path='ma-boutique' element={<Views.ProductListView />}/>                
                 <Route path='mes-achats' element={<Views.OrderListView />}/>
                 <Route path='nouveau-produit' element={<Views.ProductCreateView />}/>

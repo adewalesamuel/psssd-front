@@ -155,6 +155,7 @@ export default function DashbaordView() {
                     iconElement={<i className="bx bx-user text-info" 
                     style={{fontSize: "3rem"}}></i>}
                     title={'Filleuls'}
+                    handleClick={() => navigate('/mes-filleuls')}
                     value={analytics.clients_count}/>
                 </div>
                 <div className="col-6">

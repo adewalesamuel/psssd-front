@@ -8,6 +8,11 @@ const getAll = (params, signal) => {
     return Api.get(`${ENPOINTS.Order}?page=${params?.page ?? 1}`, signal)
 }
 
+const getAllClient = (params, signal) => {
+    return Api.get(`clients`, signal)
+}
+
+
 const getById = (id, signal) => {
     return Api.get(`${ENPOINTS.Order}/${id}`, signal);
 }
@@ -25,6 +30,7 @@ const destroy = (id, signal) => {
 
 export const OrderService = {
     getAll,
+    getAllClient,
     getById,
     create,
     update,

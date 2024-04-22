@@ -81,7 +81,7 @@ export default function LoginView() {
                                     setEmail={setEmail} password={password} setPassword={setPassword}
                                     handleFormSubmit={handleLoginSubmit}/>
                                      <div className="text-center mt-1">
-                                        <small className="mr-25 d-inline-block">
+                                        <small className="mr-25 d-inline-block text-xxs">
                                             Vous n&apos;avez pas de compte?
                                             <Link to="/inscription" className="text-primary mt-2 d-inline-block">
                                                 <b className="d-inline-block">Inscrivez-vous</b> 

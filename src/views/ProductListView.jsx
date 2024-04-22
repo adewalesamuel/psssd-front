@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useEffect, useState } from 'react';
+import { FaBookOpen } from "react-icons/fa";
 import { Services } from '../services';
 import { Components } from '../components';
 import { Utils } from '../utils';
@@ -55,12 +56,13 @@ export function ProductListView() {
                             return (
                                 <Fragment key={index}>
                                     <div className="p-xxs col-1/5 img-top-card productItem">
-                                        <div className='w-100 rounded-sm bx bx-book-open 
-                                        text-white text-center' style={{
+                                        <div className='w-100 rounded-sm text-white text-center' style={{
                                             padding: "5px 2px",
                                             fontSize: "2.5rem",
                                             backgroundColor: isLast ? "dodgerblue" : "lightgreen" 
-                                            }}></div>
+                                            }}>
+                                                <FaBookOpen />
+                                            </div>
                                         <small className="font-weight-bolder" style={{fontSize: '0.67rem'}}>
                                             {product.deleted_at ? 'vendu' : "non vendu"}
                                         </small>

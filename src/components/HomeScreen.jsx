@@ -13,7 +13,7 @@ export function HomeScreen() {
 					</div>
 					<img src={logoNoBg} width={60} className='position-relative mt-2'/>
 					<div className='position-relative px-1' style={{maxWidth:'500px'}}>
-						<div className='bg-primary px-1 rounded-lg text-white text-center'
+						<div id="homeText" className='bg-primary px-1 rounded-lg text-white text-center'
 						style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
 							<h2 className='text-uppercase text-white mb-0'>
 								Psssp Afrique

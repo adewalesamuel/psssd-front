@@ -169,4 +169,13 @@ html body.bg-full-screen-image {
   .top-card-item-wrapper .label {
     font-size: 0.8rem;
   }
+
+  .text-xxs {
+    font-size: 0.6rem;
+  }
+
+.mobile-menu .menu-title {
+    font-size: 0.4rem;
+  }
+
 }

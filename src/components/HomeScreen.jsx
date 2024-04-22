@@ -1,4 +1,4 @@
-import logoNoBg from '../app-assets/images/logo/logo-nobg.png';
+import logoNoBg from '../app-assets/images/logo/logo.png';
 import homeImg from '../app-assets/images/home-img.jpeg';
 import { Link } from 'react-router-dom';
 

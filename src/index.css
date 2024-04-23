@@ -149,6 +149,14 @@ html body.bg-full-screen-image {
   .footer {
     min-height: 52px;
   }
+
+  .header-navbar.fixed-top {
+    background-color: unset;
+  }
+
+  #userEdit {
+    margin-top: -2rem;
+  }
 }
 
 @media screen and (max-width:645px) {

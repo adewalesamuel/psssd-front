@@ -92,7 +92,7 @@ html body.bg-full-screen-image {
 }
 
 input {
-  font-size: 20px !important;
+  font-size: 16px !important;
 }
 
 .custom-file-input:lang(en) ~ .custom-file-label::after

@@ -9,7 +9,8 @@ export function ImageFileInput(props) {
                 role='button' onChange={e => props.handleFileChange(e.target.files[0])} 
                 accept='image/*' style={{top: 0, left: 0}}/>
                 <img src={props.img_url !== '' ? props.img_url : imgPlaceholder} 
-                className="img-fluid rounded-pill" alt=""/>
+                className="img-fluid rounded-pill" alt="" 
+                style={{width:"50px", height:"50px", objectFit:"cover"}}/>
             </div>
         </span>
     )

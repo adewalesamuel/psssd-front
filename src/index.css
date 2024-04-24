@@ -91,6 +91,10 @@ html body.bg-full-screen-image {
   border-radius: 0.267rem;
 }
 
+input {
+  font-size: 20px !important;
+}
+
 .custom-file-input:lang(en) ~ .custom-file-label::after
 {
   content: "Parcourir...";

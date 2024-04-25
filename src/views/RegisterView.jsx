@@ -140,12 +140,26 @@ export default function RegisterView() {
                 <Components.Modal isControlVisible={true} handleModalClose={() => setIsModalVisible(false)}
                 title={"Nos termes et conditions"} handleModalValidate={handleRegisterSubmit}
                 isDisabled={useUser.isDisabled}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    <div className="overflow-auto" style={{maxHeight: "300px"}}>
+                        Le P.S.S.S.P BUSINESS est un projet communautaire de commercialisation de livres, 
+                        documents et fascicules numériques via son application (PSSSP Business). Une adhésion 
+                        au projet équivaut à l’achat de quatre e-books qui sont automatiquement livrés avec un 
+                        reçu d’achat et un code de parrainage unique. Dans le but de susciter de nouvelles ouvertures 
+                        de comptes et promouvoir la fidélité au sein du programme, le PSSSP Business confie sept de 
+                        ses e-books à tous les nouveaux membres. 
+                        NB: Ces sept E-books restent la propriété exclusive du PSSSP Business mais sont gérés et remis 
+                        en vente par les membres contre 50 à 80% des recettes encaissées. En aucun cas, ces E-books 
+                        ne feront l’objet de réclamation ni de revendication de la part de qui que soit.                                                                                                  
+                        NB: Le projet PSSSP Business s’engage à mettre tout en œuvre pour assurer la permanence, 
+                        la continuité et la qualité du fonctionnement de la plateforme de sorte à satisfaire tous 
+                        ses Utilisateurs. Cependant, compte tenu de la nature du réseau internet, le PSSSP Business 
+                        ne peut garantir l’absence d’interruption ou de dégradation du fonctionnement de l’application.
+                        <br /><br />
+                        <div className="text-right">
+                            <b>Maitre Salomon</b><br />
+                            Fondateur et Coordonnateur Général du Projet PSSSP Afrique
+                        </div>
+                    </div>
                 </Components.Modal>
             }
         </Layouts.AuthLayout>

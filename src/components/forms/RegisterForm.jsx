@@ -49,10 +49,10 @@ export default function RegisterForm(props) {
                             name='phone_number'
                             placeholder='Tel principal'
                             value={props.useUser.phone_number ?? ''}
-                            minLength={10}
-                            maxLength={10}
+                            minLength={14}
+                            maxLength={14}
                             disabled={props.isDisabled}
-                            onChange={e => props.useUser.setPhone_number(e.target.value) ?? null}
+                            onChange={e => props.useUser.setPhone_number( e.target.value ?? null)}
                             required
                         />
                         <div className="form-control-position">
@@ -69,10 +69,10 @@ export default function RegisterForm(props) {
                             name='whatsapp_number'
                             placeholder='WhatsApp'
                             value={props.useUser.whatsapp_number ?? ''}
-                            minLength={10}
-                            maxLength={10}
+                            minLength={14}
+                            maxLength={14}
                             disabled={props.isDisabled}
-                            onChange={e => props.useUser.setWhatsapp_number(e.target.value) ?? null}
+                            onChange={e => props.useUser.setWhatsapp_number( e.target.value ?? null)}
                             required
                         />
                         <div className="form-control-position">
@@ -89,10 +89,10 @@ export default function RegisterForm(props) {
                             name='telegram_number'
                             placeholder='Telegram'
                             value={props.useUser.telegram_number ?? ''}
-                            minLength={10}
-                            maxLength={10}
+                            minLength={14}
+                            maxLength={14}
                             disabled={props.isDisabled}
-                            onChange={e => props.useUser.setTelegram_number(e.target.value) ?? null}
+                            onChange={e => props.useUser.setTelegram_number( e.target.value ?? null)}
                             required
                         />
                         <div className="form-control-position">
@@ -109,10 +109,10 @@ export default function RegisterForm(props) {
                             name='backup_number'
                             placeholder='Tel de secours'
                             value={props.useUser.backup_number ?? ''}
-                            minLength={10}
-                            maxLength={10}
+                            minLength={14}
+                            maxLength={14}
                             disabled={props.isDisabled}
-                            onChange={e => props.useUser.setBackup_number(e.target.value) ?? null}
+                            onChange={e => props.useUser.setBackup_number( e.target.value ?? null)}
                             required
                         />
                         <div className="form-control-position">

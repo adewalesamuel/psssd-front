@@ -26,20 +26,24 @@ export default function RegisterView() {
 
         useUser.setIsDisabled(true);
 
+        const country = countries.find(country => 
+            parseInt(useUser.country_id) == country.id);
+
         try {
             const payload = {
                 fullname: useUser.fullname,
                 email: useUser.email,
                 password: useUser.password,
-                phone_number: useUser.phone_number,
-                backup_number: useUser.backup_number,
-                whatsapp_number: useUser.whatsapp_number,
-                telegram_number: useUser.telegram_number,
+                phone_number: (country?.phone_code ?? '') + useUser.phone_number,
+                backup_number: (country?.phone_code ?? '') + useUser.backup_number,
+                whatsapp_number: (country?.phone_code ?? '') + useUser.whatsapp_number,
+                telegram_number: (country?.phone_code ?? '') + useUser.telegram_number,
                 shop_name: useUser.shop_name,
                 sponsor_code: useUser.sponsor_code,
                 referer_sponsor_code: useUser.referer_sponsor_code,
                 country_id: useUser.country_id
             }
+
             const {account, tk} = await Services.AuthService.register(
                 JSON.stringify(payload), abortContoller.signal);
 

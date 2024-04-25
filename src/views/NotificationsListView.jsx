@@ -22,7 +22,7 @@ export function NotificationListView() {
                 return { 
                     nom: account.fullname,
                     login: account.email,
-                    country: account?.country.name,
+                    country: account?.country?.name ?? "",
                     tel: account.user?.phone_number,
                     'nom boutique': account.shop_name,
                     activation_code: account.activation_code,

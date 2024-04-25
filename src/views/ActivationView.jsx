@@ -108,7 +108,7 @@ export default function ActivationView() {
                                                 Félicitations
                                             </h4>
                                             <small className="text-center d-block">
-                                                Votre compte PSSSP Afrique vient d&apos;être créé. Contactez 
+                                                Votre compte PSSSP Business vient d&apos;être créé. Contactez 
                                                 la  personne ci-dessous pour  votre Code d&apos;Activation
                                             </small>
                                             <div className="border border-success rounded mt-2 bg-grey">

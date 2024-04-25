@@ -16,13 +16,13 @@ export function HomeScreen() {
 						<div id="homeText" className='bg-primary px-1 rounded-lg text-white text-center'
 						style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
 							<h2 className='text-uppercase text-white mb-0'>
-								Psssp Afrique
+								Psssp Business
 							</h2>
 							<small className='text-uppercase' style={{fontSize:"0.56rem"}}>
 								<b>Projet: santé, solidarité, spiritualité et prospérité</b>
 							</small>
 							<div className='px-1 mt-2'>
-								Adhérez au projet PSSSP Afrique pour bâtir un avenir sur 
+								Adhérez au projet PSSSP Business pour bâtir un avenir sur 
 								les quatres pilliers de la vie humaine
 								<i style={{opacity: 0.5}} className='d-block'>
 									&laquo; La Santé, la Solidarité, la Spiritualité 

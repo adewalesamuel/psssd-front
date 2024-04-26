@@ -3,6 +3,7 @@ import { FaBookOpen } from "react-icons/fa";
 import { Services } from '../services';
 import { Components } from '../components';
 import { Utils } from '../utils';
+import { Psssp } from '../Psssp'
 
 export function ProductListView() {
     let abortController = new AbortController();
@@ -52,15 +53,17 @@ export function ProductListView() {
                     </small>
                     <div className='row p-1'>
                         {products.map((product, index) => {
-                            const isLast = index <= 4 ? true : false;
+                            const subscriptionPlan = Utils.Auth.getUser().user.subscription_plan;
+                            const isSolidarite = Psssp.SolidariteIndexFromPlanMap[subscriptionPlan.slug]
+                            .includes(index + 1);
                             return (
                                 <Fragment key={index}>
                                     <div className="p-xxs col-1/5 img-top-card productItem">
                                         <div className='w-100 rounded-sm text-white text-center' style={{
                                             padding: "5px 2px",
                                             fontSize: "2.5rem",
-                                            backgroundColor: isLast ? "dodgerblue" : "lightgreen" 
-                                            }}>
+                                            backgroundColor: !isSolidarite ? "dodgerblue" : "lightgreen" 
+                                        }}>
                                                 <FaBookOpen />
                                             </div>
                                         <small className="font-weight-bolder" style={{fontSize: '0.67rem'}}>

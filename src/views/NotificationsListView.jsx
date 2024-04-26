@@ -22,6 +22,7 @@ export function NotificationListView() {
                 return { 
                     nom: account.fullname,
                     login: account.email,
+                    country: account?.country?.name ?? "",
                     tel: account.user?.phone_number,
                     'nom boutique': account.shop_name,
                     activation_code: account.activation_code,
@@ -57,6 +58,7 @@ export function NotificationListView() {
                                 <b>{notification.nom}</b> viens de créer son compte. <br />
                                 <b>Tel: {notification.tel}</b> <br />
                                 <b>Login: {notification.login}</b> <br />
+                                <b>Pays: {notification.country}</b> <br />
                                 <b>Code: {notification.activation_code}</b> <br />
                                 <small className='d-inline-block float-right'>
                                     {notification.created_at && new Date(notification.created_at)

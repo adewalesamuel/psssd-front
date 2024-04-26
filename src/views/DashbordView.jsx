@@ -78,7 +78,7 @@ export default function DashbaordView() {
                                                 {analytics.initial_stock ?? "--"}
                                             </h2>
                                             <p className="text-white label mb-0">
-                                                Stock initial
+                                                Stock initial boutique
                                             </p>
                                         </div>
                                     </div>

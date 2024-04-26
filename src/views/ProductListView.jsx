@@ -47,7 +47,7 @@ export function ProductListView() {
                 <div className='col-xl-6 col-12 px-0'>
                     <small>
                         Les 7 livres ci-dessous vous ont été confiés par le
-                        PSSSP Afrique pour les vendre et non pour les télécharger 
+                        PSSSP Business pour les vendre et non pour les télécharger 
                         ni les imprimer.
                     </small>
                     <div className='row p-1'>

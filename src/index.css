@@ -91,6 +91,10 @@ html body.bg-full-screen-image {
   border-radius: 0.267rem;
 }
 
+input {
+  font-size: 16px !important;
+}
+
 .custom-file-input:lang(en) ~ .custom-file-label::after
 {
   content: "Parcourir...";
@@ -148,6 +152,14 @@ html body.bg-full-screen-image {
 
   .footer {
     min-height: 52px;
+  }
+
+  .header-navbar.fixed-top {
+    background-color: unset;
+  }
+
+  #userEdit {
+    margin-top: -2rem;
   }
 }
 

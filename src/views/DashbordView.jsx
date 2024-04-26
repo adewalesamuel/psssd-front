@@ -58,7 +58,7 @@ export default function DashbaordView() {
             <div className="row">
                 <div className="col-12 py-1 text-center">
                     <p className="user-name mt-1 text-secondary">
-                        Bienvenu dans votre compte nº{analytics.accounts_count ?? 1}
+                        Bienvenu dans votre compte nº{analytics.account_number ?? "__"}
                         &nbsp;de la categorie {Utils.Auth.getUser()
                         .user?.subscription_plan?.name ?? "___"}
                     </p>

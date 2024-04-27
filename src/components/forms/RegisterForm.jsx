@@ -9,6 +9,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='fullname'
                             name='fullname'
+                            autoComplete="true"
                             placeholder='Nom complet'
                             value={props.useUser.fullname ?? ''}
                             disabled={props.isDisabled}
@@ -26,6 +27,7 @@ export default function RegisterForm(props) {
                             className='select2 form-control bg-grey'
                             id='country_id'
                             name='country_id'
+                            autoComplete="true"
                             value={props.useUser.country_id ?? ''}
                             disabled={props.isDisabled}
                             onChange={e => props.useUser.setCountry_id(e.target.value) ?? null}
@@ -47,6 +49,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='phone_number'
                             name='phone_number'
+                            autoComplete="true"
                             placeholder='Tel principal'
                             value={props.useUser.phone_number ?? ''}
                             minLength={14}
@@ -67,6 +70,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='whatsapp_number'
                             name='whatsapp_number'
+                            autoComplete="true"
                             placeholder='WhatsApp'
                             value={props.useUser.whatsapp_number ?? ''}
                             minLength={14}
@@ -87,6 +91,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='telegram_number'
                             name='telegram_number'
+                            autoComplete="true"
                             placeholder='Telegram'
                             value={props.useUser.telegram_number ?? ''}
                             minLength={14}
@@ -107,6 +112,7 @@ export default function RegisterForm(props) {
                             type='tel'
                             id='backup_number'
                             name='backup_number'
+                            autoComplete="true"
                             placeholder='Tel de secours'
                             value={props.useUser.backup_number ?? ''}
                             minLength={14}
@@ -127,6 +133,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='sponsor_code'
                             name='sponsor_code'
+                            autoComplete="true"
                             placeholder='Code de parrainage (facultatif)'
                             value={props.useUser.referer_sponsor_code ?? ''}
                             disabled={props.isDisabled}
@@ -144,6 +151,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='shop_name'
                             name='shop_name'
+                            autoComplete="true"
                             placeholder='Choisissez le nom votre boutique'
                             value={props.useUser.shop_name ?? ''}
                             disabled={props.isDisabled}
@@ -162,6 +170,7 @@ export default function RegisterForm(props) {
                             type='text'
                             id='email'
                             name='email'
+                            autoComplete="true"
                             placeholder='Login'
                             value={props.useUser.email ?? ''}
                             disabled={props.isDisabled}
@@ -180,6 +189,7 @@ export default function RegisterForm(props) {
                             type='password'
                             id='password'
                             name='password'
+                            autoComplete="true"
                             placeholder='Mot de passe'
                             value={props.useUser.password ?? ''}
                             disabled={props.isDisabled}

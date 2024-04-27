@@ -12,7 +12,7 @@ export function HomeScreen() {
 						style={{maxHeight: "400px", objectFit: 'cover'}}/>
 					</div>
 					<img src={logoNoBg} width={60} className='position-relative mt-2'/>
-					<div className='position-relative px-1' style={{maxWidth:'500px'}}>
+					<div className='position-relative px-1' style={{maxWidth:'350px'}}>
 						<div id="homeText" className='bg-primary px-1 rounded-lg text-white text-center'
 						style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
 							<h2 className='text-uppercase text-white mb-0'>
@@ -41,7 +41,7 @@ export function HomeScreen() {
 								asie - amérique - afrique - europe - pacifique
 							</small>
 						</div>
-						<div className='px-2 mb-4 mt-4'>
+						<div className='px-2 mb-2 mt-2'>
 							<Link to={'/mobile-choice'} className='btn btn-block btn-sm px-1 
 							text-uppercase btn-info mt-2 text-bold-600 d-block d-lg-none'>
 								Suivant

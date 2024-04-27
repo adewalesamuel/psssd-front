@@ -1,3 +1,5 @@
+import placeholderImg from '../app-assets/images/placeholder.jpg';
+
 export function ProductItem({product, canDownlaod, productImg}) {
     return (
         <div className="col-3 img-top-card productItem p-xxs position-relative">
@@ -5,7 +7,8 @@ export function ProductItem({product, canDownlaod, productImg}) {
                 <a className="card-content" href={product?.file_url} target='_blank'
                 rel='noreferer'>
                     <img className="card-img-top mb-md-1 rounded img-fluid" 
-                    src={productImg} alt="Card image cap" style={{
+                    src={productImg} alt="Card image cap" 
+                    onError={e => e.currentTarget.src=placeholderImg} style={{
                         minHeight: "80px",
                         objectFit: 'cover'
                     }}/>

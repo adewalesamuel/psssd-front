@@ -12,7 +12,7 @@ export default function MainLayout({children}) {
         boxicon-layout no-card-shadow 2-columns navbar-sticky footer-static`;
 
         if (!isLoggedIn()) return navigate('/connexion', {replace: true});
-        if (getUser().is_active === false) navigate('/activation', {replace: true});
+        if (getUser().is_active == false) navigate('/activation', {replace: true});
     }, [])
 
     if (!isLoggedIn()) return null;

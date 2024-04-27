@@ -9,6 +9,7 @@ import logo from '../app-assets/images/logo/logo.png';
 
 export default function ActivationView() {
     const abortContoller = new AbortController();
+    const user =  Utils.Auth.getUser();
 
     const navigate = useNavigate();
 
@@ -28,7 +29,6 @@ export default function ActivationView() {
                 JSON.stringify({activation_code}), 
                 abortContoller.signal)
             
-            const user = Utils.Auth.getUser();
             user.is_active = true;
 
             Utils.Auth.setUser(user);
@@ -113,11 +113,22 @@ export default function ActivationView() {
                                             </small>
                                             <div className="border border-success rounded mt-2 bg-grey">
                                                 <ul className="p-1 mb-0" style={{listStyleType: "none"}}>
-                                                    <li>Login:{sponsor.email}</li>
-                                                    <li>Pays:{sponsor.country?.name}</li>
-                                                    <li>Numéro WhatsApp: {sponsor.whatsapp_number}</li>
-                                                    <li>Numéro Télégram: {sponsor.telegram_number}</li>
-                                                    <li>Numéro Secours: {sponsor.backup_number}  </li>
+                                                    {sponsor?.user?.sponsor_code === user?.user?.sponsor_code ? 
+                                                        <div>
+                                                            Votre compte Nº {user.num_account} de PSSSP Business 
+                                                            vient d’être créé. Ci-dessous votre code d’activation: <br />
+                                                            <b>{user.activation_code}</b>
+                                                        </div>
+                                                    : 
+                                                        <>
+                                                            <li>Login:{sponsor.email}</li>
+                                                            <li>Pays:{sponsor.country?.name}</li>
+                                                            <li>N° Principal: {sponsor.user?.phone_number}</li>
+                                                            <li>N° WhatsApp: {sponsor.whatsapp_number}</li>
+                                                            <li>N° Télégram: {sponsor.telegram_number}</li>
+                                                            <li>N° Secours: {sponsor.backup_number}  </li>
+                                                        </>
+                                                    }
                                                 </ul>
                                             </div>
                                             <div className="mt-2">

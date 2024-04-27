@@ -26,6 +26,7 @@ export function UserEditView() {
 
             const {img_url} = await Services.FileService.store(
                 formData, abortController.signal);
+            console.log(img_url)
 
             useUser.setProfile_img_url(img_url);
         } catch (error) {

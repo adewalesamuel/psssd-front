@@ -55,11 +55,11 @@ export function NotificationListView() {
                         return (
                             <div className='bg-white px-2 py-1 shadow-sm mb-1 cursor-pointer
                                 position-relative' key={index}>
-                                <b>{notification.nom}</b> viens de créer son compte. <br />
-                                <b>Tel: {notification.tel}</b> <br />
-                                <b>Login: {notification.login}</b> <br />
-                                <b>Pays: {notification.country}</b> <br />
-                                <b>Code: {notification.activation_code}</b> <br />
+                                <b><span style={{color:'red'}}>Nom</span>: {notification.nom}</b> <br />
+                                <b><span style={{color:'red'}}>Login</span>: {notification.login}</b> <br />
+                                <b><span style={{color:'red'}}>Pays</span>: {notification.country}</b> <br />
+                                <b><span style={{color:'red'}}>Tel</span>: {notification.tel}</b> <br />
+                                <b><span style={{color:'red'}}>Code</span>: <span style={{color:'royalblue'}}>{notification.activation_code}</span></b> <br />
                                 <small className='d-inline-block float-right'>
                                     {notification.created_at && new Date(notification.created_at)
                                     .toLocaleDateString('fr', {dateStyle: 'full'})}

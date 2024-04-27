@@ -7,5 +7,6 @@ export const Psssp = {
 		'plan-pro-max': [6, 8, 10, 12, 14],
 		'plan-pro-max-or': [6, 8, 10, 12, 16],
 		'plan-pro-max-diamant': [6, 8, 10, 12, 16, 20]
-	}
+	},
+	SPONSOR_CODE: "CP000000"
 }

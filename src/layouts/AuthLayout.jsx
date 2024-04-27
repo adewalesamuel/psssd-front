@@ -15,7 +15,7 @@ export default function AuthLayout({children}) {
         bg-full-screen-image  blank-page`;
 
         if (isLoggedIn()) {
-            if (getUser().is_active) {
+            if (getUser().is_active == true) {
                 return navigate('/', {replace: true});
             }
         } else {

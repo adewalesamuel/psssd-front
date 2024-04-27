@@ -4,6 +4,7 @@ import { Components } from "../components";
 import { Utils } from "../utils";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import {Psssp} from '../Psssp';
 
 export default function DashbaordView() {
     const abortController = new AbortController();
@@ -22,6 +23,8 @@ export default function DashbaordView() {
             setAnalytics(analytics);
 
             if (analytics.products_count > 0) return;
+            if (Utils.Auth.getUser().is_active == false) return;
+            if (Psssp.SPONSOR_CODE === Utils.Auth.getUser().user.sponsor_code) return;
 
             const {isConfirmed} = await Swal.fire({
                 icon: 'warning',

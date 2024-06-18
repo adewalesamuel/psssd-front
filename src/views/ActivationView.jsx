@@ -121,12 +121,12 @@ export default function ActivationView() {
                                                         </div>
                                                     : 
                                                         <>
-                                                            <li>Login: {sponsor.email}</li>
+                                                            <li className="text-danger">Login: {sponsor.email}</li>
                                                             <li>Pays: {sponsor.country?.name}</li>
-                                                            <li>N° Principal: {sponsor.user?.phone_number}</li>
-                                                            <li>N° WhatsApp: {sponsor.whatsapp_number}</li>
-                                                            <li>N° Télégram: {sponsor.telegram_number}</li>
-                                                            <li>N° Secours: {sponsor.backup_number}  </li>
+                                                            <li>Principal: {sponsor.user?.phone_number}</li>
+                                                            <li>WhatsApp: {sponsor.whatsapp_number}</li>
+                                                            <li>Télégram: {sponsor.telegram_number}</li>
+                                                            <li>Secours: {sponsor.backup_number}  </li>
                                                         </>
                                                     }
                                                 </ul>

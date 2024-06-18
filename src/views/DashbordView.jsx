@@ -150,7 +150,7 @@ export default function DashbaordView() {
                 iconElement={<i className="bx bx-wallet text-info" 
                 style={{fontSize: "3rem"}}></i>}
                 title={'Solde actuel'}
-                value={analytics.revenu}/>
+                value={`${analytics.revenu}$`}/>
             
                 <Components.DashbaordCard 
                 iconElement={<i className="bx bx-user text-info" 

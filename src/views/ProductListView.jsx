@@ -8,20 +8,14 @@ import { Psssp } from '../Psssp'
 export function ProductListView() {
     let abortController = new AbortController();
 
-    const { ProductService, OrderService } = Services;
+    const { ProductService } = Services;
 
     const [products, setProducts] = useState([]);
-    const [, setOrders] = useState([]);
     const [page, ] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
 
     const init = useCallback(async () => {
         try {
-            const {orders} = await OrderService.getAll(
-                {page: page}, abortController.signal);
-
-            setOrders(orders);
-
             const {products} = await ProductService.getAll(
                 {page: page}, abortController.signal);
 
@@ -67,7 +61,10 @@ export function ProductListView() {
                                                 <FaBookOpen />
                                             </div>
                                         <small className="font-weight-bolder" style={{fontSize: '0.67rem'}}>
-                                            {product.deleted_at ? 'vendu' : "non vendu"}
+                                        <span className={`${product.deleted_at ?'text-danger': ''}`}
+                                        >
+                                            {product.deleted_at ? "vendu": "non vendu"}
+                                        </span>
                                         </small>
                                     </div>
                                 </Fragment>

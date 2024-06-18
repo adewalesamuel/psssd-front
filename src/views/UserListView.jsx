@@ -67,7 +67,9 @@ export function UserListView() {
                                 <div className='bg-white px-2 py-1 shadow-sm mb-1 cursor-pointer
                                 position-relative' key={index} 
                                 onClick={() => handleAccountClick(account)}>
-                                    <small className="position-absolute" style={{right:"20px"}}>{index +  1}</small>
+                                    <small className="position-absolute" style={{right:"20px"}}>
+                                        {(accounts.length + 1) - (index + 1)}    
+                                    </small>
                                     <span>Login: {account.email}</span> <br />
                                     <span>Boutique: {account.shop_name}</span> <br />
                                     <small className='d-inline-block float-right'>
